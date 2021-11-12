@@ -1,0 +1,43 @@
+<!--我的卡券列表-->
+<wxs module="getDate" src="../../utils/dateParse.wxs"></wxs>
+<view class="top">
+  <view data-status="1" catchtap="switchTab" class="headers {{status==1?'active':''}}">已拥有</view>
+  <view data-status="0" catchtap="switchTab" class="headers {{status==0?'active':''}}">已失效</view>
+</view>
+<!-- 我的卡券 -->
+<view class="myDiscountedCard">
+  <!-- 卡券 -->
+<block wx:for="{{cardVoucherList}}" wx:key="card">
+  <view class="cardItem" bindtap="goPay" data-id="{{item.id}}">
+    <image class="imgsty" src="{{item.cardImgUrl}}"></image>
+    <!-- 头像 -->
+    <!-- <view class="cardPic"></view> -->
+    <!-- 有效期 -->
+    <view class="cardTime">
+      <view class="bookName">{{item.cardName}}</view>
+      <view class="time">有效期至 ：{{getDate.getDate_New(item.validEndTime,'.')}} </view>
+    </view>
+    <!-- 剩余价格 -->
+    <view class="cardMoney">
+      <view class="cardMoneyText">余额</view>
+      <view class="price">¥{{item.beforeSpotPrice}}.
+        <view class="pricePoint">{{item.afterSpotPrice}}</view>
+      </view>
+    </view>
+    <!-- 卡片已失效状态 -->
+    <view class="invalid" wx:if="{{item.status!=1}}">
+      <view class="invalidImgs"> 
+        <image class="imgsty" src="/images/{{item.status==0?'invalid.png':'overdue.png'}}"></image>
+      </view>
+    </view>
+  </view>
+</block>
+
+  <!-- 没有卡券 -->
+  <view class="noCardItem" wx:if="{{cardVoucherList.length<=0}}">
+    <view class="noCardPic">
+      <image class="imgsty" src="/assets/images/myInex/noCard.png"></image>
+    </view>
+    <view class="noCardText">暂无卡劵</view>
+  </view>
+</view>

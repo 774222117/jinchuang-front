@@ -1,0 +1,147 @@
+<!--提交订单页-->
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+
+<view class="addressBox" bindtap="chooseAddress">
+  <view class="addressBox_left">
+    <image class="addressBox_img" src="/images/orderSubmit/address.png"></image>
+    <text class="addressBox_placeholder" wx:if="{{!flag}}">请您选择收货地址</text>
+    <view class="addressBox_info" wx:else>
+      <view>
+        <text class="addressBox_name">{{pickerName}}</text>
+        <text class="addressBox_phone">{{pickerMobile}}</text>
+      </view>
+      <text class="addressBox_detailInfo">{{regionInfo+detailInfo}}</text>
+    </view>
+  </view>
+  <image class="addressBox_icon" src="/images/orderSubmit/rightArrow.svg"></image>
+</view>
+<view class="goodsBox">
+  <view class="goodsList_item" wx:for="{{shopCart}}" wx:key="index">
+    <image class="goodsList_img" src="{{item.goodsThumb}}"></image>
+    <view class="goodsList_main">
+      <view class="goodsList_titleBox">
+        <view class="goodsList_title">
+          <view class="goodsList_titleText text-ellipsis">{{item.title}}</view>
+          <view class="goodsList_num">
+            <text>x</text>
+            <text style="font-family: DIN, DIN-Medium;font-weight: 500;margin-left: 4rpx">{{item.total}}</text>
+          </view>
+        </view>
+        <view class="goodsList_specs"></view>
+      </view>
+      <view class="goodsList_price">
+        <text style="font-size:30rpx">￥</text>
+        <text>{{priceUtil.getBefore(item.price)}}</text>
+        <text style="font-size:28rpx">.{{priceUtil.getAfter(item.price)}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="goodsList_details">
+    <text>订单备注</text>
+    <input type="text" placeholder="点击输入，100字以内" placeholder-class="goodsList_detailsValue" style="text-align:right" bindinput="getValue" value="{{buyRemark}}" data-name="buyRemark"/>
+
+  </view>
+  <view class="goodsList_details" style="margin-top: 16rpx">
+    <text>配送费用</text>
+    <text class="goodsList_detailsValue">免邮</text>
+  </view>
+  <view class="goodsList_total">
+    <text class="goodsList_totalNum" style="color:rgba(20,20,20,.53)">共{{buyCount}}件</text>
+    <text class="goodsList_totalNum">小计：</text>
+
+    <text style="font-size:30rpx">￥</text>
+    <text style="font-size:36rpx">{{priceUtil.getBefore(sumPrice)}}</text>
+    <text>.{{priceUtil.getAfter(sumPrice)}}</text>
+  </view>
+</view>
+<view class="couponBox" style="{{isIpx?'margin-bottom:214rpx':''}}" bindtap="{{useCouponCount==1?'showDialog':''}}">
+  <text>优惠券/兑换券</text>
+  <view class="couponBox_right">
+    <text>{{couponDetail}}</text>
+    <image class="addressBox_icon" src="/images/orderSubmit/rightArrow.svg"></image>
+  </view>
+</view>
+<view style="height: 124rpx;"></view>
+<view class="footBox" catchtouchmove="true">
+  <view class="footBox_priceBox">
+    <view class="footBox_price">
+      <text style="font-size:30rpx">￥</text>
+      <text>{{priceUtil.getBefore(sumPrice)}}</text>
+      <text style="font-size:28rpx">.{{priceUtil.getAfter(sumPrice)}}</text>
+    </view>
+    <view class="footBox_tip">
+      <text style="font-family: PingFang SC, PingFang SC-Regular;">共</text>
+      <text>{{buyCount}}</text>
+      <text style="font-family: PingFang SC, PingFang SC-Regular;">件 预计为您节省￥</text>
+      <block wx:if="{{(sumProductPrice-sumPrice)>0}}">
+        <text style="font-size:32rpx ">{{priceUtil.getBefore(sumProductPrice-sumPrice)}}</text>
+        <text> .{{priceUtil.getAfter(sumProductPrice-sumPrice)}}元</text>
+      </block>
+      <block wx:else>
+        <text style="font-size:32rpx ">0</text>
+        <text> .00元</text>
+      </block>
+    </view>
+  </view>
+  <view class="footBox_btn" bindtap="submitOrder">提交订单</view>
+</view>
+<!-- 遮罩层 -->
+<view class="mask" hidden="{{!isShow&&!isShow2}}"></view>
+<!-- 优惠券抽屉框 -->
+<view class="dialog {{isShow?'dialogMainShow':''}}" catchtap="showDialog" catchtouchmove="true">
+  <view class="dialogMain" catchtap="nothing">
+    <image src="/images/goodsDetails/close.png" class="closeBtn" bindtap="showDialog"></image>
+    <view class="dialog_title">优惠券</view>
+    <scroll-view scroll-y style="height:{{830-224}}rpx;" scroll-with-animation>
+      <view class="discountList_box">
+        <view class="discountList" wx:for="{{myCoupons}}" wx:key="index">
+          <view class="dottedLine">
+            <view class="dotted" wx:for="{{14}}" wx:key="index"></view>
+          </view>
+          <view class="discountList_left">
+            <text class="discountList_price"><text style="font-size:32rpx">￥</text>50</text>
+            <text class="discountList_threshold">满<text style="font-family: DIN, DIN-Medium;">69</text>元可用</text>
+          </view>
+          <view class="discountList_main">
+            <view class="discountList_mainLeft">
+              <text class="discountList_tag">限品类券</text>
+              <text class="discountList_tip">仅可购买自营部分商品</text>
+              <text class="discountList_time">2021.01.01-2021.12.31</text>
+            </view>
+            <image data-goodsinfo="{{item}}" catchtap="chooseDiscount"
+              src="/images/shoppingCart{{item.isChoosed?'/tick.png':'/untick.png'}}" class="discountList_mainRight">
+            </image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <view class="discount_foot">
+      <view class="discount_footText">
+        <text>已选择</text>
+        <text style="font-family:DIN, DIN-Medium">1</text>
+        <text>张，可抵扣</text>
+        <text style="font-family:DIN, DIN-Medium;color:#F35437">￥</text>
+        <text style="font-family:DIN, DIN-Medium;color:#F35437;font-size:32rpx">50</text>
+        <text style="font-family:DIN, DIN-Medium;color:#F35437">.00</text>
+      </view>
+      <view class="discount_footBtn">确认使用</view>
+    </view>
+  </view>
+</view>
+<!-- 身份信息抽屉框 -->
+<view class="dialog2 {{isShow2?'dialogMainShow2':''}}" catchtap="showDialog2" catchtouchmove="true">
+  <view class="dialogMain2" catchtap="nothing">
+    <view style="width:100%">
+      <view class="inputBox">
+        <text>姓名：</text>
+        <input type="text" placeholder="请输入姓名" placeholder-class="input_placeholder" bindinput="getValue" value="{{name}}" data-name="name" style="flex:1" />
+      </view>
+      <view class="inputBox">
+        <text>身份证号码：</text>
+        <input type="text" placeholder="请输入身份证号码" placeholder-class="input_placeholder"  bindinput="getValue" value="{{cardId}}" data-name="cardId" style="flex:1"/>
+      </view>
+      <view class="dialog2_tip">请输入您本人的真实信息，以供海关检查</view>
+    </view>
+    <view class="dialog2_btn" bindtap="confirmSubmit">确认</view>
+  </view>
+</view>

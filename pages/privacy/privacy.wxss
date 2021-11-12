@@ -1,0 +1,29 @@
+/* pages/privacy/privacy.wxss */
+page{
+  background-color: #fff;
+  padding: 0 24rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+}
+.title{
+  width: 100%;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 700;
+  margin: 32rpx 0 24rpx;
+}
+.text{
+  text-indent: 50rpx;
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+.title2{
+  font-weight: 700;
+}
+.text2{
+  font-size: 24rpx;
+  line-height: 36rpx;
+}

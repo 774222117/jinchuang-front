@@ -1,0 +1,89 @@
+<!-- 头图 -->
+<view class="headImgs">
+  <image class="imgsty1" mode="widthFix" src="{{saleActivityInfo.backImg}}"></image>
+</view>
+
+<!-- 底部瀑布流 -->
+<view class="goodsContents">
+  <!-- 留一个包裹盒子 用于添加背景色或者图片 -->
+  <view class="goodsContentsBg" style="background:{{bgColor}}">
+	  <view class="left">
+	    <!-- 单个商品元素 -->
+	    <view class="commodityItem" wx:key="commodityItem" wx:for="{{goodsList}}" wx:if="{{index % 2 == 0}}">
+	      <!-- 商品图片 -->
+	      <view class="itemImgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+			    <image class="imgSty" src="{{item.thumb}}"/>
+		    </view>
+	      <!-- 商品文字 -->
+	      <view class="itemTitle" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+	        {{item.title}}
+	      </view>
+        <view class="sold" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">已售{{item.salesReal}}件</view>	
+				<view class="promotion" wx:if="{{item.self==0}}">
+					<view class="pro1 flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+          <view class="pro1 text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+				</view>
+	      
+	      <!-- 商品价格 与 添加商品 -->
+	      <view class="itemPriceAdd">	
+        <!-- 价格折扣 -->
+	      <view class="priceDiscount" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+	        <view class="leftPrice">
+	          <view class="price1"><text class="text1">￥{{item.beforeSpotPrice}}.<text class="deci">{{item.afterSpotPrice}}</text></text>
+							<text class="price2" hidden="{{item.marketPrice>=item.productPrice}}"><text class="text2">￥{{item.productPrice}}</text></text>
+						</view>
+	          
+	        </view>
+	      </view>		
+	        <!-- 添加减少 -->
+        <view class="btnBoxs"  wx:if="{{item.self}}">
+          <view class="addBtn" data-goodsinfo="{{item}}" catchtap="addcart">
+            <image class="addBtnImg" src="/images/cart.svg"></image>
+          </view>
+        </view>
+	      </view>
+	    </view>
+			<view style="width:100%;height:90rpx;height:calc(90rpx + constant(safe-area-inset-bottom));height:calc(90rpx + env(safe-area-inset-bottom));"></view>
+	  </view>
+	  <view class="right">
+	    <!-- 单个商品元素 -->
+	    <view class="commodityItem"  wx:key="commodityItem" wx:for="{{goodsList}}" wx:if="{{(index+1) %2 == 0}}">
+	      <!-- 商品图片 -->
+	      <view class="itemImgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+			    <image class="imgSty" src="{{item.thumb}}"/>
+		    </view>
+	      <!-- 商品文字 -->
+	      <view class="itemTitle" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+	        {{item.title}}
+	      </view>
+        <view class="sold" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">已售{{item.salesReal}}件</view>	
+	      <view class="promotion" wx:if="{{item.self==0}}">
+					<view class="pro1 flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+          <view class="pro1 text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+				</view>
+	      <!-- 商品价格 与 添加商品 -->
+	      <view class="itemPriceAdd">	
+        <!-- 价格折扣 -->
+	      <view class="priceDiscount" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+	        <view class="leftPrice">
+	          <view class="price1"><text class="text1">￥{{item.beforeSpotPrice}}.<text class="deci">{{item.afterSpotPrice}}</text></text>
+							<text class="price2" hidden="{{item.marketPrice>=item.productPrice}}"><text class="text2">￥{{item.productPrice}}</text></text>
+						</view>
+	        </view>
+	      </view>		
+	        <!-- 添加减少 -->
+        <view class="btnBoxs" wx:if="{{item.self}}">
+          <view class="addBtn" data-goodsinfo="{{item}}" catchtap="addcart">
+            <image class="addBtnImg" src="/images/cart.svg"></image>
+          </view>
+        </view>
+	      </view>
+	    </view>
+			<view style="width:100%;height:90rpx;height:calc(90rpx + constant(safe-area-inset-bottom));height:calc(90rpx + env(safe-area-inset-bottom));"></view>
+	  </view>
+		<!-- <view class="holdThePlace {{isIpx?'pb20':''}}"></view> -->
+  </view>
+</view>
+<bottom-action shopCart="{{shopCart}}" sumPrice="{{cartTotal.sumPrice}}" 
+	sumProductPrice="{{cartTotal.sumProductPrice}}" buyCount="{{cartTotal.buyCount}}"
+	goodsInfoList="{{goodsList}}"></bottom-action>

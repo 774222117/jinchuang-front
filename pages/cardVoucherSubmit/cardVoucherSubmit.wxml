@@ -1,0 +1,58 @@
+<!--卡券兑换提交订单-->
+<view class="addressBox" bindtap="chooseAddress" wx:if="{{cardVoucherInfo.orderType==2}}">
+  <view class="addressBox_left">
+    <image class="addressBox_img" src="/images/orderSubmit/address.png"></image>
+    <text class="addressBox_placeholder" wx:if="{{!flag}}">请您选择收货地址</text>
+    <view class="addressBox_info" wx:else>
+      <view>
+        <text class="addressBox_name">{{pickerName}}</text>
+        <text class="addressBox_phone">{{pickerMobile}}</text>
+      </view>
+      <text class="addressBox_detailInfo">{{regionInfo+detailInfo}}</text>
+    </view>
+  </view>
+  <image class="addressBox_icon" src="/images/orderSubmit/rightArrow.svg"></image>
+</view>
+<view class="top">
+  <!-- 图片一行 -->
+  <view class="header">
+    <view class="header_imgs"> <image class="imgsty" src="{{cardVoucherInfo.cardImgUrl}}"></image> </view>
+    <view class="header_text">
+      <view class="text1">{{cardVoucherInfo.cardName}}</view>
+      <view class="text2">面值：{{cardVoucherInfo.nominalPrice}}</view>
+      <view class="text3"> <text>¥{{cardVoucherInfo.realPrice}}</text>
+      <!-- <text class="ft28">.00</text>   -->
+      </view>
+    </view>
+    <view class="header_label">不支持退换货</view>
+  </view>
+  <!-- 说明 -->
+  <view class="infos" wx:if="{{cardVoucherInfo.orderType!=2}}">支付成功后，可前往“个人中心-卡劵”使用</view>
+  <!-- 购买数量 -->
+  <view class="payNum">
+    <view class="lefts">购买数量</view>
+    <view class="rights">
+      <view class="cut"> <image class="imgsty" catchtap="delCount" src="/images/shoppingCart/reduce.png"></image> </view>
+      <view class="shopNum">{{cardVoucherInfo.buyCount}}</view>
+      <view class="add"><image class="imgsty" catchtap="addCount" src="/images/shoppingCart/add.png"></image></view>
+    </view>
+  </view>
+</view>
+<!-- 商品合计 -->
+<view class="shopTotal">
+  <view class="text1">商品合计</view>
+  <view class="text3"> <text>¥{{cardVoucherInfo.sumPrice}}</text>
+  <!-- <text class="ft28">.00</text>   -->
+  </view>
+</view>
+
+<!-- 底部 -->
+<view class="footer {{isIphoneX?'isIphoneXSty':''}}">
+  <view class="footer_price">
+    <view class="text1">共{{cardVoucherInfo.buyCount}}件，合计</view>
+    <view class="text3"> <text>¥{{cardVoucherInfo.sumPrice}}</text>
+    <!-- <text class="ft28">.00</text>   -->
+    </view>
+  </view>
+  <view class="btms" catchtap="submitOrder">立即兑换</view>
+</view>

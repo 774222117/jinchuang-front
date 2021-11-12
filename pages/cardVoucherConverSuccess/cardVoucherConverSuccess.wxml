@@ -1,0 +1,33 @@
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+<view class="top">
+  <view class="titles" style="top:{{customBar - 30}}px;">兑换成功</view>
+  <view class="imgs"><image class="imgsty" src="/images/cardVoucherConverSuccess/paysuccess.png"></image></view>
+  <view class="texts">
+    <view class="text1">支付成功!</view>
+    <view class="text2">感谢您的购买</view>
+  </view>
+</view>
+
+<view class="contents">
+  <view class="lines"></view>
+  <view class="payInfo">
+    <view class="topLines"></view>
+    <!-- 价格 -->
+    <view class="prices">
+      <view class="priceText"> <text class="text1">¥{{priceUtil.getBefore(payAmount)}}</text>
+      <text class="text2">.{{priceUtil.getAfter(payAmount)}}</text> </view>
+    </view>
+    <!-- 信息 -->
+    <view class="orderInfo">
+      <view>订单编号:{{ordersn}}</view>
+      <view>下单时间:{{createTime}}</view>
+      <view>支付方式:长复锦礼卡</view>
+    </view>
+  </view>
+</view>
+<view class="footer">
+  <view class="lookcard" catchtap="toMyCardVoucher">
+    查看卡券
+  </view>
+</view>
+

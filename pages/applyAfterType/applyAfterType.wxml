@@ -1,0 +1,55 @@
+<!--pages/applyAfterType/applyAfterType.wxml-->
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+
+<view class="cardBox">
+  <view class="title">退款商品</view>
+  <view class="goodsList" wx:for="{{goodsItems}}" wx:key="index">
+    <image class="goodsList_img" src="{{item.goodsThumb}}"></image>
+    <view class="goodsList_main">
+      <view style="padding-left:2rpx;display:flex">
+        <view style="flex:1">
+          <view class="goodsList_title">{{item.title}}</view>
+          <!-- <view class="goodsList_specs">假数据</view> -->
+        </view>
+        <view class="goodsList_num">x{{item.total}}</view>
+      </view>
+      <view class="goodsList_priceBox">
+        <view class="goodsList_price">
+          <text style="font-size:30rpx">￥</text>
+          <text>{{priceUtil.getBefore(item.price)}}</text>
+          <text style="font-size:28rpx">.{{priceUtil.getAfter(item.price)}}</text>
+          <text
+            style="font-size: 24rpx;text-decoration:  line-through;color: rgba(50,50,50,.18);margin-left: 8rpx">¥{{item.discountPrice}}</text>
+        </view>
+        <view class="numBtn">
+          <image src="/images/goodsDetails/reduce.png" data-item="{{item}}" bindtap="delRefund"></image>
+          {{item.quantity}}
+          <image src="/images/goodsDetails/add.png" data-item="{{item}}" bindtap="addRefund"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="cardBox">
+  <view class="title">选择服务类型</view>
+  <view class="typeList" bindtap="gotoNext" data-applyType="REFUND">
+    <view class="typeList_left">
+      <image class="typeList_img" src="/images/applyAfterType/money.png"></image>
+      <view>
+        <view class="typeList_title">我要退款（无需退货）</view>
+        <view class="typeList_tip">没收到货，或与卖家协商同意不用退货至退款</view>
+      </view>
+    </view>
+    <image class="typeList_icon" src="/images/applyAfterType/rightArrow.svg"></image>
+  </view>
+  <view class="typeList" style="margin-top: 48rpx" bindtap="gotoNext" data-applyType="RETURN_GOODS">
+    <view class="typeList_left">
+      <image class="typeList_img" src="/images/applyAfterType/tui.png"></image>
+      <view>
+        <view class="typeList_title">我要退款退货</view>
+        <view class="typeList_tip">已收到货，需要退还的货物</view>
+      </view>
+    </view>
+    <image class="typeList_icon" src="/images/applyAfterType/rightArrow.svg"></image>
+  </view>
+</view>

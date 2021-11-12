@@ -1,0 +1,180 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/promotion/promotion",
+          "pathName": "pages/promotion/promotion",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情",
+          "pathName": "pages/goodsDetail/goodsDetail",
+          "query": "id=39757",
+          "scene": null
+        },
+        {
+          "name": "pages/promotion/promotion",
+          "pathName": "pages/promotion/promotion",
+          "query": "activityId=1",
+          "scene": null
+        },
+        {
+          "name": "pages/arrondi/arrondi",
+          "pathName": "pages/arrondi/arrondi",
+          "query": "bannerId=8",
+          "scene": null
+        },
+        {
+          "name": "分类商品",
+          "pathName": "pages/categoryGoods/categoryGoods",
+          "query": "id=6&title=爽肤水/化妆水",
+          "scene": null
+        },
+        {
+          "name": "pages/editPassword/editPassword",
+          "pathName": "pages/editPassword/editPassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的订单",
+          "pathName": "pages/orderList/orderList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人信息",
+          "pathName": "pages/peopleInfo/peopleInfo",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/retrievePassword/retrievePassword",
+          "pathName": "pages/retrievePassword/retrievePassword",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "关于我们",
+          "pathName": "pages/aboutUs/aboutUs",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "用户名",
+          "pathName": "pages/editPeopleName/editPeopleName",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/chooseCity/chooseCity",
+          "pathName": "pages/chooseCity/chooseCity",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "限时秒杀二级页",
+          "pathName": "pages/seckill/seckill",
+          "query": "activityId=1",
+          "scene": null
+        },
+        {
+          "name": "品牌详情",
+          "pathName": "pages/brandGoods/brandGoods",
+          "query": "id=6",
+          "scene": null
+        },
+        {
+          "name": "使用卡券",
+          "pathName": "pages/myCardVoucherUse/myCardVoucherUse",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/search/search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "提交订单",
+          "pathName": "pages/orderSubmit/orderSubmit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "意见反馈",
+          "pathName": "pages/feedback/feedback",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/settlement/settlement",
+          "pathName": "pages/settlement/settlement",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "banner1二级页",
+          "pathName": "pages/arrondi2/arrondi2",
+          "query": "bannerId=1",
+          "scene": null
+        },
+        {
+          "name": "banner2二级页2",
+          "pathName": "pages/arrondi3/arrondi3",
+          "query": "bannerId=6",
+          "scene": null
+        },
+        {
+          "name": "售后类型选择",
+          "pathName": "pages/applyAfterType/applyAfterType",
+          "query": "orderId=249",
+          "scene": null
+        },
+        {
+          "name": "申请售后",
+          "pathName": "pages/applyAfterOrder/applyAfterOrder",
+          "query": "applyType=REFUND&orderId=501&goods=[{\"id\":41,\"total\":1}]",
+          "scene": null
+        },
+        {
+          "name": "物流信息",
+          "pathName": "pages/expressInfo/expressInfo",
+          "query": "orderId=515&goodsId=999",
+          "scene": null
+        },
+        {
+          "name": "pages/cardVoucherDetail/cardVoucherDetail",
+          "pathName": "pages/cardVoucherDetail/cardVoucherDetail",
+          "query": "id=8",
+          "scene": null
+        },
+        {
+          "name": "订单详情",
+          "pathName": "pages/orderDetail/orderDetail",
+          "query": "orderId=271",
+          "scene": null
+        },
+        {
+          "name": "卡券",
+          "pathName": "pages/cardVoucherDetail/cardVoucherDetail",
+          "query": "id=8",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

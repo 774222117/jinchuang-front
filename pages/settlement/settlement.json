@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "长复收银台",
+  "usingComponents": {
+    "paySix":"/components/payPassword/payPassword"
+  }
+}

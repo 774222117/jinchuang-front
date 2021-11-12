@@ -1,0 +1,45 @@
+<!--我的锦创卡列表-->
+<wxs module="getDate" src="../../utils/dateParse.wxs"></wxs>
+<wxs module="m1">
+  var numberToFix= function (value) {
+  return value.toFixed(2)
+  }
+  module.exports.numberToFix=numberToFix;
+</wxs>
+<view class="top">
+  <view data-status="1" catchtap="switchTab" class="headers {{status==1?'active':''}}">可用锦礼卡</view>
+  <view data-status="0" catchtap="switchTab" class="headers {{status==0?'active':''}}">不可用锦礼卡
+  </view>
+</view>
+<view class="allBalance" wx:if="{{status==1}}">
+  <text>当前可用余额总额（元）</text>
+  <text>{{m1.numberToFix(sumBalance)}}</text>
+</view>
+
+<view class="cardList">
+  <view class="cardItem" wx:for="{{cardList}}" wx:key="card">
+    <image class="imgsty" src="{{item.cardImgUrl}}"></image>
+    <view class="cardinfo">
+      <text>可用余额（元）</text>
+      <text class="balance">{{item.cardBalance}}</text>
+      <text class="cardTitle">卡号</text>
+      <view class="cardNo">
+        <view>{{item.cardNumber}}</view>
+        <view>有效期至 ：{{getDate.getDate_New(item.validEndTime,'.')}} </view>
+      </view>
+    </view>
+    <!-- 卡片已失效状态 -->
+    <view class="invalid" wx:if="{{item.status!=1}}">
+      <view class="invalidImgs"> 
+        <image class="imgsty1" src="/images/{{item.status==0?'invalid.png':'overdue.png'}}"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 没有卡券 -->
+  <view class="noCardItem" wx:if="{{cardList.length<=0}}">
+    <view class="noCardPic">
+      <image class="imgsty2" src="/assets/images/myInex/noCard.png"></image>
+    </view>
+    <view class="noCardText">暂无卡劵</view>
+  </view>
+</view>

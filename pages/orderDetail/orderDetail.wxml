@@ -1,0 +1,66 @@
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+<!--订单详情-->
+<view class="goodsListBox">
+  <view class="goodsList" wx:for="{{orderInfo.goodsItems}}" wx:key="index">
+    <image class="goodsList_img" data-id="{{item.goodsId}}"
+      bindtap="gotoDetails"  data-ordertype = "{{orderInfo.orderType}}" src="{{item.goodsThumb}}"></image>
+    <view class="goodsList_main">
+      <view class="goodsList_titleBox" data-id="{{item.goodsId}}" data-ordertype = "{{orderInfo.orderType}}"
+      bindtap="gotoDetails">
+        <view class="goodsList_title">{{item.title}}</view>
+        <view class="goodsList_num">x{{item.total}}</view>
+      </view>
+      <view class="goodsList_priceBox">
+        <view class="goodsList_price" data-id="{{item.goodsId}}" data-ordertype = "{{orderInfo.orderType}}"
+      bindtap="gotoDetails">
+          <text style="font-family:PingFang SC, PingFang SC-Medium;">￥</text>
+          <text>{{priceUtil.getBefore(item.price)}}.</text>
+          <text style="font-size:28rpx">{{priceUtil.getAfter(item.price)}}</text>
+        </view>
+        <view class="goodsList_btn" wx:if="{{item.expressNumber!=''}}" data-item="{{item}}" data-expressnumber="{{item.expressNumber}}" catchtap="toExpressInfo">查看物流</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="priceBox">
+  <view class="priceBox_top">
+    <view class="priceBox_topList">
+      <text>配送费</text>
+      <text style="color: #141414;">￥{{orderInfo.dispatchPrice}}</text>
+    </view>
+    <view class="priceBox_topList">
+      <text>商品金额</text>
+      <text style="color: #141414;">￥{{orderInfo.goodsPrice}}</text>
+    </view>
+  </view>
+  <view class="line"></view>
+  <view class="priceBox_total">
+    <text class="priceBox_totalLabel">实付金额：</text>
+    <view class="priceBox_totalPrice">
+      <text>￥</text>
+      <text style="font-size:36rpx">{{priceUtil.getBefore(orderInfo.price)}}.</text>
+      <text style="font-size:28rpx">{{priceUtil.getAfter(orderInfo.price)}}</text>
+    </view>
+  </view>
+</view>
+<view class="orderInfoBox">
+  <view class="orderInfo_list">
+    <text>下单时间</text>
+    <text>{{orderInfo.createTime}}</text>
+  </view>
+  <view class="orderInfo_list">
+    <text>订单编号</text>
+    <view style="display:flex;align-items:center">
+      <view class="orderInfo_copyBtn" bindtap="copyNum" data-num="{{orderInfo.ordersn}}">复制</view>
+      <text>{{orderInfo.ordersn}}</text>
+    </view>
+  </view>
+  <!-- <view class="orderInfo_list">
+    <text>支付方式</text>
+    <text>test</text>
+  </view>
+  <view class="orderInfo_list">
+    <text>交易流水号</text>
+    <text>test</text>
+  </view> -->
+</view>

@@ -1,0 +1,45 @@
+<!--pages/register2/register2.wxml-->
+<view class="register-header" style="padding-top:{{customBar + 10}}px;">
+    <image class="register-bg" src="/images/register/background.png"></image>
+    <view class="toolbar" bindtap="back" style="top:{{navTop}}px;height:{{capsuleHeight}}px">
+        <image class="toolbar-back" src="/images/login/back.png"></image>
+    </view>
+    <view class="title" style="top:{{navTop}}px;height:{{capsuleHeight}}px">注册</view>
+</view>
+<view class="step-item">
+    <view class="pic-guide">
+        <image class="pic-guide-img" src="/images/register/card_green.png"></image>
+        <image class="pic-guide-img-node" src="/images/register/step_yellow.png"></image>
+        <image class="pic-guide-img" src="/images/register/phone_yellow.png"></image>
+        <image class="pic-guide-img-node" src="/images/register/step_gray.png"></image>
+        <image class="pic-guide-img" src="/images/register/secret_gray.png"></image>
+    </view>
+    <view class="text-guide">
+        <view>验证卡号和卡密</view>
+        <view>手机验证</view>
+        <view>设置支付密码</view>
+    </view>
+</view>
+<view class="register-body">
+    <view class="tel-label">手机号码</view>
+    <!-- 请输入手机号框 -->
+    <view class="phone">
+        <!-- 区号 -->
+        <view class="areaCode">+86</view>
+        <view class="interval-line"></view>
+        <!-- 输入手机号 -->
+        <input type="text" class="mobilephone" placeholder="请输入手机号" maxlength="11" value="{{phone}}" bindinput="setPhoneInput"/>
+    </view>
+    <view class="code-label">验证码</view>
+    <!-- 请输入验证码框 -->
+    <view class="code">
+        <!-- 输入验证码 -->
+        <input type="text" class="mobilecode" placeholder="请输入验证码" value="{{code}}" bindinput="setCodeInput"/>
+        <!-- 获取验证码 -->
+        <view class="getCode" catchtap="sendCode">{{sendCodeText}}</view>
+    </view>
+    <view class="next-btn">
+        <view class="next-label" bindtap="next">下一步</view>
+    </view>
+</view>
+

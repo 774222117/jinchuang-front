@@ -1,0 +1,46 @@
+<!--个人信息-->
+<view class="card">
+  <view class="cardItem">
+    <view class="cardItem_label">用户信息</view>
+    <image src="{{peopleInfo.icon}}" class="cardItem_img"></image>
+  </view>
+  <view class="cardItem" bindtap="jumpTo" data-url="/pages/editPeopleName/editPeopleName">
+    <view class="cardItem_label">用户名</view>
+    <view class="cardItem_label">{{peopleInfo.nickName}}<image src='/images/peopleInfo/rightArrow.svg'
+        class="cardItem_icon"></image>
+    </view>
+  </view>
+  <view class="cardItem" bindtap="jumpTo" data-url="/pages/editPeopleSex/editPeopleSex">
+    <view class="cardItem_label">性别</view>
+    <view class="cardItem_label">{{peopleInfo.gender==0?'男':peopleInfo.gender==1?'女':''}}<image
+        src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+    </view>
+  </view>
+  <view class="cardItem">
+    <view class="cardItem_label">手机号</view>
+    <view class="cardItem_label" style="padding-right: 26rpx">
+      {{encryptionPhone}}</view>
+  </view>
+  <picker mode="date" value="{{date}}" start="1900-01-01" end="{{endDate}}" bindchange="bindDateChange">
+    <view class="cardItem">
+      <view class="cardItem_label">生日</view>
+      <view class="cardItem_label">{{peopleInfo.birthday?date:'暂未设置'}}<image
+          src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon">
+        </image>
+      </view>
+    </view>
+  </picker>
+</view>
+<!-- <view class="mask" hidden="{{!isShow}}"></view>
+<view class="dialog {{isShow?'dialogMainShow':''}}" catchtap="showDialog" catchtouchmove="true">
+  <view class="dialogMain" catchtap="nothing">
+    <view class="dialog_titleBox">
+      <view class="dialog_cancel" catchtap="showDialog">取消</view>
+      <view class="dialog_title">选择开始日期</view>
+      <view class="dialog_confirm" catchtap="submitDate">完成</view>
+    </view>
+    <view class="dialog_dateBox">
+
+    </view>
+  </view>
+</view> -->

@@ -1,0 +1,323 @@
+page{
+  background-color: #ffffff;
+}
+.search-region{
+  width:702rpx;
+  height:60rpx;
+  margin:10rpx 24rpx 0;
+  background: #eeeeee;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 16rpx;
+}
+.phclass{
+  opacity: 0.18;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: rgba(50,50,50,0.8);
+}
+.history-region{
+  margin-top:34rpx;
+}
+.history-title{
+  widows: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 24rpx;
+  padding-right:56rpx;
+}
+.history-title .title{
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+}
+.history-title .clear{
+  opacity: 0.52;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.history-main{
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.history-main .main-item{
+  height: 48rpx;
+  padding: 0 30rpx 0;
+  background: #f5f5f5;
+  border-radius: 24px;
+  opacity: 0.52;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:24rpx 0 0 24rpx;
+}
+.hot-region{
+  margin-top:34rpx;
+}
+.hot-title{
+  widows: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 24rpx;
+  padding-right:24rpx;
+}
+.hot-title .title{
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+}
+.hot-title .clear{
+  opacity: 0.52;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hot-main{
+  display: flex;
+  flex-wrap: wrap;
+}
+.hot-main .main-item{
+  height: 48rpx;
+  padding: 0 30rpx 0;
+  background: rgba(229,218,187,0.43);
+  border-radius: 24px;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #d6912d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:24rpx 0 0 24rpx;
+}
+.sort{
+  margin-left:24rpx;
+  margin-top: 48rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+}
+.moreContents {
+  width: 100%;
+  padding: 18rpx 24rpx 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.moreContents .left {
+  float: left;
+}
+
+.moreContents .right {
+  float: right;
+}
+
+/* 单个商品元素 */
+.moreContents .commodityItem {
+  width: 342rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+  margin-bottom: 18rpx;
+}
+
+.commodityItem .itemImgs {
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6rpx;
+  margin-top: 22rpx;
+  position: relative;
+}
+
+.commodityItem .itemImgs .imgSty {
+  width: 292rpx;
+  height: 300rpx;
+  display: block;
+}
+
+/* 商品文字 */
+.commodityItem .itemTitle {
+  width: calc(100% - 40rpx);
+  font-size: 28rpx;
+  line-height: 34rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+  margin: 0 auto;
+}
+
+/* 商品已售件数 */
+.itemSales {
+  height: 34rpx;
+  line-height: 34rpx;
+  margin: 0 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(50, 50, 50, .66);
+}
+
+/* 商品标签 */
+.itemTagBox {
+  width: calc(100% - 40rpx);
+  height: 32rpx;
+  margin: 12rpx auto 18rpx;
+  display: flex;
+}
+
+.itemTag {
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 16rpx;
+  border: 2rpx solid #e2b472;
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #e1ab5d;
+  margin-right: 8rpx;
+}
+
+/* 价格折扣 */
+.commodityItem .priceDiscount {
+  /* width: 232rpx; */
+  width: max-content;
+  height: 44rpx;
+  margin: 14rpx 0 16rpx 20rpx;
+  background-color: #FEF0E7;
+  display: flex;
+}
+
+.commodityItem .leftPrice {
+  height: 44rpx;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.commodityItem .leftPrice .price1 {
+  height: 44rpx;
+  line-height: 44rpx;
+  margin-left: 2rpx;
+  position: relative;
+  z-index: 1;
+}
+
+/* 商品价格 人民币符号 */
+.commodityItem .leftPrice .price1 .text1 {
+  font-size: 30rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+
+/* 商品价格 价格 */
+.commodityItem .leftPrice .price1 .text2 {
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+.commodityItem .leftPrice .price1 .text3 {
+  font-size: 28rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+.commodityItem .leftPrice .price2 {
+  height: 34rpx;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  color: rgba(50, 50, 50, .18);
+  margin-left: 8rpx;
+  position: relative;
+  z-index: 1;
+  text-decoration: line-through;
+}
+
+/* 商品价格 与 添加商品  包裹层*/
+.commodityItem .itemPriceAdd {
+  width: calc(100% - 40rpx);
+  height: 52rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+/* 商品价格 */
+.commodityItem .itemPriceAdd .price {
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(60, 60, 67, 0.65);
+  line-height: 40rpx;
+}
+
+/* 添加商品 */
+.commodityItem .itemPriceAdd .addItem {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.imgSty {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.imgHelp {
+  width: 100%;
+  position: absolute;
+  bottom: 0rpx;
+}
+
+.addBtn,
+.cutBtn {
+  width: 52rpx;
+  height: 52rpx;
+  cursor: pointer;
+}
+
+.addBtn .addBtnImg,
+.cutBtn .cutBtnImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

@@ -1,0 +1,72 @@
+<import src="../../components/wxParse/wxParse.wxml" />
+<!--实体卡-->
+<view class="top">
+  <view class="imgs">
+    <image class="imgsty" src="{{cardVoucherInfo.cardImgUrl}}"></image>
+  </view>
+  <view class="titles">{{cardVoucherInfo.cardName}}</view>
+  <view class="labels">
+    <view class="labels_item" wx:for="{{ [ {a:false,b:'不支持退换'}, {a:true,b:'一次性使用'},{a:true,b:'每单仅限一张'} ] }}" wx:key="index">
+      <view class="labels_icon">
+        <image wx:if="{{item.a}}" class="imgsty" src="/images/cart.svg"></image>
+        <image wx:else class="imgsty" src="/images/index/search.svg"></image>
+      </view>
+      <view class="labels_text">{{item.b}}</view>
+    </view>
+  </view>
+</view>
+<!-- 选择 -->
+<view class="choice" catchtap="chooseCardAmount">
+  <view class="texts">
+    <view class="text1">选择：选择兑换面值</view>
+    <view class="text2">共{{cardVoucherInfo.merchantCardDetails.length}}种面值可选</view>
+  </view>
+  <view class="icon">
+    <image class="imgsty" src="/images/index/more.svg"></image>
+  </view>
+</view>
+<!-- 须知事项 -->
+<view class="notes">
+  <view class="notes_title">须知事项</view>
+  <view class="notes_title1">兑换须知</view>
+  <template is="wxParse" data="{{wxParseData:commodityDetails.nodes}}" />
+</view>
+<!-- 底栏 -->
+<view class="footer {{isIphoneX?'isIphoneXSty':''}}">
+  <!-- <view class="lefts">
+    <view class="footer_icon">
+      <image class="imgsty" src="/images/cart.svg"></image>
+    </view>
+    <view class="footer_text">分享</view>
+  </view> -->
+  <view class="rights" catchtap="submit">立即兑换</view>
+</view>
+<!-- 弹框 -->
+<view class="models" wx:if="{{showChoose}}">
+  <view class="content">
+    <view class="close" catchtap="closeChoose">
+      <image class="imgsty" src="/images/cardVoucherList/close.svg"></image>
+    </view>
+    <!-- 面值 -->
+    <view class="faceValue">面值</view>
+    <view class="faceValue_content">
+      <view class="faceValue_content_item {{index==currentCardIndex?'faceValueActive':''}}" data-index="{{index}}"
+        catchtap="chooseCard" wx:for="{{cardVoucherInfo.merchantCardDetails}}" wx:key="obj">{{item.realPrice}}元</view>
+    </view>
+    <!-- 购买数量 -->
+    <view class="payNum">
+      <view class="lefts">购买数量</view>
+      <view class="rights">
+        <view class="cut" catchtap="delCount">
+          <image class="imgsty" src="/images/shoppingCart/reduce.png"></image>
+        </view>
+        <view class="shopNum">{{buyCount}}</view>
+        <view class="add" catchtap="addCount">
+          <image class="imgsty" src="/images/shoppingCart/add.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 立即兑换 -->
+    <view class="models_btn" catchtap="submit">立即兑换</view>
+  </view>
+</view>

@@ -1,0 +1,106 @@
+
+<wxs module="m1">
+  var numberToFix= function (value) {
+    return value.toFixed(2)
+  }
+ module.exports.numberToFix=numberToFix;
+</wxs>
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+<view class="cart-btmBox {{bottomVal}}">
+    <view class="left-cart-btn">
+      <view class="xl" bindtap="showModal" data-target="bottomModal1" style="position:relative;font-size:70rpx;color:white;background-color:white;">
+        <view class="cart-img">
+          <image style="width:66rpx;height:66rpx;" src="/images/cart-bottom.png">
+            <view class="cu-tag badge" style="width:28rpx;height:28rpx;">{{buyCount}}</view>
+          </image>
+        </view>
+      </view>
+      <!-- 地址 底部显示窗口 -->
+      <view class="cu-modal bottom-modal {{modalName=='bottomModal1'?'show':''}}" style="bottom:0;z-index:-1;">
+        <view class="cu-dialog shopCar" style="padding-bottom:{{bottomVal=='bt120'?236:136}}rpx;">
+          <view class="cu-bar bg-white">
+            <view class="action" bindtap="clearShopCart" style="margin-right:20rpx;">
+            <image style="height:34rpx;width:34rpx;" src="/images/clear.png"></image>
+            清空
+            </view>
+            <view class="action" bindtap="hideModal" style="margin-right:0;">
+            <image style="height:36rpx;width:36rpx;" src="/images/goodsDetails/close.png"></image>
+            </view>
+          </view>
+          <view style="height:800rpx;">
+            <scroll-view scroll-y scroll-with-animation style="height:100%">
+            <!-- 此处为购物车 -->
+              <block wx:for="{{shopCart}}" wx:key="shopCartKey">
+                  <view class="shopCart-Item" >
+                    <view class="shopCar-LeftImg">
+                      <image src="{{item.goodsThumb}}"></image>
+                    </view>
+                    <view class="shopCar-RightBox">
+                      <view class="shopCar-topTitle shopCar-text-ellipsis">{{item.title}}</view>
+                      <view class="shopCar-tag">
+                        <!-- <view class="tag">微辣</view> -->
+                        <view class="tag"  wx:if="{{item.specDesc!=null&&item.specDesc!=''}}">{{item.specDesc}}</view>
+                        <view wx:else class="tag" style="background:unset;"></view>
+                      </view>
+                      <view class="shopCar-PriceBox">
+                        <text class="text-shopCarMoney1">¥{{priceUtil.getBefore(item.price)}}.<text class="text-shopCarMoney1-deci">{{priceUtil.getAfter(item.price)}}</text> </text>
+                        <text class="text-shopCarMoney2"  hidden="{{item.marketPrice>=item.productPrice}}"> ￥{{m1.numberToFix(item.productPrice)}} </text>
+                      </view>
+                    </view>
+                    <view class="shopCar-countBox">
+                      <view class="flex justify-between">
+                        <!-- <view class="shopCar-minusBtn" bindtap="cartDel" data-cart="{{item}}">-</view> -->
+                        <image class="shopCar-image" bindtap="cartDel" data-cart="{{item}}" src="/images/shoppingCart/reduce.png"></image>
+                        <view class="shopCar-goosNum">{{item.total}}</view>
+                        <image class="shopCar-image" bindtap="cartAdd" data-cart="{{item}}" src="/images/shoppingCart/add.png"></image>
+                        <!-- <view class="shopCar-plusBtn" bindtap="cartAdd" data-cart="{{item}}">+</view> -->
+                      </view>
+                    </view>
+                  </view>
+                </block>
+            </scroll-view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+    <view class="priceInfo">
+      <text class="text-black text-bold text-money11">¥{{priceUtil.getBefore(sumPrice)}}.<text class="text-money11-deci">{{priceUtil.getAfter(sumPrice)}}</text></text>
+      <text class="text-white text-money22" >本次预计为您节省￥{{m1.numberToFix(sumProductPrice-sumPrice>0?sumProductPrice-sumPrice:0)}}元</text>
+    </view>
+    <view class="placeBtn">
+      <view class="pay-btn" bindtap="toPayPageBefore">
+        <view class="tex1">去结算</view>
+      </view>
+    </view>
+</view>
+
+<!-- 地址 显示窗口 -->
+<view class="cu-modal bottom-modal {{modalName=='addressModal'?'show':''}}" style="position:fixed;">
+  <view class="cu-dialog addressBox">
+    <view class="cu-bar bg-white addressTitle">
+      <view class="search-form round" style="font-size:18px;">
+        <text class="cuIcon-search"></text>
+        <input type="text" placeholder="输入您想要查询的门店" confirm-type="search" bindinput="searchAddress"></input>
+      </view>
+      <view class="action cuIcon-close" style="font-size:20px;" data-target="addressModal" bindtap="selectShop"></view>
+    </view>
+    <view class="padding-sm bg-white">
+      <view style="height:900rpx;">
+        <scroll-view scroll-y scroll-with-animation style="height:100%" bindscrolltolower="addressBtmFun">
+          <!-- 地址内容 -->
+          <view class="addressItem flex justify-around" wx:for="{{shops}}" wx:key="shopListKey">
+            <view class="addressItemLeftImg">
+              <image src="https://sourced.sgsugou.com/merchant/icon/bd1b4bb88e434c94ac6c352c6a8f5a9f.png"></image>
+            </view>
+            <view class="addressItemMiddleBox" data-id="{{item.id}}" data-target="addressModal" bindtap="selectShop">
+            <text>{{item.name}}</text>
+            <view class="text-sty2"><view>约{{item.distance}}m </view><view>{{item.detailAddress}}</view></view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    
+    </view>
+  </view>
+</view>

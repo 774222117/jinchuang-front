@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bottom-action": "/components/bottomAction/bottomAction"
+  },
+  "navigationBarTitleText": "促销"
+}

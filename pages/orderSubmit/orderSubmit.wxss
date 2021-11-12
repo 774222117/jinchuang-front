@@ -1,0 +1,575 @@
+/* pages/orderSubmit/orderSubmit.wxss */
+.addressBox {
+  width: 702rpx;
+  margin: 24rpx auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 14rpx 32rpx 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+
+}
+
+.addressBox_left {
+  display: flex;
+  align-items: center;
+}
+
+.addressBox_img {
+  width: 74rpx;
+  height: 74rpx;
+  margin-right: 14rpx;
+}
+
+.addressBox_placeholder {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+}
+
+.addressBox_info {
+  width: 530rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.addressBox_name {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+  margin-right: 12rpx;
+}
+
+.addressBox_phone {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(50, 50, 50, .53);
+}
+
+.addressBox_detailInfo {
+  margin-top: 10rpx;
+  max-height: 74rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+  line-height: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.addressBox_icon {
+  width: 52rpx;
+  height: 39rpx;
+}
+
+.goodsBox {
+  width: 702rpx;
+  margin: 24rpx auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24rpx 24rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+
+}
+
+
+
+.goodsList_item {
+  width: 100%;
+  height: 176rpx;
+  margin-top: 24rpx;
+  display: flex;
+}
+
+.goodsList_img {
+  width: 176rpx;
+  height: 176rpx;
+  margin-right: 28rpx;
+}
+
+.goodsList_main {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.goodsList_titleBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.goodsList_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  height: 36rpx;
+}
+
+.goodsList_titleText {
+  height: 34rpx;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #141414;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.goodsList_num {
+  height: 100%;
+  margin-left: 24rpx;
+  font-size: 30rpx;
+  font-family: Segoe UI, Segoe UI-Regular;
+  font-weight: 400;
+  color: rgba(20, 20, 20, .53);
+}
+
+.goodsList_specs {
+  margin-top: 6rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(20, 20, 20, .53);
+
+}
+
+.goodsList_price {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+
+.goodsList_details {
+  margin-top: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+}
+
+.goodsList_detailsValue {
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(20, 20, 20, .53);
+  text-align: right;
+}
+
+.goodsList_total {
+  text-align: right;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 28rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+  margin-top: 28rpx;
+}
+
+.goodsList_totalNum {
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+  margin-left: 10rpx;
+}
+
+.couponBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 702rpx;
+  height: 88rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 24rpx auto 148rpx;
+  padding: 0 14rpx 0 24rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+}
+
+.couponBox_right {
+  display: flex;
+  align-items: center;
+
+
+  font-size: 30rpx;
+  font-family: Segoe UI, Segoe UI-Regular;
+  font-weight: 400;
+  color: #141414;
+}
+
+.footBox {
+  width: calc(100% - 64rpx);
+  height: 124rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24rpx 0 40rpx;
+  box-sizing: content-box;
+  padding-bottom: env(safe-area-inset-bottom);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 -4rpx 12rpx 0 rgba(0, 0, 0, 0.06);
+  z-index: 5;
+}
+
+.footBox_price {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+
+.footBox_tip {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 400;
+  color: rgba(20, 20, 20, .3);
+}
+
+.footBox_btn {
+  width: 200rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  background: #1c6a4f;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* 遮罩层 */
+.mask {
+  position: fixed;
+  z-index: 6;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(50, 50, 50, 0.78);
+}
+
+/* 优惠券弹窗 */
+.dialog {
+  display: flex;
+  z-index: 7;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  transition: all 0.5s;
+  align-items: flex-end;
+}
+
+.dialogMainShow {
+  bottom: 0;
+  height: 100%;
+}
+
+.dialogMain {
+  width: 100%;
+  height: 830rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  background-color: #fff;
+  box-sizing: content-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 44rpx;
+  right: 22rpx;
+  width: 44rpx;
+  height: 44rpx;
+  z-index: 8;
+}
+
+.dialog_title {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 36rpx;
+  font-size: 36rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #141414;
+}
+
+.discountList_box {
+  display: flex;
+  flex-direction: column;
+  padding-top: 34rpx;
+}
+
+.discountList {
+  width: 704rpx;
+  height: 160rpx;
+  margin: 0 auto 20rpx;
+  display: flex;
+  position: relative;
+}
+
+.dottedLine {
+  position: absolute;
+  width: 8rpx;
+  top: 0;
+  left: -4rpx;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4rpx 0;
+}
+
+.dotted {
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.discountList_left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240rpx;
+  height: 100%;
+  background-color: #1C6A4F;
+  padding-top: 16rpx;
+}
+
+.discountList_price {
+  font-size: 72rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #fff;
+}
+
+.discountList_threshold {
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 4rpx;
+}
+
+.discountList_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 18rpx 36rpx 24rpx 20rpx;
+  box-shadow: 0 4rpx 14rpx 0 rgba(0, 0, 0, 0.06);
+}
+
+.discountList_mainLeft {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.discountList_tag {
+  height: 36rpx;
+  line-height: 36rpx;
+  text-align: center;
+  padding: 0 18rpx;
+  background-color: #e1ab5d;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 18rpx;
+  margin-bottom: 8rpx;
+}
+
+.discountList_tip {
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #2d2d2d;
+  margin-bottom: 12rpx;
+
+}
+
+.discountList_time {
+  height: 26rpx;
+  line-height: 26rpx;
+  font-size: 22rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: rgba(20, 20, 20, .7);
+}
+
+.discountList_mainRight {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 24rpx;
+}
+
+.discount_foot {
+  width: 100%;
+  height: 124rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24rpx 0 42rpx;
+  box-sizing: border-box;
+  /* position: fixed;
+  bottom: 0;
+  left: 0; */
+  background-color: #fff;
+  box-shadow: 0 -4rpx 12rpx 0 rgba(0, 0, 0, 0.06);
+}
+
+.discount_footText {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #323232;
+}
+
+.discount_footBtn {
+  width: 200rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  background: #1c6a4f;
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+/* 身份信息弹窗 */
+.dialog2 {
+  display: flex;
+  z-index: 7;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  transition: all 0.5s;
+  align-items: flex-end;
+}
+
+.dialogMainShow2 {
+  bottom: 0;
+  height: 100%;
+}
+
+.dialogMain2 {
+  width: 100%;
+  height: 730rpx;
+  border-radius: 20rpx 20rpx 0 0;
+  background-color: #f5f5f5;
+  box-sizing: content-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.inputBox {
+  width: 702rpx;
+  height: 100rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  margin: 26rpx auto 0;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+}
+
+.input_placeholder {
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(20, 20, 20, .5);
+}
+
+.dialog2_tip {
+  width: 654rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+  margin: 36rpx auto 0;
+}
+
+.dialog2_btn {
+  width: 602rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  background: #1c6a4f;
+  border-radius: 34rpx;
+  margin: 0 auto 32rpx;
+
+
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+}

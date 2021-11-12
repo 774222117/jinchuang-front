@@ -1,0 +1,178 @@
+<!--专区页-->
+<view class="searchMain">
+  <view class="search">
+    <view class="search_icon">
+      <image class="imgsty" src="/images/index/search.svg"></image>
+    </view>
+    <view class="search_input" bindtap="toSearch"><input disabled="true" type="text" placeholder="寻找称心商品"
+        placeholder-class="placeholderSty" /></view>
+  </view>
+</view>
+<!-- banner -->
+<view class="banner" wx:if="{{secondPageinfo.secondModuleBannerList.length>0}}">
+  <swiper autoplay interval="5000" circular indicator-dots
+    style="height: 230rpx;border-radius:20rpx;overflow:hidden;transform:translateY(0)"
+    indicator-color="rgba(255,255,255,0.65)" indicator-active-color="rgba(255,255,255,1)" duration="500">
+    <swiper-item wx:for="{{secondPageinfo.secondModuleBannerList}}" wx:key="index" data-link="{{item.jumpLink}}" catchtap="onjumpPage">
+      <image class="imgsty1" src="{{item.categoryImg}}"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 分类icon classify  -->
+<view class="classify" wx:if="{{secondPageinfo.secondModuleCategoryList.length>0}}">
+  <swiper style="height:198rpx;" autoplay="{{false}}" indicator-dots="{{false}}" current="{{swiperCurrent}}"
+    bindchange="swiperChange">
+    <block wx:for="{{secondPageinfo.secondModuleCategoryList.length/5}}" wx:key='activity' wx:for-index="ind">
+      <swiper-item>
+        <view class="swiper-item">
+          <view class="categoryItme" data-link="{{item.jumpLink}}" catchtap="onjumpPage"
+            wx:for="{{secondPageinfo.secondModuleCategoryList}}" wx:key="index"
+            wx:if="{{ind*5 <= index && index < (ind+1)*5}}">
+            <view class="categoryItmeImg">
+              <image class="imgsty" src="{{item.categoryImg}}"></image>
+            </view>
+            <view class="categoryItmeTitle">{{item.title}}</view>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 线条左右切换需根据轮播的当前下标来判断 -->
+  <view class="lines" style="width:{{(swiperNum-1)*24+40}}rpx;"  wx:if="{{secondPageinfo.secondModuleCategoryList.length>0}}">
+    <view class="linesActive" style="left:{{swiperCurrent*24}}rpx"></view>
+  </view>
+</view>
+<!-- 品牌甄选 brand -->
+<view class="brand_title" wx:if="{{secondPageinfo.secondModuleBrandList.length>0}}">
+  <view class="brand_title_imgs">
+    <image class="imgsty" src="/images/arrondi/brand_title_imgsnew.png"></image>
+  </view>
+</view>
+<view class="brand_contentBox" wx:if="{{secondPageinfo.secondModuleBrandList.length>0}}">
+  <view class="brand_content">
+    <view class="brand_content_items">
+      <scroll-view class="scroll-view_H" scroll-x="true">
+        <view class="brand_item scroll-view-item_H" data-link="{{item.jumpLink}}" catchtap="onjumpPage"
+          wx:for="{{secondPageinfo.secondModuleBrandList}}" wx:key="brand">
+          <view class="brand_item_img">
+            <image class="imgsty" src="{{item.categoryImg}}"></image>
+          </view>
+          <view class="brand_item_text textOver">{{item.title}}</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 大牌推荐 -->
+<!-- 秒杀 -->
+<view class="seckillBox" wx:if="{{secondPageinfo.secondModuleGoodsDtoList.length>0}}">
+  <view class="seckill">
+    <view class="seckill_title">
+      <view class="seckill_title_logo">
+        <image class="imgsty" src="/images/arrondi/bigpai.png"></image>
+      </view>
+      <!-- <view class="seckill_title_times">
+      <view>05</view>
+      <view>:</view>
+      <view>15</view>
+      <view>:</view>
+      <view>18</view>
+    </view> -->
+      <!-- <view class="seckill_title_more more_icon_parent">更多 <view class="more_icon"><image class="imgsty" src="/images/index/more.svg"></image></view> </view> -->
+    </view>
+    <view class="seckill_box">
+      <scroll-view class="seckill_view scroll-view_H" scroll-x="true">
+        <!-- 秒杀商品单个元素 -->
+        <view class="seckill_item scroll-view-item_H" wx:for="{{secondPageinfo.secondModuleGoodsDtoList}}" wx:key="id">
+          <view class="seckill_item_img">
+            <image class="imgsty" src="{{item.thumb}}" data-goodsinfo="{{item}}" catchtap="goGoodsDetail"></image>
+            <!-- <view class="seckill_item_img_text">限5000瓶</view> -->
+          </view>
+          <view class="seckill_item_name textOver2" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">{{item.title}}
+          </view>
+          <view class="seckill_item_price">
+            <view class="prices">
+              <text> ¥{{item.beforeSpotPrice}}</text><text>.{{item.afterSpotPrice}}</text>
+            </view>
+            <view class="add" wx:if="{{item.self}}" data-goodsinfo="{{item}}" catchtap="addcart"></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<!-- 样式一 标题 -->
+<!-- <view class="titles_sty1">
+  <scroll-view class="scroll-view_H" scroll-x="true">
+    <block wx:for="{{8}}">
+      <view class="titles_sty1_items scroll-view-item_H {{index==1?'active_sty1':''}}" >热门推荐</view>
+    </block>
+  </scroll-view>
+</view> -->
+<!-- 样式二 标题 -->
+<view style="width: 100%;height:112rpx;" id='tabcategory' wx:if="{{secondPageinfo.secondModuleDtoList.length>0}}">
+  <view class="{{flag?'classify_titleFixed':'classify_title'}}">
+    <scroll-view class="classify_view scroll-view_H" scroll-x="true">
+      <block wx:for="{{secondPageinfo.secondModuleDtoList}}" wx:key="id">
+        <view class="title_item scroll-view-item_H {{index == curCategoryIndex?'active':''}}" data-id="{{index}}"
+          catchtap="tabCategorySelect">
+          <view>{{item.moduleTitle}}</view>
+          <view>{{item.moduleText}}</view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
+<!-- 瀑布流商品 -->
+<view class="moreContents">
+  <view class="left">
+    <!-- 单个商品 -->
+    <view class="items" wx:for="{{goodsList}}" wx:key="goods" wx:if="{{(index+1) %2 == 1}}">
+      <view class="items_imgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        <image class="imgsty" src="{{item.thumb}}"></image>
+      </view>
+      <view class="items_text textOver2" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">{{item.title}}</view>
+      <view class="items_sold">已售{{item.salesReal+item.salesVirtual}}件</view>
+      <view class="labels" wx:if="{{item.self==0}}">
+        <view class="labels_item flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+        <view class="labels_item text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+      </view>
+      <view class="items_price">
+        <view><text>¥{{item.beforeSpotPrice}}</text><text>.{{item.afterSpotPrice}}</text></view>
+        <view hidden="{{item.marketPrice>=item.productPrice}}">¥{{item.productPrice}}</view>
+        <view wx:if="{{item.self}}" data-goodsinfo="{{item}}" catchtap="addcart">
+          <image class="imgsty" src="/images/index/shoppingcart.svg"></image>
+        </view>
+      </view>
+    </view>
+    <view style="width:100%;height:130rpx;height:calc(130rpx + constant(safe-area-inset-bottom));height:calc(130rpx + env(safe-area-inset-bottom));"></view>
+  </view>
+  <view class="right">
+    <!-- 单个商品 -->
+    <view class="items" wx:for="{{goodsList}}" wx:key='goods' wx:if="{{(index+1) %2 == 0}}">
+      <view class="items_imgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        <image class="imgsty" src="{{item.thumb}}"></image>
+      </view>
+      <view class="items_text textOver2" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">{{item.title}}</view>
+      <view class="items_sold">已售{{item.salesReal+item.salesVirtual}}件</view>
+      <view class="labels" wx:if="{{item.self==0}}">
+        <view class="labels_item flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+        <view class="labels_item text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+      </view>
+      <view class="items_price">
+        <view><text>¥{{item.beforeSpotPrice}}</text><text>.{{item.afterSpotPrice}}</text></view>
+        <view hidden="{{item.marketPrice>=item.productPrice}}">¥{{item.productPrice}}</view>
+        <view wx:if="{{item.self}}" data-goodsinfo="{{item}}" catchtap="addcart">
+          <image class="imgsty" src="/images/index/shoppingcart.svg"></image>
+        </view>
+      </view>
+    </view>
+    <view style="width:100%;height:130rpx;height:calc(130rpx + constant(safe-area-inset-bottom));height:calc(130rpx + env(safe-area-inset-bottom));"></view>
+  </view>
+</view>
+
+<bottom-action shopCart="{{shopCart}}" sumPrice="{{cartTotal.sumPrice}}" sumProductPrice="{{cartTotal.sumProductPrice}}"
+  buyCount="{{cartTotal.buyCount}}" goodsInfoList="{{goodsList}}"></bottom-action>

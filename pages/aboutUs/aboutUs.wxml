@@ -1,0 +1,7 @@
+<!--关于我们-->
+<view class="card">
+  <view class="cardItem" wx:for="{{newList}}" wx:key="id" bindtap="gotoDetails" data-url="{{item.url}}">
+    <view class="cardItm_label">{{item.name}}</view>
+    <image src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+  </view>
+</view>

@@ -1,0 +1,248 @@
+/* pages/arrondi3/arrondi3.wxss */
+
+.top {
+  width: 100%;
+  /* height: 504rpx; */
+  /* margin-bottom: 24rpx; */
+}
+/* 顶部控制栏 */
+.titleControl {
+  width: 750rpx;
+  height: 94rpx;
+  background: #ffffff;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.item {
+  width: 190rpx;
+  height: 94rpx;
+  display: inline-block;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  line-height: 94rpx;
+  color: #323232;
+}
+
+/* 选中样式 */
+.active {
+  color: #1c6a4f;
+}
+
+.active text {
+  padding: 16rpx 0rpx;
+  border-bottom: 4rpx solid #1c6a4f;
+}
+
+.mainBox {
+  padding-bottom:calc(34rpx + 30rpx);
+  padding-bottom:calc(constant(safe-area-inset-bottom) + 34rpx + 30rpx);
+  padding-bottom:calc(env(safe-area-inset-bottom) + 34rpx + 30rpx);
+}
+
+/* 活动电器 */
+.titleText {
+  width: 750rpx;
+  height: 102rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 24rpx;
+}
+.titleText image{
+  width: 475rpx;
+  height: 100%;
+}
+
+.activeBox {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 活动电器item */
+.activeItem {
+  width: 342rpx;
+  height: 538rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+}
+
+/* 图片 */
+.itemPic {
+  width: 292rpx;
+  height: 300rpx;
+  /* background: red; */
+  border-radius: 12rpx;
+  margin: 22rpx 0 0 22rpx;
+}
+
+/* 名称 */
+.itemName {
+  width: 292rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  margin: 6rpx 0 0 24rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 已售XXX件 */
+.soldNum {
+  width: 130rpx;
+  height: 34rpx;
+  opacity: 0.66;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  margin-left: 24rpx;
+}
+
+/* 价格和购买 */
+.priceBuy {
+  width: 290rpx;
+  height: 44rpx;
+  margin: 34rpx 0 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  width: 186rpx;
+  height: 44rpx;
+  display: flex;
+}
+
+.nowPrice {
+  /* width: 96rpx; */
+  height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #f35437;
+  display: flex;
+}
+
+.pricePoint {
+  font-size: 26rpx;
+  padding-top: 10rpx;
+}
+
+.oldPrice {
+  width: 82rpx;
+  height: 34rpx;
+  opacity: 0.18;
+  font-size: 28rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-decoration: line-through;
+  text-align: left;
+  color: #323232;
+  padding-top: 10rpx;
+  padding-left: 8rpx;
+}
+
+.add {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 6rpx;
+}
+
+.add image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 底部结算 */
+.bottomTotal {
+  width: 750rpx;
+  height: 124rpx;
+  background: #ffffff;
+  box-shadow: 0rpx -4rpx 12rpx 0rpx rgba(0, 0, 0, 0.06);
+  position: fixed;
+  bottom: 0;
+}
+
+.bottomBox {
+  width: 700rpx;
+  height: 78rpx;
+  margin: 28rpx 0 0 22rpx;
+  display: flex;
+  align-items: center;
+}
+
+.cartPic {
+  width: 66rpx;
+  height: 66rpx;
+  border-radius: 50%;
+}
+
+.cartPic image {
+  width: 100%;
+  height: 100%;
+}
+
+.totalPrice {
+  width: 298rpx;
+  height: 78rpx;
+  margin-left: 20rpx;
+}
+
+.payfor {
+  width: 200rpx;
+  height: 64rpx;
+  background: #1c6a4f;
+  border-radius: 10rpx;
+  margin-left: 120rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  text-align: center;
+  line-height: 64rpx;
+}
+
+.totalNum {
+  width: 96rpx;
+  height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #f35437;
+  display: flex;
+}
+
+.totalText {
+  min-width: 320rpx;
+  height: 34rpx;
+  opacity: 0.55;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+.imgsty1 {
+  width: 100%;
+}

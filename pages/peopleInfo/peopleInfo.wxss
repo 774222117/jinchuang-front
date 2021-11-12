@@ -1,0 +1,122 @@
+/* pages/peopleInfo/peopleInfo.wxss */
+.card {
+  width: 702rpx;
+  height: 473rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx auto 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16rpx;
+}
+
+.cardItem {
+  width: calc(100% - 16rpx);
+  height: 93rpx;
+  border-bottom: 2rpx solid rgba(112, 112, 112, .1);
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8rpx
+}
+
+.cardItem:last-child {
+  border-bottom: none;
+}
+
+.cardItem_img {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.cardItem_label {
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+  display: flex;
+  align-items: center;
+}
+
+.cardItem_icon {
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 10rpx;
+}
+
+/* 弹窗 */
+/* .mask {
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(20, 20, 20, 0.63);
+}
+.dialog {
+  display: flex;
+  z-index: 5;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  transition: all 0.5s;
+  align-items: flex-end;
+}
+
+.dialogMainShow {
+  bottom: 0;
+  height: 100%;
+}
+
+.dialogMain {
+  width: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s;
+  padding-bottom: env(safe-area-inset-bottom)
+}
+
+.dialog_titleBox {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  border-bottom: 2rpx solid #f9f9f9;
+}
+
+.dialog_cancel {
+  color: #666666;
+  width: 104rpx;
+  text-align: center;
+}
+
+.dialog_title {
+  color: #363636;
+}
+
+.dialog_confirm {
+  color: #3a6ed5;
+  width: 104rpx;
+  text-align: center;
+}
+
+.dialog_dateBox {
+  width: 100%;
+  height: 658rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 135rpx;
+} */

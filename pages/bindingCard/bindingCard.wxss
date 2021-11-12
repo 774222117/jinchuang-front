@@ -1,0 +1,170 @@
+/* pages/bindingCard/bindingCard.wxss */
+page {
+  background: #ffffff;
+}
+/* 卡号 */
+.account {
+  width: 60rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #141414;
+  margin: 88rpx 0 0 74rpx;
+}
+.accountBox {
+  width: 602rpx;
+  height: 48rpx;
+  margin: 16rpx 0 0 74rpx;
+  border-bottom: 2rpx solid #b1b1b1;
+  /* display: flex;
+  justify-content: space-between; */
+  position: relative;
+}
+/* 输入卡号 */
+.accountNum {
+  width: 300rpx;
+  height: 34rpx;
+  font-size: 24rpx;       
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-left: 12rpx;
+}
+.placeholder-class {
+  opacity: 0.18;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+/* 扫一扫 */
+.scanPic {
+  width: 53rpx;
+  height: 53rpx;
+  position: absolute;
+  right: 0;
+  top:-35rpx;
+}
+.scanPic image {
+  width: 100%;
+  height: 100%;
+}
+.password {
+  width: 60rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #141414;
+  margin: 88rpx 0 0 74rpx;
+}
+.passwordBox {
+  width: 602rpx;
+  height: 48rpx;
+  margin: 16rpx 0 0 74rpx;
+  border-bottom: 2rpx solid #b1b1b1;
+}
+/* 输入密码 */
+.passwordNum {
+  width: 300rpx;
+  height: 34rpx;
+  font-size: 24rpx;       
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-left: 12rpx;
+}
+
+.bindCardTitle {
+  width: 150rpx;
+  height: 42rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin: 118rpx 0 0 74rpx;
+}
+/* 绑卡说明 */
+.bindCardText {
+  width: 624rpx;
+  height: 74rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  line-height: 40rpx;
+  margin: 16rpx 0 0 74rpx;
+}
+/* 同意绑卡 */
+.agreeBind {
+  width: 210rpx;
+  height: 32rpx;
+  margin: 30rpx 0 0 70rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.agreePic {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+}
+.agreePic image {
+  width: 100%;
+  height: 100%;
+}
+.agreeText {
+  width: 156rpx;
+  height: 36rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+.operation{
+  margin-top: 162rpx;
+  width: 750rpx;
+  height: 64rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 100rpx;
+}
+.operation-label{
+  width: 250rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  border-radius: 34rpx;
+  /* background: #1C6A4F; */
+  font-size: 28rpx;
+  font-weight: 400;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 确认绑卡 */
+.confirmBind {
+  width: 230rpx;
+  height: 68rpx;
+  background: #1c6a4f;
+  border-radius: 34rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  /* margin: 162rpx 0 0 260rpx; */
+  text-align: center;
+  line-height: 68rpx;
+  cursor: pointer;
+}

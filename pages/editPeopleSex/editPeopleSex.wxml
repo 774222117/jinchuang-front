@@ -1,0 +1,12 @@
+<!--pages/editPeopleSex/editPeopleSex.wxml-->
+<view class="cardBox">
+  <view class="list" bindtap="choose" data-sex="0">
+    <text>男</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="listIcon"></image>
+  </view>
+  <view class="line"></view>
+  <view class="list" bindtap="choose" data-sex="1">
+    <text>女</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="listIcon"></image>
+  </view>
+</view>

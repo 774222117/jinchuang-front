@@ -1,0 +1,111 @@
+<view class="search-region">
+  <image style="width:40rpx;height:40rpx" src="/images/index/search.svg"></image>
+  <input placeholder-class="phclass" value="{{title}}" bindconfirm="onSearch" bindinput="onChange" placeholder="寻找称心商品"
+    type="text" />
+</view>
+<view class="history-region">
+  <view class="history-title">
+    <view class="title">历史搜索</view>
+    <view class="clear" catchtap="clearHistories">清除历史搜索</view>
+  </view>
+  <view class="history-main">
+    <view class="main-item" wx:for="{{histories}}" wx:key="index" data-title="{{item}}" bindtap="onUse">{{item}}</view>
+  </view>
+</view>
+<!-- <view class="hot-region">
+  <view class="hot-title">
+    <view class="title">热门搜索</view>
+    <view class="clear">换一批<image style="width:32rpx;height:32rpx;" src="/images/refresh.png"></image></view>
+  </view>
+  <view class="hot-main">
+    <view class="main-item">薯片</view>
+    <view class="main-item">火腿肠</view>
+    <view class="main-item">Green Lantern</view>
+    <view class="main-item">葡萄酒</view>
+    <view class="main-item">纸尿裤</view>
+  </view>
+</view>
+<view class="sort">默认排序</view> -->
+<view class="moreContents" wx:if="{{goodsInfos.length>0}}">
+  <view class="left">
+    <!-- 单个商品元素 -->
+    <view class="commodityItem" wx:for="{{goodsInfos}}" wx:key='goods' wx:if="{{(index+1) %2 == 1}}">
+      <!-- 商品图片 -->
+      <view class="itemImgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        <image class="imgSty" src="{{item.thumb}}"></image>
+        <image wx:if="{{item.helpPoor}}" mode="widthFix" class="imgHelp" src="/image/index/helppoor.svg"></image>
+      </view>
+      <!-- 商品文字 -->
+      <view class="itemTitle" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        {{item.title}}
+      </view>
+      <!-- 商品已售件数 -->
+      <view class="itemSales">已售{{item.salesReal+item.salesVirtual}}件</view>
+      <!-- 商品标签 -->
+      <view class="itemTagBox" wx:if="{{item.origin!=''||item.brand!=''}}">
+        <view class="itemTag flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+        <view class="itemTag text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+      </view>
+      <!-- 商品价格 与 添加商品 -->
+      <view class="itemPriceAdd">
+        <view class="leftPrice">
+          <view class="price1"> <text class="text1">￥</text><text class="text2">{{item.beforeSpotPrice}}</text><text
+              class="text3">.{{item.afterSpotPrice}}</text>
+          </view>
+          <view class="price2" wx:if="{{item.marketPrice<item.productPrice}}">￥{{item.productPrice}}</view>
+        </view>
+        <!-- 添加减少 -->
+        <view class="btnBoxs {{ item.buyCount < 1 || item.buyCount == undefined ? 'rightEnd':'' }}">
+          <view class="goodsNums" wx:if="{{item.buyCount > 0  && item.buyCount != undefined}}">
+            {{item.buyCount}}
+          </view>
+          <view class="addBtn" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+            <image class="addBtnImg" src="/images/goodsDetails/shopCar.png"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="right">
+    <!-- 单个商品元素 -->
+    <view class="commodityItem" wx:for="{{goodsInfos}}" wx:key='goods' wx:if="{{(index+1) %2 == 0}}">
+
+      <!-- 商品图片 -->
+      <view class="itemImgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        <image class="imgSty" src="{{item.thumb}}"></image>
+        <image wx:if="{{item.helpPoor}}" mode="widthFix" class="imgHelp" src="/image/index/helppoor.svg"></image>
+      </view>
+      <!-- 商品文字 -->
+      <view class="itemTitle" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        {{item.title}}
+      </view>
+      <!-- 商品已售件数 -->
+      <view class="itemSales">已售{{item.salesReal+item.salesVirtual}}件</view>
+      <!-- 商品标签 -->
+      <view class="itemTagBox" wx:if="{{item.origin!=''||item.brand!=''}}">
+        <view class="itemTag flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+        <view class="itemTag text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+      </view>
+      <!-- 商品价格 与 添加商品 -->
+      <view class="itemPriceAdd">
+        <view class="leftPrice">
+          <view class="price1"> <text class="text1">￥</text><text class="text2">{{item.beforeSpotPrice}}</text><text
+              class="text3">.{{item.afterSpotPrice}}</text>
+          </view>
+          <view class="price2" wx:if="{{item.marketPrice<item.productPrice}}"> ￥{{item.productPrice}}</view>
+        </view>
+        <!-- 添加减少 -->
+        <view class="btnBoxs {{ item.buyCount  < 1 || item.buyCount == undefined  ? 'rightEnd':'' }}">
+          <view class="goodsNums" wx:if="{{item.buyCount > 0 && item.buyCount != undefined}}">
+            {{item.buyCount}}
+          </view>
+          <view class="addBtn" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+            <image class="addBtnImg" src="/images/goodsDetails/shopCar.png"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

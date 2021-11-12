@@ -1,0 +1,339 @@
+/* pages/shoppingCart/shoppingCart.wxss */
+page {
+  background: #f5f5f5;
+  /* overflow: hidden; */
+}
+.addressBox {
+  width: 560rpx;
+  height: 40rpx;
+  margin: 18rpx 0 0 14rpx;
+  display: flex;
+  align-items: center;
+}
+.addressPic {
+  width: 40rpx;
+  height: 40rpx;
+}
+.addressPic image {
+  width: 100%;
+  height: 100%;
+}
+.addressText {
+  width: 500rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  opacity: 0.5;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+/* 商品 */
+.shoppingBox {
+  width: 702rpx;
+  height: 232rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+  display: flex;
+  align-items: center;
+}
+/* 勾选圈 */
+.shoppingActive {
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 1;
+  border-radius: 50%;
+  margin-left: 16rpx;
+  cursor: pointer;
+}
+.shoppingActive image {
+  width: 100%;
+  height: 100%;
+}
+/* 商品详情 */
+.shopItem {
+  width: 638rpx;
+  height: 176rpx;
+  margin-left: 12rpx;
+  display: flex;
+}
+/* 商品图 */
+.shopPic {
+  width: 176rpx;
+  height: 176rpx;
+  opacity: 1;
+  background: black;
+}
+/* 右侧价格详情 */
+.shopShow {
+  width: 462rpx;
+  height: 176rpx;
+}
+/* 商品名称 */
+.itemName {
+  min-width: 300rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  margin-left: 26rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* 商品重量 */
+.itemWeight {
+  /* width: 100rpx; */
+  width:fit-content;
+  height: 44rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  opacity: 0.53;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  line-height: 44rpx;
+  text-align: center;
+  margin: 12rpx 0 0 26rpx;
+  padding:0 5rpx;
+}
+/* 商品价格 */
+.itemPriceBox {
+  width: 436rpx;
+  height: 52rpx;
+  margin: 34rpx 0 0 26rpx;
+  display: flex;
+  justify-content: space-between;
+}
+/* 现价 */
+.price {
+  /* width: 96rpx; */
+  height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #f35437;
+  display: flex;
+}
+/* 整数后的零头 */
+.pricePoint {
+  font-size: 26rpx;
+  line-height: 54rpx;
+}
+/* 原价 */
+.oldPrice {
+  width: 82rpx;
+  height: 34rpx;
+  opacity: 0.18;
+  font-size: 26rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-decoration:  line-through;
+  text-align: left;
+  color: #323232;
+  margin-left: 12rpx;
+  line-height: 56rpx;
+}
+/* 增加减少 */
+.changeNumBox {
+  width: 160rpx;
+  height: 52rpx;
+  margin-left: 62rpx;
+  display: flex;
+}
+.reduce {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 8rpx;
+  cursor: pointer;
+  text-align: center;
+  line-height: 53rpx;
+}
+.reduce image {
+  width: 100%;
+  height: 100%;
+}
+.num {
+  width: 56rpx;
+  height: 52rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #3d444d;
+  line-height: 52rpx;
+}
+.add {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 8rpx;
+  cursor: pointer;
+  text-align: center;
+  line-height: 53rpx;
+}
+.add image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 结算框 */
+.calculBox {
+  width: 750rpx;
+  height: 84rpx;
+  background: #ffffff;
+  position: fixed;
+  bottom: 0rpx;
+  display: flex;
+  align-items: center;
+  bottom: 0;
+}
+.shoppingActive1 {
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 40rpx;
+  margin-bottom: 10rpx;
+}
+.shoppingActive1 image {
+  width: 100%;
+  height: 100%;
+}
+.all {
+  width: 56rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  margin-left: 14rpx;
+}
+/* 结算金额 */
+.totalPriceBox {
+  width: 190rpx;
+  height: 70rpx;
+  margin-left: 163rpx;
+  margin-bottom: 10rpx;
+}
+.totalPrice {
+  width: 190rpx;
+  height: 40rpx;
+  display: flex;
+  padding-top: 10rpx;
+}
+.totalText {
+  width: 84rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+}
+.total {
+  width: 56rpx;
+  height: 44rpx;
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #f35437;
+  line-height: 34rpx;
+  display: flex;
+}
+.totalPoint {
+  width: 40rpx;
+  height: 44rpx;
+  font-size: 26rpx;
+}
+.discountedPrice {
+  width: 190rpx;
+  height: 28rpx;
+  display: flex;
+}
+.discountedText {
+  width: 80rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #cecece;
+  line-height: 34rpx;
+}
+.discounted {
+  width: 48rpx;
+  height: 24rpx;
+  font-size: 20rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #cecece;
+}
+
+
+
+/* 去结算 */
+.payfor {
+  width: 200rpx;
+  height: 64rpx;
+  background: #1c6a4f;
+  border-radius: 10rpx;
+  margin-left: 47rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  text-align: center;
+  line-height: 64rpx;
+}
+
+/* 购物车空 */
+.shopCartEmpty {
+  width: 398rpx;
+  height: 474rpx;
+  margin: 114rpx 0 0 176rpx;
+}
+.emptyPic {
+  width: 398rpx;
+  height: 398rpx;
+}
+.emptyPic image {
+  width: 100%;
+  height: 100%;
+}
+.cartText {
+  width: 398rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+  text-align: center;
+}
+.gopayfor {
+  width: 398rpx;
+  height: 34rpx;
+  opacity: 0.27;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #141414;
+  margin-top: 8rpx;
+}

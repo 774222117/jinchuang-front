@@ -1,0 +1,5 @@
+<!--pages/registerSuccess/registersuccess.wxml-->
+<image class="register-success" src="/images/register/resigter_success.png"></image>
+<view class="toLogin" bindtap="toLogin">
+    点击登录
+</view>

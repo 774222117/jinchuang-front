@@ -1,0 +1,45 @@
+/* pages/accountSetting/accountSetting.wxss */
+.cardBox {
+  width: 702rpx;
+  border-radius: 20rpx;
+  margin: 24rpx auto 0;
+  background-color: #fff;
+  padding: 0 24rpx;
+}
+
+.cardItem {
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+}
+
+.cardItem_icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.cardLine {
+  width: 100%;
+  height: 2rpx;
+  background-color: rgba(112, 112, 112, .1);
+}
+
+.logoutBtn {
+  width: 702rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+  margin: 462rpx auto 0;
+  background-color: #1c6a4f;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+}

@@ -1,0 +1,18 @@
+<!--我的卡券去使用-->
+<view class="box">
+  <view class="codeBox">
+    <view class="codeBox_title">
+      <image class="codeBox_titleIcon" src=""></image>
+      向商家付款
+    </view>
+    <view class="codeTip">点击可查看付款码数字</view>
+    <canvas canvas-id="barcode" class="barcodeCanvas" />
+    <canvas canvas-id="barcode2" class="qrcodeCanvas" />
+  </view>
+  <text class="tip">
+    使用说明:
+      1. 本卡可在除新百商场，金鹰商场，南京商厦外，所有签约商户使用，如苏果超市直营店及汇购商城使用。
+      ⒉.持卡到签约商户门店，展示条码完成消费。
+      3.付款过程中，自上而下按顺序进行扣款，当前支付卡余额不足时，扣完余额后，按顺序扣款。您也可以直接选择扣款卡完成交易。的扣款。
+  </text>
+</view>

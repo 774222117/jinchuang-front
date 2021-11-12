@@ -1,0 +1,25 @@
+<!--意见反馈-->
+<!-- 问题和意见 -->
+<view class="feedBackText">问题和建议</view>
+<!-- 输入框 -->
+<view class="feedBackBox">
+  <textarea class="input" cols="30" rows="10" placeholder="在使用小程序时，有任何功能的使用问题和体验建议， 都期望得到您的反馈，我们会尽快优化提升。"
+    data-name="content" bindinput="getValue" value="{{content}}"></textarea>
+</view>
+<!-- 添加图片 -->
+<view class="addPic">
+  <view class="addPicText">添加图片(选填)</view>
+  <view class="addPicBox" bindtap="uploadPhoto">
+    <image src="{{questionPicList.length>0?questionPicList[0]:'/images/feedback/feedback.png'}}" mode="widthFix">
+    </image>
+  </view>
+</view>
+<!-- 联系方式 -->
+<view class="contactText">联系方式(选填)</view>
+<!-- 电话输入框 -->
+<view class="phoneBox">
+  <input class="phone" type="number" placeholder="留下您的电话号，方便联系沟通" data-name="phone" bindinput="getValue"
+    value="{{phone}}" />
+</view>
+<!-- 提交 -->
+<view class="submitBtn" bindtap="submit">提交</view>

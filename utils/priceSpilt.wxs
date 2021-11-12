@@ -1,0 +1,14 @@
+function getBeforeSpotPrice(price){
+  price = parseFloat(price).toFixed(2)
+  var strs = price.split('.')
+  return strs[0];
+}
+function getAfterSpotPrice(price){  
+  price = parseFloat(price).toFixed(2)
+  var strs = price.split('.')
+  return strs[1];
+}
+module.exports = {
+  getBefore:getBeforeSpotPrice,
+  getAfter:getAfterSpotPrice
+}

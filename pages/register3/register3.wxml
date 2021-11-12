@@ -1,0 +1,57 @@
+<!--pages/register3/register3.wxml-->
+<view class="register-header" style="padding-top:{{customBar + 10}}px;">
+    <image class="register-bg" src="/images/register/background.png"></image>
+    <view class="toolbar" bindtap="back" style="top:{{navTop}}px;height:{{capsuleHeight}}px">
+        <image class="toolbar-back" src="/images/login/back.png"></image>
+    </view>
+    <view class="title" style="top:{{navTop}}px;height:{{capsuleHeight}}px">注册</view>
+</view>
+<view class="step-item">
+    <view class="pic-guide">
+        <image class="pic-guide-img" src="/images/register/card_green.png"></image>
+        <image class="pic-guide-img-node" src="/images/register/step_green.png"></image>
+        <image class="pic-guide-img" src="/images/register/secret_yellow.png"></image>
+    </view>
+    <view class="text-guide">
+        <view style="display:flex;align-items:center;">
+            <view style="height:fit-content;">
+                <view class="scan-code-tip">验证卡号和卡密</view>
+            </view>
+        </view>
+        <view style="display:flex;align-items:center;">
+            <view style="height:fit-content;">
+                <view class="scan-code-tip" style="color: #cf9137;">设置支付密码</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="register-body">
+
+    <view class="pwd-modal" wx:if="{{showSecretFlag === '1'}}">
+        <view class="pwd-label">请输入你的支付密码</view>
+        <ul catchtap="getFocusFirst">
+            <li><i class="circle" wx:if="{{secret.length >= 1}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secret.length >= 2}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secret.length >= 3}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secret.length >= 4}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secret.length >= 5}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secret.length >= 6}}"></i></li>
+        </ul>
+        <input ref="inputs" focus="{{isFocusFirst}}" type="number" maxlength="6"  bindinput="pwdFirst" value="{{secret}}"/>
+    </view>
+
+    <view class="pwd-modal" wx:if="{{showSecretFlag === '2'}}">
+        <view class="pwd-label">请确认你的支付密码</view>
+        <ul catchtap="getFocusAgain">
+            <li><i class="circle" wx:if="{{secretAgain.length >= 1}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secretAgain.length >= 2}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secretAgain.length >= 3}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secretAgain.length >= 4}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secretAgain.length >= 5}}"></i></li>
+            <li style="margin-left: 20rpx;"><i class="circle" wx:if="{{secretAgain.length >= 6}}"></i></li>
+        </ul>
+        <input ref="inputs" focus="{{isFocusAgain}}" type="number" maxlength="6"  bindinput="pwdAgain" value="{{secretAgain}}"/>
+    </view>
+    <!--https://www.cnblogs.com/gqx-html/p/9963485.html-->
+</view>
+

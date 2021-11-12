@@ -1,0 +1,179 @@
+/* pages/brandGoods/brandGoods.wxss */
+.navBar {
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.navBar_item {
+  height: 100%;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #323232;
+}
+
+.active {
+  color: #1C6A4F;
+  position: relative;
+}
+
+.active::after {
+  content: '';
+  width: 100rpx;
+  height: 4rpx;
+  background-color: #1C6A4F;
+  border-radius: 20rpx;
+  position: absolute;
+  bottom: 6rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.topImg {
+  width: 100%;
+  height: 428rpx;
+}
+
+.mainBox {
+  width: 100%;
+  position: absolute;
+  top: 342rpx;
+  background-color: #fff;
+  border-radius: 20rpx 20rpx 0 0;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.mainBox_img {
+  width: 154rpx;
+  height: 154rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: -77rpx;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.mainBox_title {
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin: 90rpx 0 22rpx;
+  text-align: center;
+  font-size: 36rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+}
+
+.mainBox_filterBox {
+  width: 100%;
+  height: 60rpx;
+  padding: 0 106rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18rpx;
+}
+
+.mainBox_filter {
+  width: 220rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #e2e2e2;
+  border-radius: 30rpx;
+}
+
+.filterActive {
+  color: #FFFFFF;
+  background-color: #1C6A4F;
+}
+
+.mainBox_list {
+  width: 702rpx;
+  height: 204rpx;
+  margin: 0 auto;
+  box-sizing: content-box;
+  border-bottom: 2rpx solid rgba(112, 112, 112, .1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainBox_list:last-child {
+  border-bottom: none;
+}
+
+.mainBox_listImg {
+  width: 156rpx;
+  height: 156rpx;
+}
+
+.mainBox_listRight {
+  width: 522rpx;
+  height: 136rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mainBox_listTitle {
+  max-height: 74rpx;
+  width: 100%;
+  line-height: 34rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mainBox_listPrice {
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+
+.brandCard {
+  width: 702rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 0 auto 24rpx;
+  padding: 0 21rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.brandCard_title {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-bottom: 2rpx solid rgba(112, 112, 112, .1);
+
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+}
+
+.brandCard_text {
+  width: 100%;
+  margin: 30rpx 0 32rpx;
+  line-height: 56rpx;
+
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #323232;
+
+}

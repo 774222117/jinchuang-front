@@ -1,0 +1,7 @@
+@font-face {
+  font-family: 'DIN';
+  src: url('https://jinchuang-source.wyouquan.cn/font/DIN/DIN-Medium.otf');
+  font-style: normal;
+  font-display: swap;
+}
+

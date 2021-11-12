@@ -1,0 +1,195 @@
+<wxs module="getDate" src="../../utils/dateParse.wxs"></wxs>
+<view class="personalCenter">
+  <image src="/assets/images/myInex/background.png" mode="widthFix">
+    <view class="discountedBox">
+    <image src="/assets/images/myInex/discountedBox.png" mode="widthFix"></image>
+    <view class="discounted">
+      <!-- 礼卡 -->
+      <view class="leftCard" data-target="/pages/myCard/myCard" catchtap="toPage">
+        <view class="card">
+          <image src="/assets/images/myInex/card.png" mode="widthFix"></image>
+        </view>
+        <view class="cardText">长复锦礼卡</view>
+      </view>
+      <!-- 优惠券 -->
+      <view class="rightCard">
+        <view class="card">
+          <image src="/assets/images/myInex/moneyCard.png" mode="widthFix"></image>
+        </view>
+        <view class="cardText">优惠券</view>
+      </view>
+    </view>
+  </view>
+  </image>
+  <view class="personIntroduce">
+    <!-- 头像 -->
+    <view class="personPic">
+      <image mode="widthFix" src="{{peopleInfo.icon}}" wx:if="{{peopleInfo.icon}}"></image>
+      <image mode="widthFix" src="/images/myInex/defaultAvatar.png" wx:else catchtap="goLoin"></image>
+    </view>
+    <!-- ID -->
+    <view class="personName" wx:if="{{peopleInfo.nickName}}">{{peopleInfo.nickName}}</view>
+    <view class="personName" wx:else catchtap="goLoin">登录/注册</view>
+    <!-- 设置 -->
+    <view class="setting" data-target="/pages/accountSetting/accountSetting" catchtap="toPage">
+      <image src="/assets/images/myInex/setting.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 我的卡券 -->
+  <view class="myCard">
+    <view class="cardText">我的卡劵</view>
+    <view class="bindCard" data-target="/pages/bindingCard/bindingCard" catchtap="toPage">
+      <image src="/assets/images/myInex/bindCard.png" mode="widthFix"></image>
+      <view class="bindCardText">绑卡</view>
+    </view>
+  </view>
+  <!-- 礼卡和优惠券 -->
+  
+</view>
+
+<!-- 我的订单 -->
+<view class="myOrder">
+  <!-- title -->
+  <view class="myOrderTitle">
+    <view class="myOrderText">我的订单</view>
+    <view class="watchOrder">
+      <view class="watchOrderText" data-status="" bindtap="touchOrder">查看全部订单</view>
+      <view class="morePic">
+        <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 订单状态 -->
+  <view class="stateBox">
+    <!-- 待付款 -->
+    <view class="pendingPayment" data-status="1" bindtap="touchOrder">
+      <view class="statePic">
+        <image src="/assets/images/myInex/pendingPayment.png" mode="widthFix"></image>
+      </view>
+      <view class="statePoint" wx:if="{{countData.noPayOrder>0}}">{{countData.noPayOrder}}</view>
+      <view class="pendingPaymentText">待付款</view>
+    </view>
+    <!-- 代发货 -->
+    <view class="shipped" data-status="2" bindtap="touchOrder">
+      <view class="statePic">
+        <image src="/assets/images/myInex/shipped.png" mode="widthFix"></image>
+      </view>
+      <view class="statePoint" wx:if="{{countData.waitSend>0}}">{{countData.waitSend}}</view>
+      <view class="shippedText">待发货</view>
+    </view>
+    <!-- 待收货 -->
+    <view class="received" data-status="3" bindtap="touchOrder">
+      <view class="statePic">
+        <image src="/assets/images/myInex/received.png" mode="widthFix"></image>
+      </view>
+      <view class="statePoint" wx:if="{{countData.waitTakeInOrder>0}}">{{countData.waitTakeInOrder}}</view>
+      <view class="receivedText">待收货</view>
+    </view>
+    <!-- 已收货 -->
+    <view class="receGoods" data-status="4" bindtap="touchOrder">
+      <view class="statePic">
+        <image src="/assets/images/myInex/receGoods.png" mode="widthFix"></image>
+      </view>
+      <view class="statePoint" wx:if="{{countData.waitRefundOrder>0}}">{{countData.waitRefundOrder}}</view>
+      <view class="receGoodsText">待退款</view>
+    </view>
+    <!-- 售后服务 -->
+    <view class="afterSale" data-target="/pages/afterOrderList/afterOrderList" catchtap="toPage">
+      <view class="statePic">
+        <image src="/assets/images/myInex/afterSale.png" mode="widthFix"></image>
+      </view>
+      <view class="statePoint" wx:if="{{countData.afterSaleOrder>0}}">{{countData.afterSaleOrder}}</view>
+      <view class="afterSaleText">售后服务</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- 我的卡券 -->
+<view class="myDiscountedCard" hidden="{{!canbuy}}">
+  <!-- title -->
+  <view class="myOrderTitle">
+    <view class="myOrderText">我的 · 大牌卡劵</view>
+    <view class="watchOrder">
+      <view class="watchOrderText" wx:if="{{cardVoucheList.length>0}}" data-target="/pages/myCardVoucher/myCardVoucher" catchtap="toPage">
+        查看更多卡劵</view>
+      <view class="exchange" wx:else catchtap="toMoreCardVoucher">去兑换</view>
+      <view class="morePic">
+        <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 卡券 -->
+  <block wx:for="{{cardVoucheList}}" wx:if="{{cardVoucheList.length}}" wx:key="index">
+    <view class="cardItem" bindtap="goPay" data-id="{{item.id}}">
+      <image src="{{item.cardImgUrl}}"></image>
+      <!-- 头像 -->
+      <!-- <view class="cardPic"></view> -->
+      <!-- 有效期 -->
+      <view class="cardTime">
+        <view class="bookName">{{item.cardName}}</view>
+        <view class="time">有效期至 ：{{getDate.getDate_New(item.validEndTime,'.')}}</view>
+      </view>
+      <!-- 剩余价格 -->
+      <view class="cardMoney">
+        <view class="cardMoneyText">余额</view>
+        <view class="price">¥{{item.beforeSpotPrice}}.
+          <view class="pricePoint">{{item.afterSpotPrice}}</view>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 没有卡券 -->
+  <view class="noCardItem" wx:if="{{cardVoucheList.length<=0}}">
+    <view class="noCardPic">
+      <image src="/assets/images/myInex/noCard.png" mode="widthFix"></image>
+    </view>
+    <view class="noCardText">暂无卡劵</view>
+  </view>
+</view>
+
+
+<!-- 更多设置 -->
+<view class="moreSetting">
+  <!-- 收货地址 -->
+  <view class="receAddressBox" catchtap="chooeAddress">
+    <view class="recePic">
+      <image src="/assets/images/myInex/receAddress.png" mode="widthFix"></image>
+    </view>
+    <view class="receText">收货地址</view>
+    <view class="moreBtn">
+      <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 意见反馈 -->
+  <view class="feedBack" data-target="/pages/feedback/feedback" catchtap="toPage">
+    <view class="recePic">
+      <image src="/assets/images/myInex/feedBack.png" mode="widthFix"></image>
+    </view>
+    <view class="receText">意见反馈</view>
+    <view class="moreBtn">
+      <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 在线客服 -->
+  <button class="customer" open-type="contact" session-from="weapp">
+    <view class="recePic">
+      <image src="/assets/images/myInex/customer.png" mode="widthFix"></image>
+    </view>
+    <view class="receText">在线客服</view>
+    <view class="moreBtn">
+      <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+    </view>
+  </button>
+  <!-- 关于我们 -->
+  <view class="aboutUs" data-target="/pages/aboutUs/aboutUs" catchtap="toPage">
+    <view class="recePic">
+      <image src="/assets/images/myInex/aboutUs.png" mode="widthFix"></image>
+    </view>
+    <view class="receText">关于我们</view>
+    <view class="moreBtn">
+      <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,247 @@
+page{
+  background-color: #ffffff;
+}
+.head-block{
+  z-index: 1;
+  background-color: #ffffff;
+}
+.scroll-class{
+  height:100vh;
+  padding-top: 10rpx;
+}
+.head-region{
+  width:750rpx;
+  /* height:266rpx; */
+  opacity: 1;
+  background: #1c6a4f;
+  padding: 24rpx 0;
+}
+.naviTitle{
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.naviTitle .title{
+  opacity: 1;
+  font-size: 36rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+.naviTitle .title text{
+  height:34rpx;
+}
+.searchBarArea{
+  width:100%;
+  /* position: absolute; */
+  bottom: 24rpx;
+  padding: 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.searchBarArea .searchBar{
+  width:624rpx;
+  height:60rpx;
+  background: #eff1e9;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+  padding-left:15rpx;
+}
+.searchBarArea .cancelBtn{
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+.GPS-region{
+  margin: 10rpx 0 0 8rpx;
+  display: flex;
+  background-color: #ffffff;
+}
+.GPS-region .cityName{
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #141414;
+  margin-left:9rpx;
+  display: flex;
+  align-items: center;
+}
+.GPS-region .tip{
+  opacity: 0.52;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  display: flex;
+  align-items: flex-end;
+  margin-left:6rpx;
+}
+.history-region{
+  margin: 50rpx 0 10rpx 0;
+  width: 678rpx;
+  background-color: #ffffff;
+}
+.history-region .history-title{
+  opacity: 0.52;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  margin-left: 24rpx;
+}
+.history-region .history-main{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.history-main .history-city-item{
+  width: 140rpx;
+  height: 56rpx;
+  opacity: 1;
+  background: rgba(28,106,79,0.10);
+  border-radius: 6px;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #1c6a4f;
+  margin: 24rpx 0 0 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hotCity-region{
+  margin: 0 0 24rpx 0;
+  width: 678rpx;
+}
+.hotCity-region .hotCity-title{
+  opacity: 0.52;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  margin-left: 24rpx;
+}
+.hotCity-region .hotCity-main{
+  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hotCity-main .hotCity-city-item{
+  width: 140rpx;
+  height: 56rpx;
+  opacity: 1;
+  background: #ffffff;
+  border: 2rpx solid #cecece;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  margin: 24rpx 0 0 24rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.city-alphabet-item{
+  width:100%;
+}
+.city-alphabet-item .alphabet-title{
+  width:100%;
+  height:68rpx;
+  background-color: rgba(245,245,245,1);
+  padding-left:24rpx;
+  display: flex;
+  align-items: center;
+  opacity: 0.52;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+}
+.city-body{
+  margin:0 24rpx;
+}
+.city-alphabet-item .city-body .city-na{
+  width:100%;
+  height:80rpx;
+  opacity: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  border-bottom: 1px solid rgba(112,112,112,0.1) ;
+}
+.city-alphabet-item .city-body .city-na:last-child{
+  border-bottom:none;
+}
+.alphabet-list{
+  position:fixed;
+  right:24rpx;
+  top:326rpx;
+  z-index: 99;
+}
+.alphabet-list .list-item{
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #1c6a4f;
+  margin-bottom: 10rpx;
+}
+.bg_layer{
+  position: fixed; left: 0; top: 107rpx; bottom: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.6); z-index: 9998;
+}
+.search-main{
+  position: fixed; left: 0; top: 107rpx; bottom: 0; right: 0;
+  background-color: #ffffff; z-index: 9999;
+}
+.search-item{
+  width:100%;
+  height:80rpx;
+  opacity: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  padding: 0 24rpx;
+  border-bottom: 1px solid rgba(112,112,112,0.1) ;
+}
+.search-item:nth-last-child(2){
+  border-bottom:none;
+}
+.holdThePlace{
+  width: 100%;
+  height:20rpx;
+}
+.seachScroll{
+  height:100vh;
+}

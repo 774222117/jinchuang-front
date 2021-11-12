@@ -1,0 +1,62 @@
+<!--pages/arrondi3/arrondi3.wxml-->
+<!-- 顶部切换控制栏 -->
+<view style="background-color:{{secondPageinfo.bgcolor}}; min-height:100vh">
+
+  <scroll-view class="titleControl"scroll-x wx:if="{{secondPageinfo.secondModuleDtoList.length>0&&tabFixed}}" scroll-into-view="{{toViewTop}}">
+    <view wx:for="{{secondPageinfo.secondModuleDtoList}}" wx:key="index"
+      class="item {{currentIndex == index ? 'active' : ''}}" data-id="s{{index}}" bindtap="handleTitileClick"
+      id="t{{index}}"
+      data-index="{{index}}">
+      <text>{{item.moduleTitle}}</text>
+    </view>
+  </scroll-view>
+  
+  <!-- 活动电器 -->
+  <scroll-view style="height: {{screenHeight}}px" scroll-y scroll-into-view="{{toView}}" bindscroll="scroll"
+    scroll-with-animation="true">
+    <view class="top">
+      <image class="imgsty1" id="imgsty1" mode="widthFix" src="{{secondPageinfo.topImg}}"></image>
+    </view>
+    <view class="mainBox" id="mainBox">
+      <block wx:for="{{secondPageinfo.secondModuleDtoList}}" wx:key="index">
+        <view class="titleText" id="s{{index}}">
+          <image mode="widthFix" src="{{item.moduleImg}}"></image>
+        </view>
+        <!-- 活动电器item -->
+        <view class="activeBox">
+          <block wx:for="{{item.goodsList}}" wx:key="index" wx:for-item="it" wx:for-index="ind">
+            <view class="activeItem">
+              <!-- 图片 -->
+              <image src="{{it.thumb}}" class="itemPic" data-id="{{it.id}}" catchtap="gotoDetails"></image>
+              <!-- 名称 -->
+              <view class="itemName" data-id="{{it.id}}" catchtap="gotoDetails">{{it.title}}</view>
+              <!-- 已售XXX件 -->
+              <view class="soldNum" data-id="{{it.id}}" catchtap="gotoDetails">已售{{it.salesReal+it.salesVirtual}}件
+              </view>
+              <!-- 价格和购买 -->
+              <view class="priceBuy">
+                <!-- 价格 -->
+                <view class="price" data-id="{{it.id}}" catchtap="gotoDetails">
+                  <!-- 现价 -->
+                  <view class="nowPrice">¥{{it.beforeSpotPrice}}.
+                    <view class="pricePoint">{{it.afterSpotPrice}}</view>
+                  </view>
+                  <!-- 原价 -->
+                  <view class="oldPrice" hidden="{{it.marketPrice>=it.productPrice}}">¥{{it.productPrice}}</view>
+                </view>
+                <!-- 添加 -->
+                <view class="add" data-goodsinfo="{{it}}" wx:if="{{it.self}}" catchtap="addCart">
+                  <image src="/images/arrondi3/add.png" mode="widthFix"></image>
+                </view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+  <!-- 底部结算 -->
+  <bottom-action shopCart="{{shopCart}}" sumPrice="{{cartTotal.sumPrice}}"
+    sumProductPrice="{{cartTotal.sumProductPrice}}" buyCount="{{cartTotal.buyCount}}" goodsInfoList="{{goodsList}}">
+  </bottom-action>
+</view>

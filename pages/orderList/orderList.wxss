@@ -1,0 +1,228 @@
+/* pages/orderList/orderList.wxss */
+@font-face {
+  font-family: "iconfont";
+  /* Project id 2702816 */
+  src: url('//at.alicdn.com/t/font_2702816_e6acoojorfa.woff2?t=1627367493694') format('woff2'),
+    url('//at.alicdn.com/t/font_2702816_e6acoojorfa.woff?t=1627367493694') format('woff'),
+    url('//at.alicdn.com/t/font_2702816_e6acoojorfa.ttf?t=1627367493694') format('truetype');
+}
+
+.iconfont {
+  font-size: 20rpx;
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-huxian:before {
+  content: "\e606";
+}
+
+.searchBox {
+  width: 702rpx;
+  height: 60rpx;
+  margin: 16rpx auto 0;
+  border-radius: 12rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+}
+
+.searchIpt {
+  margin-left: 6rpx;
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.titleNav {
+  width: 100%;
+  background-color: #fff;
+  height: 80rpx;
+  margin-top: 18rpx;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.titleNav_list {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #141414;
+}
+
+.active {
+  font-family: PingFang SC, PingFang SC-Heavy;
+  font-weight: 800;
+  position: relative;
+
+}
+
+.active::after {
+  content: "\e606";
+  font-family: "iconfont";
+  color: #D6912D;
+  height: 8rpx;
+  position: absolute;
+  bottom: 8rpx;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.orderListBox {
+  width: 100%;
+  padding-top: 24rpx;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom);
+
+}
+
+.orderList {
+  width: 702rpx;
+  /* height: 300rpx; */
+  margin: 0 auto 24rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 20rpx;
+}
+
+.orderList_body {
+  width: 100%;
+  height: 176rpx;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+}
+
+.orderList_img {
+  border-radius: 10rpx;
+  width: 176rpx;
+  height: 176rpx;
+}
+
+.orderList_bodyR {
+  width: 454rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.orderList_status {
+  width: 100%;
+  padding-right: 4rpx;
+  box-sizing: border-box;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: right;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #d6912d;
+}
+
+.orderList_main {
+  width: 100%;
+  padding-right: 4rpx;
+  box-sizing: border-box;
+  max-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.orderList_title {
+  width: 364rpx;
+  height: 100%;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #323232;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.textOver2{
+  width: 100%;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2; /** 显示的行数 **/
+  overflow: hidden;  /** 隐藏超出的内容 **/
+}
+
+.orderList_total {
+  margin-top: 6rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  font-size: 20rpx;
+  font-family: DIN, DIN-Regular;
+  font-weight: 400;
+  color: rgba(20, 20, 20, .53);
+}
+
+.orderList_price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  height: 50rpx;
+}
+
+.orderList_priceL {
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #cecece;
+}
+
+.orderList_priceR {
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #F35437;
+}
+
+.orderList_foot {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.orderList_btn {
+  width: 120rpx;
+  height: 56rpx;
+  border: 2rpx solid #cecece;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #323232;
+  margin-left: 44rpx;
+}

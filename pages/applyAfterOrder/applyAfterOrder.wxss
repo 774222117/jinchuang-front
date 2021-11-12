@@ -1,0 +1,590 @@
+/* pages/applyAfterOrder/applyAfterOrder.wxss */
+page {
+  background: #f5f5f5;
+}
+
+/* 退款商品 */
+.refundedGood {
+  width: 702rpx;
+  /* height: 304rpx; */
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+  overflow: hidden;
+  padding-bottom: 32rpx;
+}
+
+/* 退款状态 */
+.refundedState {
+  width: 646rpx;
+  height: 44rpx;
+  margin: 24rpx 0 0 28rpx;
+}
+
+.refundedStateText {
+  width: 128rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #323232;
+  line-height: 34rpx;
+  line-height: 42rpx;
+}
+
+.refundedChange {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: right;
+  color: #f35437;
+  line-height: 34rpx;
+  line-height: 40rpx;
+}
+
+/* 商品详情 */
+.goodDetail {
+  width: 647rpx;
+  height: 176rpx;
+  margin: 28rpx 0 0 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 商品图片 */
+.leftPic {
+  width: 176rpx;
+  height: 176rpx;
+  background: red;
+  border-radius: 8rpx;
+}
+
+/* 右边商品详情 */
+.rightGoods {
+  width: 451rpx;
+  height: 176rpx;
+}
+
+.goodsNameNum {
+  width: 451rpx;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+/* 商品名称 */
+.goodsName {
+  min-width: 292rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* 商品数量 */
+.goodsNum {
+  width: 40rpx;
+  height: 34rpx;
+  line-height: 30rpx;
+  opacity: 0.53;
+  font-size: 28rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #323232;
+  margin-top: 12rpx;
+}
+
+/* 重量 */
+.goodsWeight {
+  width: 100rpx;
+  height: 44rpx;
+  background: #f5f5f5;
+  border-radius: 8rpx;
+  opacity: 0.53;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  line-height: 44rpx;
+  text-align: center;
+  margin-top: 12rpx;
+}
+
+/* 价格和后续操作 */
+.goodsPriceControl {
+  width: 454rpx;
+  height: 50rpx;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.priceBox {
+  width: 186rpx;
+  height: 44rpx;
+  display: flex;
+}
+
+/* 现价 */
+.nowPrice {
+  width: 96rpx;
+  height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #f35437;
+  display: flex;
+}
+
+.pricePoint {
+  font-size: 26rpx;
+  line-height: 56rpx;
+  font-weight: 500;
+}
+
+/* 原价 */
+.oldPrice {
+  width: 82rpx;
+  height: 34rpx;
+  opacity: 0.18;
+  font-size: 28rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-decoration: line-through;
+  text-align: left;
+  color: #323232;
+  margin-left: 14rpx;
+  line-height: 56rpx;
+}
+
+/* 退货信息 */
+.refundedInfo {
+  width: 700rpx;
+  height: 346rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+  overflow: hidden;
+}
+
+.refundedText {
+  width: 128rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  margin: 28rpx 0 0 28rpx;
+}
+
+/* 货物状态 */
+.goodsState {
+  width: 648rpx;
+  height: 40rpx;
+  margin: 28rpx 0 0 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goodsStateText {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.choice {
+  /* width: 102rpx; */
+  height: 34rpx;
+  display: flex;
+  cursor: crosshair;
+}
+
+.choiceText {
+  /* width: 72rpx; */
+  height: 34rpx;
+  opacity: 0.53;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+}
+
+.choicePic {
+  width: 24rpx;
+  height: 24rpx;
+  line-height: 34rpx;
+  margin-left: 6rpx;
+  cursor: pointer;
+  margin-top: 3rpx;
+}
+
+.choicePic image {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 退款原因 */
+.goodsQuestion {
+  width: 648rpx;
+  height: 40rpx;
+  margin: 32rpx 0 0 28rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goodsQuestionText {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+/* 退款金额 */
+.refundedPrice {
+  width: 648rpx;
+  height: 40rpx;
+  margin: 32rpx 0 0 28rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.refundedPriceText {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+
+.refunPrice {
+  width: 96rpx;
+  height: 44rpx;
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  text-align: left;
+  color: #f35437;
+  display: flex;
+  margin-right: 10rpx;
+}
+
+/* 补充描述和凭证 */
+.moreDescription {
+  width: 700rpx;
+  /* height: 472rpx; */
+  padding-bottom: 56rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+  overflow: hidden;
+}
+
+.moreDesText {
+  width: 224rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  margin: 28rpx 0 0 28rpx;
+}
+
+/* 上传凭证 */
+.moreWay {
+  width: 652rpx;
+  /* height: 320rpx; */
+  opacity: 1;
+  background: #f5f5f5;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+  overflow: hidden;
+}
+
+.textBox {
+  width: 604rpx;
+  /* height: 34rpx; */
+  margin: 24rpx 0 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.moreWayText {
+  width: 456rpx;
+  height: 34rpx;
+  opacity: 0.53;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+  border: 1px red solid;
+}
+
+.moreText {
+  width: 520rpx;
+  height: 100rpx;
+  opacity: 0.53;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+}
+
+.textNum {
+  width: 70rpx;
+  height: 34rpx;
+  opacity: 0.53;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #323232;
+  line-height: 34rpx;
+}
+
+/* 上传框 */
+.upload {
+  width: 156rpx;
+  height: 156rpx;
+  opacity: 0.36;
+  border: 2rpx dashed #707070;
+  margin: 24rpx 0 24rpx 24rpx;
+  opacity: 0.53;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #323232;
+}
+
+.uploadPic {
+  width: 58rpx;
+  height: 58rpx;
+  margin: 18rpx 0 0 48rpx;
+}
+
+.uploadPic image {
+  width: 100%;
+  height: 100%;
+}
+
+.uploadText {
+  margin-top: 8rpx;
+  margin-right: 8rpx;
+}
+
+.uploadText1 {
+  margin-top: 8rpx;
+  margin-right: 8rpx;
+}
+
+.upload_img {
+  width: 156rpx;
+  height: 156rpx;
+  margin: 24rpx 0 24rpx 24rpx;
+}
+.btn_close{
+  z-index: 5;
+  position: absolute;
+  right:-20rpx;
+  top: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+/* 提交按钮 */
+.submit {
+  width: 702rpx !important;
+  height: 68rpx;
+  background: #1c6a4f;
+  border-radius: 34rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 40rpx;
+  margin: 32rpx 0 32rpx 24rpx;
+}
+.safeArea{
+  width:100%;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+/* 底部弹窗-货物状态 */
+.bottomState {
+  width: 750rpx;
+  height: 676rpx;
+  background: #ffffff;
+  border-radius: 20rpx 20rpx 0rpx 0rpx;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: content-box;
+}
+
+/* 弹窗关闭按钮 */
+.BottomClose {
+  width: 36rpx;
+  height: 36rpx;
+  background: #e9e9e9;
+  border-radius: 50%;
+  margin: 22rpx 0 0 692rpx;
+}
+
+.BottomClose image {
+  width: 100%;
+  height: 100%;
+}
+
+.bottomGoodsText {
+  width: 128rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #141414;
+  margin-left: 312rpx;
+}
+
+/* 未收到货 */
+.noGoods {
+  width: 690rpx;
+  height: 40rpx;
+  margin: 48rpx 0 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.noGoodsText {
+  width: 112rpx;
+  height: 40rpx;
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #323232;
+}
+
+.noGoodsPic {
+  width: 40rpx;
+  height: 40rpx;
+  cursor: pointer;
+}
+
+.noGoodsPic image {
+  width: 100%;
+  height: 100%;
+}
+
+.bottomLine {
+  width: 702rpx;
+  height: 2rpx;
+  opacity: 1;
+  background: #e2e2e2;
+  margin: 24rpx 0 0 25rpx;
+}
+
+/* 已收到货 */
+.receGoods {
+  width: 690rpx;
+  height: 40rpx;
+  margin: 24rpx 0 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.receGoodsText {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #323232;
+}
+
+.receGoodsPic {
+  width: 40rpx;
+  height: 40rpx;
+  cursor: pointer;
+}
+
+.receGoodsPic image {
+  width: 100%;
+  height: 100%;
+}
+
+.godsQuestionText {
+  width: 128rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #141414;
+  margin-left: 312rpx;
+}
+
+.question {
+  width: 690rpx;
+  height: 64rpx;
+  border-bottom: 2rpx solid #e2e2e2;
+  margin: 48rpx 0 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.questionPic {
+  width: 32rpx;
+  height: 32rpx;
+  cursor: pointer;
+}
+
+.questionPic image {
+  width: 100%;
+  height: 100%;
+}

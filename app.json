@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/category/category",
+    "pages/categoryGoods/categoryGoods",
+    "pages/myIndex/myIndex",
+    "pages/shoppingCart/shoppingCart",
+    "pages/goodsDetail/goodsDetail",
+    "pages/arrondi/arrondi",
+    "pages/promotion/promotion",
+    "pages/afterOrder/afterOrder",
+    "pages/afterOrderList/afterOrderList",
+    "pages/applyAfterOrder/applyAfterOrder",
+    "pages/cardDetail/cardDetail",
+    "pages/search/search",
+    "pages/orderList/orderList",
+    "pages/orderDetail/orderDetail",
+    "pages/orderSubmit/orderSubmit",
+    "pages/settlement/settlement",
+    "pages/myCard/myCard",
+    "pages/accountSetting/accountSetting",
+    "pages/myPhoneNo/myPhoneNo",
+    "pages/myPhoneNoEdit/myPhoneNoEdit",
+    "pages/editPassword/editPassword",
+    "pages/retrievePassword/retrievePassword",
+    "pages/peopleInfo/peopleInfo",
+    "pages/aboutUs/aboutUs",
+    "pages/feedback/feedback",
+    "pages/bindingCard/bindingCard",
+    "pages/cardVoucherConverSuccess/cardVoucherConverSuccess",
+    "pages/cardVoucherList/cardVoucherList",
+    "pages/cardVoucherDetail/cardVoucherDetail",
+    "pages/cardVoucherSubmit/cardVoucherSubmit",
+    "pages/myCardVoucher/myCardVoucher",
+    "pages/myCardVoucherUse/myCardVoucherUse",
+    "pages/myCardDetail/myCardDetail",
+    "pages/cardVoucherOfflineDetail/cardVoucherOfflineDetail",
+    "pages/register1/register1",
+    "pages/register2/register2",
+    "pages/register3/register3",
+    "pages/registerSuccess/registersuccess",
+    "pages/editPeopleName/editPeopleName",
+    "pages/chooseCity/chooseCity",
+    "pages/seckill/seckill",
+    "pages/arrondi2/arrondi2",
+    "pages/arrondi3/arrondi3",
+    "pages/brandGoods/brandGoods",
+    "pages/applyAfterType/applyAfterType",
+    "pages/afterOrderExpressSubmit/afterOrderExpressSubmit",
+    "pages/expressInfo/expressInfo",
+    "pages/paySuccess/paySuccess",
+    "pages/privacy/privacy",
+    "pages/agreement/agreement",
+    "pages/editPeopleSex/editPeopleSex",
+    "pages/webView/webView"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "长复锦礼",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#898989",
+    "selectedColor": "#1C6A4F",
+    "list": [{
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabbar/indexDefault.png",
+        "selectedIconPath": "images/tabbar/indexActive.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "images/tabbar/categoryDefault.png",
+        "selectedIconPath": "images/tabbar/categoryActive.png"
+      },
+      {
+        "pagePath": "pages/shoppingCart/shoppingCart",
+        "text": "购物车",
+        "iconPath": "images/tabbar/shoppingCarDefault.png",
+        "selectedIconPath": "images/tabbar/shoppingCarActive.png"
+      },
+      {
+        "pagePath": "pages/myIndex/myIndex",
+        "text": "我的",
+        "iconPath": "images/tabbar/myIndexDefault.png",
+        "selectedIconPath": "images/tabbar/myIndexActive.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

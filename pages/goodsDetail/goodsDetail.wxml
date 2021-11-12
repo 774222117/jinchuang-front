@@ -1,0 +1,191 @@
+<!--商品详情-->
+<import src="../../components/wxParse/wxParse.wxml" />
+<view class="mainBox">
+  <scroll-view scroll-with-animation scroll-y style="height: {{isIpx?scrollHeight-34:scrollHeight}}px">
+    <swiper style="width:100%;height: 750rpx" autoplay interval="5000" circular indicator-dots indicator-color=""
+      indicator-active-color="">
+      <!-- <swiper-item wx:for="{{goodsInfo.pictures}}" wx:if="{{index<4}}" bindtap="handlePreviewImg" data-url="{{item}}" wx:key="index">
+        <image style="width: 100%;height: 100%;" src="{{item}}" />
+      </swiper-item> -->
+      <swiper-item wx:if="{{goodsInfo.thumb}}" bindtap="handlePreviewImg" data-url="{{goodsInfo.thumb}}">
+        <image style="width: 100%;height: 100%;" src="{{goodsInfo.thumb}}" />
+      </swiper-item>
+    </swiper>
+    <view class="goodsInfo">
+      <view class="goodsInfo_price">
+        <view class="goodsInfo_priceLeft">
+          <text class="goodsInfo_text1">￥{{goodsInfo.beforeSpotPrice}}.<text
+              style="font-size:28rpx">{{goodsInfo.afterSpotPrice}}</text></text>
+          <text class="goodsInfo_text2" hidden="{{goodsInfo.marketPrice>=goodsInfo.productPrice}}" style=" text-decoration:line-through">￥{{goodsInfo.productPrice}}</text>
+
+        </view>
+        <text class="goodsInfo_text3">已售：<text style="font-family: DIN, DIN-Regular;">{{goodsInfo.salesReal+
+            goodsInfo.salesVirtual}}</text>件</text>
+      </view>
+      <view class="goodsInfo_tagBox" wx:if="{{!goodsInfo.self}}">
+        <view class="goodsInfo_tag">{{goodsInfo.origin}}</view>
+        <view class="goodsInfo_tag">{{goodsInfo.brand}}</view>
+      </view>
+      <view class="goodsInfo_title">{{goodsInfo.title}}</view>
+      <view class="goodsInfo_describe">{{goodsInfo.subtitle}}</view>
+    </view>
+    <view class="goodsDetails" bindtap="showDialog2" wx:if="{{discount!='暂无优惠券'}}">
+      <view class="goodsDetails_left">
+        <view class="goodsDetails_tag">优惠</view>{{discount}}
+      </view>
+      <image src='/images/goodsDetails/rightArrow.svg' class="goodsDetails_img"></image>
+    </view>
+    <view class="goodsDetails" bindtap="{{type==1?'':'showDialog'}}">
+      <view class="goodsDetails_left">
+        <view class="goodsDetails_tag">规格</view>{{specs}}
+      </view>
+      <image src='/images/goodsDetails/rightArrow.svg' class="goodsDetails_img"></image>
+    </view>
+    <view style="width: 704rpx;margin: 18rpx auto 0;border-radius: 20rpx;">
+      <image style="border-radius: 20rpx;width:100%;" src="https://jinchuang-source.wyouquan.cn/miniprogram/goodsDetailTop.png" mode="widthFix"></image>
+    </view>
+    <view class="goodsDetails_title">
+      <view class="goodsDetails_line"></view>商品详情<view class="goodsDetails_line"></view>
+    </view>
+    <!-- 商品详情 -->
+    <view class="details">
+      <!-- <view class="detailsTitle">{{goodsInfo.content}}{{goodsInfo.images}}</view> -->
+      <!-- <view class="detail-info">
+        <view class="info-item">
+          <view class="info-left">
+            <view class="item-title">长复福礼 诚挚为你</view>
+            <view class="item-tip">产地严选 全程溯源 便捷安全 服务专业</view>
+          </view>
+          <view  class="info-right">
+            <image style="width:80rpx;height:80rpx;" src="/images/badge.png"></image>
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="info-left">
+            <view class="item-title">100％正品</view>
+            <view class="item-tip">原产地国 质量监测 假一罚十</view>
+          </view>
+          <view  class="info-right">
+            <image style="width:80rpx;height:80rpx;" src="/images/thumbsUp.png"></image>
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="info-left">
+            <view class="item-title">云仓速配</view>
+            <view class="item-tip">发货更及时 配送更便捷</view>
+          </view>
+          <view  class="info-right">
+            <image style="width:80rpx;height:80rpx;" src="/images/cloud.png"></image>
+          </view>
+        </view>
+        <view class="info-item">
+          <view class="info-left">
+            <view class="item-title">售后无忧</view>
+            <view class="item-tip">专业服务团队，如果您收到商品有受损或质量有瑕疵等问题，请立即联系官方客服</view>
+          </view>
+          <view class="info-right">
+            <image style="width:80rpx;height:80rpx;" src="/images/afterOrder.png"></image>
+          </view>
+        </view>
+      </view> -->
+      <template is="wxParse" data="{{wxParseData:commodityDetails.nodes}}" />
+
+    </view>
+  </scroll-view>
+</view>
+<view class="footBox" catchtouchmove="true">
+  <view class="footTabBox">
+    <button class="footTab" open-type="contact" session-from="weapp">
+      <image class="footTab_img" src="/images/goodsDetails/service.png"></image>
+      <text class="footTab_text">客服</text>
+    </button>
+    <view class="footTab" bindtap="gotoCart">
+      <image class="footTab_img" src="/images/goodsDetails/shopCar.png"></image>
+      <text class="footTab_text">购物车</text>
+      <view class="goodsNum">{{totalBuyCount}}</view>
+    </view>
+  </view>
+  <view class="footBtnBox">
+    <view class="footBtn" style="background-color:#D6912D" bindtap="addToCart">加入购物车</view>
+    <view class="footBtn" style="background-color:#1C6A4F;border-radius:0 34rpx 34rpx 0;" bindtap="topay">立即购买
+    </view>
+  </view>
+</view>
+
+
+<view class="mask" hidden="{{!isShow&&!isShow2}}"></view>
+<!-- 规格抽屉框 -->
+<view class="dialog {{isShow?'dialogMainShow':''}}" catchtap="showDialog" catchtouchmove="true">
+  <view class="dialogMain" catchtap="nothing">
+    <image src="/images/goodsDetails/close.png" class="closeBtn" bindtap="showDialog"></image>
+    <!-- <scroll-view scroll-y style="height:{{isIpx?802-118-68:802-118}}rpx;" scroll-with-animation> -->
+      <view class="dialog_head">
+        <image src="{{goodsInfo.thumb}}" style="width: 120rpx;height:120rpx;"></image>
+        <view class="dialog_headDetails">
+          <text class="dialog_headText1">￥{{choosedSku.childs[active2].beforeSpotPrice}}.<text
+              style="font-size:28rpx">{{choosedSku.childs[active2].afterSpotPrice}}</text> </text>
+          <!-- <text class="dialog_headText2">￥{{choosedSku.childs[active2].stock}}</text> -->
+
+        </view>
+      </view>
+      <view class="dialog_body">
+        <text class="dialog_bodyText1" wx:if="{{goodsInfo.goodsSkuSpecs.length>1}}">保质期</text>
+        <view class="dialog_tagBox" wx:if="{{goodsInfo.goodsSkuSpecs.length>1}}">
+          <view class="dialog_tagList {{active1==index?'active':''}}" wx:for="{{goodsInfo.goodsSkuSpecs}}" wx:key="index"
+            wx:if="{{goodsInfo.goodsSkuSpecs.length>1}}" data-index="{{index}}" catchtap="chooseSkuSpecs">{{item.specDesc}}
+          </view>
+        </view>
+        <text class="dialog_bodyText1">规格</text>
+        <view class="dialog_tagBox">
+          <view class="dialog_tagList {{active2==index?'active':''}}" wx:for="{{choosedSku.childs}}" wx:key="index"
+            data-index="{{index}}" catchtap="chooseChildSku">{{item.specDesc}}</view>
+        </view>
+        <view class="dialog_bodyNum">
+          <text class="dialog_bodyText1" style="margin-bottom:0;">购买数量<text
+              class="dialog_bodyText2">(限购9999件）库存{{choosedSku.childs[active2].stock}}件</text></text>
+          <view class="numBtn">
+            <image src="/images/goodsDetails/reduce.png" data-isadd="0" bindtap="changeNum"></image>
+            {{num}}
+            <image src="/images/goodsDetails/add.png" data-isadd="1" bindtap="changeNum"></image>
+          </view>
+        </view>
+      </view>
+    <!-- </scroll-view> -->
+    <view class="bottomBtnBox">
+      <view class="btnBox" data-info="{{goodsInfo}}" bindtap="addCart"> 加入购物车</view>
+      <view class="btnBox" style="  background-color: #1c6a4f;border-radius:0 34rpx 34rpx 0" bindtap="topay"> 立即购买
+      </view>
+    </view>
+  </view>
+
+</view>
+<!-- 优惠券抽屉框 -->
+<view class="dialog2 {{isShow2?'dialogMainShow2':''}}" catchtap="showDialog2" catchtouchmove="true">
+  <view class="dialogMain2" catchtap="nothing">
+    <image src="/images/goodsDetails/close.png" class="closeBtn2" bindtap="showDialog2"></image>
+    <view class="dialog2_title">该商品可用优惠券</view>
+    <scroll-view scroll-y style="height:{{isIpx?790-124-64:790-124}}rpx;" scroll-with-animation>
+      <view class="discountList_box">
+        <view class="discountList">
+          <view class="dottedLine">
+            <view class="dotted" wx:for="{{14}}" wx:key="*this"></view>
+          </view>
+          <view class="discountList_left">
+            <text class="discountList_price"><text style="font-size:32rpx">￥</text>50</text>
+            <text class="discountList_threshold">满<text style="font-family: DIN, DIN-Medium;">69</text>元可用</text>
+          </view>
+          <view class="discountList_right">
+            <view class="discountList_rightTop">
+              <view class="discountList_rightTag">限品类券</view>
+              <text>仅可购买自营部分商品</text>
+            </view>
+            <view class="discountList_rightBottom">
+              <text>2021.01.01-2021.12.31</text>
+              <view class="discountList_btn">点击领取</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

@@ -1,0 +1,57 @@
+<view class="register-header" style="padding-top:{{customBar + 10}}px;">
+    <image class="register-bg" src="/images/register/background.png"></image>
+    <view class="toolbar"  bindtap="back" style="top:{{navTop}}px;height:{{capsuleHeight}}px">
+        <image class="toolbar-back" src="/images/login/back.png"></image>
+    </view>
+    <view class="title" style="top:{{navTop}}px;height:{{capsuleHeight}}px">注册</view>
+</view>
+<view class="step-item">
+    <view class="pic-guide">
+        <image class="pic-guide-img" src="/images/register/card_yellow.png"></image>
+        <image class="pic-guide-img-node" src="/images/register/step_gray.png"></image>
+        <image class="pic-guide-img" src="/images/register/secret_gray.png"></image>
+    </view>
+    <view class="text-guide">
+        <view style="display:flex;align-items:center;">
+            <view style="height:fit-content;">
+                <view class="scan-code-tip" style="color: #cf9137;">验证卡号和卡密</view>
+            </view>
+        </view>
+        <view style="display:flex;align-items:center;">
+            <view style="height:fit-content;">
+                <view class="scan-code-tip">设置支付密码</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="register-body">
+    <view class="item-label">卡号</view>
+    <!-- 请输入卡号框 -->
+    <view class="item-input-box">
+        <!-- 输入卡号 -->
+        <input type="text" class="item-input" placeholder="请输入卡号" value="{{cardNumber}}" bindinput="setCardNumberInput"/>
+        <view class="scan-img" bindtap='getScancode'>
+            <image style="width:100%;height:100%;" src="/images/register/scan.png"></image>
+        </view>
+    </view>
+    <view class="item-label">密码</view>
+    <!-- 请输入密码框 -->
+    <view class="item-input-box">
+        <!-- 输入密码 -->
+        <input type="text" class="item-input" placeholder="请输入密码" value="{{cardCheckCode}}" bindinput="setCardCheckCode"/>
+    </view>
+
+    <view class="operation">
+        <view class="operation-label" style="background: #d6912d;" bindtap='getScancode'><image style="height:33rpx;width:33rpx;margin-right:10rpx;" src="/images/register/scan-white.png"></image>扫码快速绑卡</view>
+        <view class="operation-label" bindtap="next">开始验证</view>
+    </view>
+
+    <view class="register-tip tip-margin">
+        温馨提示：
+    </view>
+
+    <view class="register-tip">
+        注册成功后，系统自动帮您完成新卡的绑定，你可以在 【我的——长复锦礼卡】中查询。
+    </view>
+
+</view>

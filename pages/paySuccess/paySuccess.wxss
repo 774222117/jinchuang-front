@@ -1,0 +1,302 @@
+/* pages/paySuccess/paySuccess.wxss */
+/* 支付成功上面的 */
+page{
+  background-color: #f5f5f5;
+}
+.paySuccessTop {
+  width: 100%;
+  height: 426rpx;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1c6a4f, #134837);
+}
+
+/* 图片 */
+/* .paySuccessTop .imgs{
+  width: 116rpx;
+  height: 116rpx;
+  margin: 56rpx auto 0;
+} 
+.paySuccessTop .imgs image {
+  width: 100%;
+  height: 100%;
+  display: block;
+}*/
+
+/* 支付成功文案 */
+.paySuccessTop .texts {
+  width: 100%;
+  height: 50rpx;
+  font-size: 36rpx;
+  font-family:  PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  margin: 138rpx 0 8rpx;
+}
+
+/* 实付金额 */
+.paySuccessTop .price {
+  width: 100%;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+}
+
+/* 按钮 */
+.paySuccessTop .btnBox {
+  width: 488rpx;
+  height: 64rpx;
+  margin: 74rpx auto 0 ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 返回首页 */
+.paySuccessTop .btnBox .goIndex {
+  width: 208rpx;
+  height: 64rpx;
+  border: 2rpx solid #e5d19b;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #e5d19b;
+}
+
+/* 查看订单 */
+.paySuccessTop .btnBox .goOrder {
+  width: 208rpx;
+  height: 64rpx;
+  border: 2rpx solid #e5d19b;
+  border-radius: 32rpx;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #e5d19b;
+}
+
+
+/* 更多超值精选标题 */
+.moreTitle {
+  width: 100%;
+  height: 114rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 更多标题的线 */
+.moreTitle .lines {
+  width: 56rpx;
+  height: 4rpx;
+  background-color: #1c6a4f;
+}
+
+/* 更多标题的文案 */
+.moreTitle .texts {
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #141414;
+  margin: 0 12rpx;
+}
+
+/* 更多的内容区域 */
+.moreContents {
+  width: 100%;
+  padding: 18rpx 24rpx 0;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+.moreContents .left {
+  float: left;
+}
+
+.moreContents .right {
+  float: right;
+}
+
+/* 单个商品元素 */
+.moreContents .commodityItem {
+  width: 342rpx;
+  background-color: #ffffff;
+  border-radius: 20rpx;
+  overflow: hidden;
+  padding-bottom: 20rpx;
+  margin-bottom: 18rpx;
+}
+
+.commodityItem .itemImgs {
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 6rpx;
+  margin-top: 22rpx;
+  position: relative;
+}
+
+.commodityItem .itemImgs .imgSty {
+  width: 292rpx;
+  height: 300rpx;
+  display: block;
+}
+
+/* 商品文字 */
+.commodityItem .itemTitle {
+  width: calc(100% - 40rpx);
+  font-size: 28rpx;
+  line-height: 34rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 500;
+  color: #323232;
+  margin: 0 auto;
+}
+
+/* 商品已售件数 */
+.itemSales {
+  height: 34rpx;
+  line-height: 34rpx;
+  margin: 0 20rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(50, 50, 50, .66);
+}
+
+/* 商品标签 */
+.itemTagBox {
+  width: calc(100% - 40rpx);
+  height: 32rpx;
+  margin: 12rpx auto 18rpx;
+  display: flex;
+}
+
+.itemTag {
+  height: 32rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 16rpx;
+  border: 2rpx solid #e2b472;
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #e1ab5d;
+  margin-right: 8rpx;
+}
+
+/* 价格折扣 */
+.commodityItem .priceDiscount {
+  /* width: 232rpx; */
+  width: max-content;
+  height: 44rpx;
+  margin: 14rpx 0 16rpx 20rpx;
+  background-color: #FEF0E7;
+  display: flex;
+}
+
+.commodityItem .leftPrice {
+  height: 44rpx;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+}
+
+.commodityItem .leftPrice .price1 {
+  height: 44rpx;
+  line-height: 44rpx;
+  margin-left: 2rpx;
+  position: relative;
+  z-index: 1;
+}
+
+/* 商品价格 人民币符号 */
+.commodityItem .leftPrice .price1 .text1 {
+  font-size: 30rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+
+/* 商品价格 价格 */
+.commodityItem .leftPrice .price1 .text2 {
+  font-size: 36rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+.commodityItem .leftPrice .price1 .text3 {
+  font-size: 28rpx;
+  font-family: DIN, DIN-Medium;
+  font-weight: 500;
+  color: #f35437;
+}
+
+.commodityItem .leftPrice .price2 {
+  height: 34rpx;
+  font-size: 28rpx;
+  line-height: 34rpx;
+  color: rgba(50, 50, 50, .18);
+  margin-left: 8rpx;
+  position: relative;
+  z-index: 1;
+  text-decoration: line-through;
+}
+
+/* 商品价格 与 添加商品  包裹层*/
+.commodityItem .itemPriceAdd {
+  width: calc(100% - 40rpx);
+  height: 52rpx;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 20rpx;
+}
+
+/* 商品价格 */
+.commodityItem .itemPriceAdd .price {
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: rgba(60, 60, 67, 0.65);
+  line-height: 40rpx;
+}
+
+/* 添加商品 */
+.commodityItem .itemPriceAdd .addItem {
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.imgSty {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.imgHelp {
+  width: 100%;
+  position: absolute;
+  bottom: 0rpx;
+}
+
+.addBtn,
+.cutBtn {
+  width: 52rpx;
+  height: 52rpx;
+  cursor: pointer;
+}
+
+.addBtn .addBtnImg,
+.cutBtn .cutBtnImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

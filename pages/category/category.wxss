@@ -1,0 +1,125 @@
+/* pages/categoryShop/categoryShop.wxss */
+.searchBox {
+  width: 715rpx;
+  height: 64rpx;
+  margin: 16rpx auto;
+  border-radius: 64rpx;
+  background-color: #f7f8fa;
+  display: flex;
+  align-items: center;
+  padding: 0 45rpx;
+  box-sizing: border-box;
+}
+
+.searchIpt {
+  margin-left: 13rpx;
+  flex: 1;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+
+.nav_left {
+  display: flex;
+  flex-direction: column;
+  width: 180rpx;
+
+}
+
+.nav_left_items {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #333333;
+  background-color: #f7f7f7;
+}
+
+.active {
+  color: #F37920;
+  background-color: #fff;
+  position: relative;
+}
+
+.active::before {
+  content: '';
+  width: 5rpx;
+  height: 30rpx;
+  background-color: #F37920;
+  position: absolute;
+  left: 0;
+  top: 35rpx;
+}
+
+.nav_right {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.nav_right_items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 32rpx;
+}
+
+.nav_right_items:first-child {
+  padding-top: 73rpx;
+}
+
+.nav_right_itemsTitle {
+
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #333333;
+  letter-spacing: -2rpx;
+  margin: 0 0 14rpx 16rpx;
+}
+
+.nav_right_itemsMain {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 11rpx;
+  box-sizing: border-box;
+}
+
+.nav_right_itemsMain:after {
+  content: "";
+  width: 33%;
+  height: 0px;
+  visibility: hidden;
+}
+
+.nav_right_itemsList {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 41rpx;
+}
+
+.nav_right_itemsImg {
+  width: 104rpx;
+  height: 104rpx;
+  margin-bottom: 18rpx;
+}
+
+.nav_right_itemsText {
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #333333;
+}

@@ -1,0 +1,74 @@
+/* pages/myCardVoucherUse/myCardVoucherUse.wxss */
+.box {
+  width: 100%;
+  background-color: #fff;
+  min-height: calc(100vh - 18rpx);
+  margin-top: 18rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.codeBox {
+  width: 702rpx;
+  height: 664rpx;
+  border-radius: 20rpx;
+  border: 12rpx solid #d6912d;
+  margin: 24rpx auto 0;
+}
+
+.codeBox_title {
+  width: 100%;
+  height: 98rpx;
+  box-shadow: 0 6rpx 12rpx 0 rgba(0, 0, 0, 0.04);
+  display: flex;
+  align-items: center;
+  padding-left: 32rpx;
+  font-size: 34rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #141414;
+  border-radius:12rpx ;
+}
+
+.codeBox_titleIcon {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+
+.codeTip {
+  width: 100%;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  color: #141414;
+  text-align: center;
+  margin: 34rpx 0;
+}
+
+.barcodeCanvas {
+  width: 530rpx;
+  height: 150rpx;
+  margin:0 auto;
+}
+
+.qrcodeCanvas {
+  width: 210rpx;
+  height: 210rpx;
+  margin:40rpx auto 0;
+
+}
+
+
+
+.tip {
+  width: 652rpx;
+  margin: 44rpx auto 0;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #141414;
+}

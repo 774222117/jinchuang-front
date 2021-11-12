@@ -1,0 +1,248 @@
+<!--首页-->
+<wxs module="getDate" src="../../utils/dateParse.wxs"></wxs>
+<!-- 头部 -->
+<view class="top"
+  style="height:{{(navHeight+54)*2}}rpx;background-image: url('https://jinchuang-source.wyouquan.cn/miniprogram/topbg.png');background-repeat: no-repeat;background-size: 100% 100%;">
+  <view class="index_gift" style="top:{{navTop}}px;width: 100%;">
+    <image mode="widthFix" src="/images/index/gift.png"></image>
+  </view>
+
+  <!-- 地址 -->
+  <view class="top-action-region">
+    <view class="address" bindtap="changeCity">
+      <view class="adddress_icon">
+        <image class="imgsty" src="/images/index/address.svg"></image>
+      </view>
+      <view class="address_name text-ellipsis">{{currentCity == ''?'南京':currentCity}}</view>
+      <view class="address_more">
+        <image class="imgsty" src="/images/index/more.png"></image>
+      </view>
+    </view>
+    <!-- 搜索 -->
+    <view class="search_box">
+      <view class="search_input"><input type="text" disabled catchtap="gotoSearch" placeholder="寻找称心商品"
+          placeholder-class="placeholderSty" /></view>
+      <view class="search_icon">
+        <image class="imgsty" src="/images/index/search.svg"></image>
+      </view>
+    </view>
+    <!-- 联系客服 -->
+    <button class="customerService" open-type="contact" session-from="weapp">
+      <image class="imgsty" src="/images/index/customerService.svg">
+      </image>
+    </button>
+  </view>
+</view>
+
+<!-- 轮播  -->
+<view style="margin-top:{{(navHeight+54)*2}}rpx;" >
+  <image mode="widthFix" class="index_bg" src="/images/index/index_bg.png"></image>
+  <view class="mainBox">
+    <!-- 轮播  -->
+    <view class="contents" wx:if="{{allDataObj.shuf.length>0}}">
+      <swiper style="height:100%;border-radius:20rpx;overflow:hidden;transform:translateY(0)" indicator-dots="{{true}}" indicator-color="rgba(255,255,255,0.65)"
+        indicator-active-color="rgba(255,255,255,1)" autoplay="{{true}}" interval="{{5000}}" duration="{{500}}">
+        <block wx:for="{{allDataObj.shuf}}" wx:key="index" wx:key='activity'>
+          <swiper-item data-item="{{item}}" catchtap="onjumpPage">
+            <view class="swiper-item" style="height:100%; font-size:30px">
+              <image class="imgSty" data-item="{{item}}" catchtap="onjumpPage" src="{{item.bannerImg}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
+
+<!-- 分类 -->
+<view class="categoryMain">
+  <!-- 分类title -->
+  <view class="category_title">
+    <view class="category_title_item"
+      wx:for="{{[{a:'icon_1',b:'全球尖货'},{a:'icon_2',b:'一站购齐'},{a:'icon_3',b:'正品严保'},{a:'icon_4',b:'售后无忧'}]}}" wx:key="a">
+      <view class="category_title_item_icon">
+        <image class="imgsty" src="/images/index/{{item.a}}.svg"></image>
+      </view>
+      <view class="category_title_item_text">{{item.b}}</view>
+    </view>
+  </view>
+  <!-- 商品 -->
+  <view class="category" wx:if="{{allDataObj.category.length>0}}">
+    <!-- 品类包裹一层 -->
+    <view class="categoryContent">
+      <swiper style="height:100%;" autoplay="{{false}}" bindchange="changeSwp">
+        <block wx:for="{{allDataObj.category.length/10}}" wx:key='category' wx:for-index="ind">
+          <swiper-item>
+            <view class="swiper-item">
+              <view class="categoryItme" wx:for="{{allDataObj.category}}" wx:key="index" data-item="{{item}}"
+                catchtap="onjumpPage" wx:if="{{ind*10 <= index && index < (ind+1)*10}}"
+                data-navigateid="{{item.navigateId}}">
+                <view class="categoryItmeImg">
+                  <image class="imgsty" src="{{item.bannerImg}}"></image>
+                </view>
+                <view class="categoryItmeTitle">{{item.bannerTitle}} </view>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class="lines {{categorySwpIndex==0?'lefts':'rights'}}"></view>
+  </view>
+</view>
+
+<!-- 本地生活 -->
+<view class="localLife" wx:if="{{allDataObj.cardVoucher.length>0}}">
+  <!-- 本地生活title -->
+  <view class="localLife_title">
+    <view>本地生活 · 大牌卡劵</view>
+    <view>随心兑换，轻松买单</view>
+    <view class="more_icon_parent" catchtap="toMoreCardVoucher">更多 <view class="more_icon">
+        <image class="imgsty" src="/images/index/more.svg"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 卡片 -->
+  <view class="cards" wx:for="{{allDataObj.cardVoucher}}" wx:key="cardVoucher">
+    <image class="imgsty" src="{{item.merchantCardInfoVO.cardIndexImgUrl}}"></image>
+    <view class="card_text1">{{item.merchantCardInfoVO.cardName}}</view>
+    <view class="card_text2">{{item.merchantCardInfoVO.salesReal+item.merchantCardInfoVO.salesVirtual}} · 已售</view>
+    <view class="card_exchange" data-selltype="{{item.merchantCardInfoVO.sellType}}"
+      data-id="{{item.merchantCardInfoVO.id}}" catchtap="toExchange">
+      <view class="card_text3">立即兑换</view>
+    </view>
+  </view>
+</view>
+
+<!-- 秒杀 -->
+<view class="seckill" wx:if="{{allDataObj.seckill.length>0}}">
+  <view class="seckill_title">
+    <view class="seckill_title_logo">
+      <image class="imgsty" src="/images/index/seckill_title_logo.png"></image>
+    </view>
+    <view class="seckill_title_times">
+      <view>{{hour}}</view>
+      <view>:</view>
+      <view>{{minute}}</view>
+      <view>:</view>
+      <view>{{second}}</view>
+    </view>
+    <view class="seckill_title_more more_icon_parent" data-item="{{allDataObj.seckill[0]}}" catchtap="toSeckill">更多
+      <view class="more_icon">
+        <image class="imgsty" src="/images/index/more.svg"></image>
+      </view>
+    </view>
+  </view>
+  <view class="seckill_box">
+    <scroll-view class="seckill_view scroll-view_H" scroll-x="true">
+      <!-- 秒杀商品单个元素 -->
+      <view class="seckill_item scroll-view-item_H" wx:for="{{allDataObj.seckill[0].goodsList}}" wx:key="index">
+        <view class="seckill_item_img" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+          <image class="imgsty" src="{{item.thumb}}"></image>
+          <!-- <view class="seckill_item_img_text">限5000瓶</view> -->
+        </view>
+        <view class="seckill_item_name textOver" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">{{item.title}}
+        </view>
+        <view class="seckill_item_price">
+          <view class="prices" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+            <text> ¥{{item.beforeSpotPrice}}</text><text>.{{item.afterSpotPrice}}</text>
+          </view>
+          <view class="add" catchtap="addcart" data-goodsinfo="{{item}}" wx:if="{{item.self==1}}">
+          <image style="width:100%;height:100%" src="/images/arrondi3/add.png"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 商品卡片 shopCard -->
+<view class="shopCard" wx:for="{{allDataObj.plate}}" wx:key="index" data-item="{{item}}" catchtap="onjumpPage">
+  <image class="imgsty1" mode="widthFix" src="{{item.bannerImg}}"></image>
+</view>
+<!-- 分类瀑布流 -->
+<view id="category" class="classify_title">
+  <scroll-view class="classify_view scroll-view_H" scroll-x="true">
+    <block wx:for="{{categories}}" wx:key="index">
+      <view class="title_item scroll-view-item_H {{curCategoryIndex==index?'active':''}}" bindtap="touchCategory"
+        data-id="{{item.id}}" data-index="{{index}}">
+        <view>{{item.title}}</view>
+        <view>{{item.description}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- <view class="holdSpace" wx:if="{{tabFixed}}"></view> -->
+<view class="fixedTab" style="top:{{(navHeight+54)*2}}rpx"  wx:if="{{tabFixed}}">
+  <scroll-view class="classify_view scroll-view_H" scroll-x="true">
+    <block wx:for="{{categories}}" wx:key="index">
+      <view class="title-item-fixed scroll-view-item_H" bindtap="touchCategory"
+        data-id="{{item.id}}" data-index="{{index}}">
+        <view class="title-fixed-name">{{item.title}}</view>
+        <view class="title-fixed-cur"><view style="border-radius: 2rpx;height:4rpx;width:30rpx;{{curCategoryIndex==index?'background-color:#ffffff':''}}"></view></view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 瀑布流商品 -->
+<view class="moreContents">
+  <view class="left">
+    <!-- 单个商品 -->
+    <view class="items {{item.itemType == 1?'pd00':''}}" wx:for="{{goodsList}}" wx:key='goods'
+      wx:if="{{(index+1) %2 == 1}}">
+      <block wx:if="{{item.itemType == 0}}">
+        <view class="items_imgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+          <image class="imgsty" src="{{item.thumb}}"></image>
+        </view>
+        <view class="items_text textOver2" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">{{item.title}}</view>
+        <view class="items_sold">已售{{item.salesReal+item.salesVirtual}}件</view>
+        <view class="labels" wx:if="{{item.self==0}}">
+          <view class="labels_item flex-shrink0"  wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+          <view class="labels_item text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+        </view>
+        <view class="items_price">
+          <view><text>¥{{item.beforeSpotPrice}}</text><text>.{{item.afterSpotPrice}}</text></view>
+          <view hidden="{{item.marketPrice>=item.productPrice}}">¥{{item.productPrice}}</view>
+          <view catchtap="addcart" data-goodsinfo="{{item}}" wx:if="{{item.self==1}}">
+            <image class="imgsty" src="/images/index/shoppingcart.svg"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{item.itemType == 1}}">
+        <view class="commodityAd">
+          <image src="{{item.imgUrl}}" mode="widthFix" class="advertImg" data-jump="{{item.jumpLink}}"
+            catchtap="commodityAdTouch"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="right">
+    <!-- 单个商品 -->
+    <view class="items {{item.itemType == 1?'pd00':''}}" wx:for="{{goodsList}}" wx:key='goods'
+      wx:if="{{(index+1) %2 == 0}}">
+      <block wx:if="{{item.itemType == 0}}">
+        <view class="items_imgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+          <image class="imgsty" src="{{item.thumb}}"></image>
+        </view>
+        <view class="items_text textOver2" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">{{item.title}}</view>
+        <view class="items_sold">已售{{item.salesReal+item.salesVirtual}}件</view>
+        <view class="labels" wx:if="{{item.self==0}}">
+          <view class="labels_item flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+          <view class="labels_item text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+        </view>
+        <view class="items_price">
+          <view><text>¥{{item.beforeSpotPrice}}</text><text>.{{item.afterSpotPrice}}</text></view>
+          <view hidden="{{item.marketPrice>=item.productPrice}}">¥{{item.productPrice}}</view>
+          <view catchtap="addcart" data-goodsinfo="{{item}}" wx:if="{{item.self==1}}">
+            <image class="imgsty" src="/images/index/shoppingcart.svg"></image>
+          </view>
+        </view>
+      </block>
+      <block wx:if="{{item.itemType == 1}}">
+        <view class="commodityAd">
+          <image src="{{item.imgUrl}}" mode="widthFix" class="advertImg" data-jump="{{item.jumpLink}}" catchtap="commodityAdTouch"></image>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

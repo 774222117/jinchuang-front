@@ -1,0 +1,84 @@
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+<block wx:if="{{stage}}">
+<view class="head-region">
+  <view class="head-price"><text class="deci">￥</text>{{payInfo.realPriceLeft}}.<text class="deci">{{payInfo.realPriceRight}}</text></view>
+  <view class="head-tip">{{ orderStatus ? '还有' + surplusMinutes + '分' + surplusSeconds + '秒自动取消' : surplusMsg  }}</view>
+</view>
+<view class="card-item" wx:for="{{payInfo.myCards}}" wx:key="id">
+  <view class="card-head">
+    <view class="card-title">锦礼卡支付</view>
+    <view class="card-worth">抵扣:￥<text style="font-family:DIN, DIN-Medium;font-weight: 550;">{{item.deductionPrice}}</text></view>
+  </view>
+  <view class="card-body">
+    <view class="card-info">
+      <image style="width:100%;height:100%" src="{{item.cardImgUrl}}">
+      </image>
+      <view class="card-info-region">
+        <view class="balance-title">可用余额（元）：</view>
+        <view class="balance">{{item.cardBalanceLeft}}.<text style="font-size:35rpx;">{{item.cardBalanceRight}}</text></view>
+        <view class="card-foot">
+          <view class="card-detail-title">卡号</view>
+          <view class="card-detail">
+            <view class="card-number">{{item.cardNumber}}</view>
+            <view class="card-age">有效期至：{{item.validEndTime}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="radio-area"><radio disabled checked="{{item.cardChoiceFlag}}"></radio></view>
+  </view>
+</view>
+<view class="bottom-bar">
+  <view class="bottom-left">
+    <view class="deduction"><text class="txt1">抵扣</text><text class="txt2">￥{{payInfo.balancePriceLeft}}.</text><text class="txt3">{{payInfo.balancePriceRight}}</text></view>
+    <view class="pay-amount"><text class="txt1">还需支付</text><text class="txt2">￥{{payInfo.priceLeft}}.</text><text  class="txt3">{{payInfo.priceRight}}</text></view>
+  </view>
+  <view class="confirmBtn" catchtap="deductionBtn">确认抵扣</view>
+</view>
+
+<view wx:if="{{showPayPwdInput}}">
+  <view class='bg_layer'></view>
+  <view class="input-region">
+    <view class='input-main'>
+      <view class="input-title">请输入锦礼卡支付密码</view>
+      <view class="input-amount"><text class="txt1">￥</text><text class="txt2">{{payInfo.balancePriceLeft}}</text><text class="txt3">.{{payInfo.balancePriceRight}}</text></view>
+      <paySix
+        bindvalueSix="valueSix" 
+        input_value="{{inputData.input_value}}"
+        value_length="{{inputData.value_length}}" 
+        isNext="{{inputData.isNext}}" 
+        get_focus="{{inputData.get_focus}}" 
+        focus_class="{{inputData.focus_class}}" 
+        value_num="{{inputData.value_num}}"
+        height="{{inputData.height}}" 
+        width="{{inputData.width}}" 
+        see="{{inputData.see}}" 
+        interval="{{inputData.interval}}">
+      </paySix>
+    </view>
+  </view>
+  
+</view>
+</block>
+
+<block wx:if="{{!stage}}">
+  <view class="head-region" style="height:302rpx;">
+  <view class="head-price"><text class="deci">￥</text>{{payInfo.realPriceLeft}}.<text class="deci">{{payInfo.realPriceRight}}</text></view>
+  <view class="head-tip">{{ orderStatus ? '还有' + surplusMinutes + '分' + surplusSeconds + '秒自动取消' : surplusMsg  }}</view>
+  <view class="third-pay">三方支付</view>
+    <view class="wxpay-region">
+      <view class="">微信支付</view>
+      <radio></radio>
+    </view>
+  </view>
+  <view class="bottom-bar">
+    <view>
+      <view class="uptip"><text class="txt1">还需支付</text><text class="txt2">￥{{priceUtil.getBefore(payInfo.price)}}.</text><text class="txt3">{{priceUtil.getAfter(payInfo.price)}}</text></view>
+      <view class="bottom-left">
+        <view class="deduction"><text class="txt1">合计：</text><text class="txt2">￥{{payInfo.realPriceLeft}}.</text><text class="txt3">{{payInfo.realPriceRight}}</text></view>
+        <view class="pay-amount"><text class="txt1">已抵扣</text><text class="txt2">￥{{priceUtil.getBefore(payInfo.balancePrice)}}.</text><text  class="txt3">{{priceUtil.getAfter(payInfo.balancePrice)}}</text></view>
+      </view>
+    </view>
+    <view class="confirmBtn" bindtap="toPayWx">确认支付</view>
+  </view>
+</block>

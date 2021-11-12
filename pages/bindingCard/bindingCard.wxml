@@ -1,0 +1,36 @@
+<!--福礼卡绑卡-->
+<!-- 卡号 -->
+<view class="account">卡号</view>
+<view class="accountBox">
+  <!-- 输入卡号 -->
+  <input type="number" class="accountNum" placeholder="请输入卡号" placeholder-class="placeholder-class" value="{{cardNumber}}" bindinput="setCardNumberInput"/>
+  <!-- 扫一扫 -->
+  <view class="scanPic">
+    <image src="/images/register/scan.png" bindtap="getScancode" mode="widthFix"></image>
+  </view>
+</view>
+<!-- 密码 -->
+<view class="password">密码</view>
+<view class="passwordBox">
+  <!-- 输入密码 -->
+  <input  class="passwordNum" placeholder="请输入密码" placeholder-class="placeholder-class" value="{{cardCheckCode}}" bindinput="setCardCheckCode"/>
+</view>
+
+<view class="bindCardTitle">绑卡章程：</view>
+<!-- 绑卡说明 -->
+<view class="bindCardText">绑卡成功后若您将卡内余额使用完毕，建议您继续保存卡片 一周以上，如有交易发生退款，退款将返还原卡。</view>
+
+<!-- 同意绑卡 -->
+<view class="agreeBind">
+  <view class="agreePic" bindtap="agreeClick">
+    <image wx:if="{{bindCardFlag}}" src="/images/bindingCard/tick.png" mode="widthFix"></image>
+    <image wx:else src="/images/bindingCard/untick.png" mode="widthFix"></image>
+  </view>
+  <view class="agreeText" bindtap="agreeClick">同意绑卡章程</view>
+</view>
+
+<view class="operation">
+  <view class="operation-label" style="background: #d6912d;" bindtap='getScancode'><image style="height:33rpx;width:33rpx;margin-right:10rpx;" src="/images/register/scan-white.png"></image>扫码快速绑卡</view>
+  <!-- 确认绑卡 -->
+  <view class="confirmBind" bindtap="bindCard">确认绑卡</view>
+</view>

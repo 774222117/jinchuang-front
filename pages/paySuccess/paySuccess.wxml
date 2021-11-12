@@ -1,0 +1,107 @@
+<!-- 支付成功 上面的 -->
+<view class="paySuccessTop">
+  <!-- 图片 -->
+  <!-- <view class="imgs"><image src="/image/paySuccess/paySuccess.svg"></image></view> -->
+  <!-- 支付成功文案 -->
+  <view class="texts">支付成功</view>
+  <!-- 实付金额 -->
+  <view class="price">实付￥{{payAmount}}</view>
+  <!-- 按钮 -->
+  <view class="btnBox">
+    <!-- 返回首页 -->
+    <view class="goIndex" catchtap="goIndex">返回首页</view>
+    <view class="goOrder" catchtap="goOrder">查看订单</view>
+  </view>
+</view>
+
+<!-- 更多标题 -->
+<view class="moreTitle">
+  <view class="lines"></view>
+  <view class="texts">更多超值精选</view>
+  <view class="lines"></view>
+</view>
+
+<!-- 更多内容区域 -->
+<view class="moreContents">
+  <view class="left">
+    <!-- 单个商品元素 -->
+    <view class="commodityItem" wx:for="{{goodsList}}" wx:key='goods' wx:if="{{(index+1) %2 == 1}}">
+      <!-- 商品图片 -->
+      <view class="itemImgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        <image class="imgSty" src="{{item.thumb}}"></image>
+        <image wx:if="{{item.helpPoor}}" mode="widthFix" class="imgHelp" src="/image/index/helppoor.svg"></image>
+      </view>
+      <!-- 商品文字 -->
+      <view class="itemTitle" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        {{item.title}}
+      </view>
+      <!-- 商品已售件数 -->
+      <view class="itemSales">已售{{item.salesReal+item.salesVirtual}}件</view>
+      <!-- 商品标签 -->
+      <view class="itemTagBox" wx:if="{{item.origin!=''||item.brand!=''}}">
+        <view class="itemTag flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+        <view class="itemTag text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+      </view>
+      <!-- 商品价格 与 添加商品 -->
+      <view class="itemPriceAdd">
+        <view class="leftPrice">
+          <view class="price1">
+            <text class="text1">￥</text><text class="text2">{{item.beforeSpotPrice}}</text><text
+              class="text3">.{{item.afterSpotPrice}}</text>
+          </view>
+          <view class="price2" wx:if="{{item.marketPrice<item.productPrice}}">￥{{item.productPrice}}</view>
+        </view>
+        <!-- 添加减少 -->
+        <view class="btnBoxs {{ item.buyCount < 1 || item.buyCount == undefined ? 'rightEnd':'' }}">
+          <view class="goodsNums" wx:if="{{item.buyCount > 0  && item.buyCount != undefined}}">
+            {{item.buyCount}}
+          </view>
+          <view class="addBtn" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+            <image class="addBtnImg" src="/images/goodsDetails/shopCar.png"></image>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="right">
+    <!-- 单个商品元素 -->
+    <view class="commodityItem" wx:for="{{goodsList}}" wx:key='goods' wx:if="{{(index+1) %2 == 0}}">
+
+      <!-- 商品图片 -->
+      <view class="itemImgs" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        <image class="imgSty" src="{{item.thumb}}"></image>
+        <image wx:if="{{item.helpPoor}}" mode="widthFix" class="imgHelp" src="/image/index/helppoor.svg"></image>
+      </view>
+      <!-- 商品文字 -->
+      <view class="itemTitle" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+        {{item.title}}
+      </view>
+      <!-- 商品已售件数 -->
+      <view class="itemSales">已售{{item.salesReal+item.salesVirtual}}件</view>
+      <!-- 商品标签 -->
+      <view class="itemTagBox" wx:if="{{item.origin!=''||item.brand!=''}}">
+        <view class="itemTag flex-shrink0" wx:if="{{item.origin!=''}}">{{item.origin}}</view>
+        <view class="itemTag text-ellipsis" wx:if="{{item.brand!=''}}">{{item.brand}}</view>
+      </view>
+      <!-- 商品价格 与 添加商品 -->
+      <view class="itemPriceAdd">
+        <view class="leftPrice">
+          <view class="price1"> <text class="text1">￥</text><text class="text2">{{item.beforeSpotPrice}}</text><text
+              class="text3">.{{item.afterSpotPrice}}</text>
+          </view>
+          <view class="price2" wx:if="{{item.marketPrice<item.productPrice}}"> ￥{{item.productPrice}}</view>
+        </view>
+        <!-- 添加减少 -->
+        <view class="btnBoxs {{ item.buyCount  < 1 || item.buyCount == undefined  ? 'rightEnd':'' }}">
+          <view class="goodsNums" wx:if="{{item.buyCount > 0 && item.buyCount != undefined}}">
+            {{item.buyCount}}
+          </view>
+          <view class="addBtn" data-goodsinfo="{{item}}" catchtap="goGoodsDetail">
+            <image class="addBtnImg" src="/images/goodsDetails/shopCar.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

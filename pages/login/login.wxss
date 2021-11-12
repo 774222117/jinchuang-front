@@ -1,0 +1,312 @@
+/* pages/myIndex/myIndex.wxss */
+page {
+	background: #f5f5f5;
+	height: 100%;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+}
+
+/* 头部 */
+.login-header {
+	width: 100%;
+	min-height: 198rpx;
+	/* background-color: #13513c;
+    border-radius: 0 0 60rpx 60rpx; */
+	position: relative;
+	padding-top: 120rpx;
+	display: flex;
+	justify-content: center;
+}
+
+.login-bg {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+.toolbar {
+	width:70rpx;
+	height: 64rpx;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 40rpx;
+	left:0;
+	/* padding: 0 25rpx; */
+	z-index: 10;
+}
+
+.toolbar-back {
+	width: 20rpx;
+	height: 34rpx;
+}
+
+.title {
+	height: 64rpx;
+	line-height: 64rpx;
+	color: #fff;
+	font-size: 36rpx;
+	text-align: center;
+	width:100%;
+	position: absolute;
+	/* left: calc(50% - 50rpx); */
+	top: 40rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login-desc {
+	padding: 96rpx 0 0 0;
+	width: 750rpx;
+	height: 162rpx;
+	line-height: 66rpx;
+	font-size: 48rpx;
+	color: #fff;
+	text-indent: 30rpx;
+	font-family: PingFang SC, PingFang SC-Bold;
+	font-weight: 700;
+}
+
+.login-tip {
+	width: 750rpx;
+	height: 36rpx;
+	line-height: 36rpx;
+	font-size: 26rpx;
+	color: #CCCCCC;
+	text-indent: 30rpx;
+	font-family: PingFang SC, PingFang SC-Medium;
+	font-weight: 500;
+	color: #cccccc;
+	margin: 16rpx 0 44rpx;
+}
+
+.login-body {
+	width: 750rpx;
+	flex: 1;
+	background: #fff;
+	border-top-left-radius: 70rpx;
+	border-top-right-radius: 70rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.tel-label {
+	padding: 86rpx 0 0 0;
+	width: 750rpx;
+	height: 128rpx;
+	line-height: 42rpx;
+	color: #141414;
+	font-size: 30rpx;
+	font-weight: 700;
+	text-indent: 74rpx;
+	font-family: PingFang SC, PingFang SC-Bold;
+}
+
+/* 输入手机号 */
+.phone {
+	width: 602rpx;
+	height: 60rpx;
+	border-bottom: 2rpx solid #b1b1b1;
+	margin: 4rpx 0 0 74rpx;
+	display: flex;
+	align-items: center;
+
+	font-size: 28rpx;
+	font-family: DIN, DIN-Medium;
+	font-weight: 500;
+	color: #141414;
+}
+
+/* 区号 */
+.areaCode {
+	/* width: 52rpx; */
+	/* line-height: 44rpx; */
+	/* margin-bottom: 12rpx; */
+
+}
+
+.interval-line {
+	width: 2rpx;
+	height: 24rpx;
+	background-color: #b1b1b1;
+	margin: 0 14rpx;
+}
+
+/* 输入手机号 */
+.mobilephone {
+	width: 368rpx;
+	/* line-height: 44rpx; */
+	/* margin: 0 0 14rpx 10rpx; */
+
+}
+.plh-class{
+	font-weight: 400;
+	color: rgba(20,20,20,0.3);
+}
+
+.code-label {
+	padding: 56rpx 0 0 0;
+	/* width: 750rpx; */
+	height: 98rpx;
+	line-height: 42rpx;
+	color: #141414;
+	font-size: 30rpx;
+	font-weight: 700;
+	text-indent: 74rpx;
+	font-family: PingFang SC, PingFang SC-Bold;
+}
+
+/* 输入验证码框 */
+.code {
+	width: 602rpx;
+	height: 54rpx;
+	border-bottom: 2rpx solid #b1b1b1;
+	margin: 10rpx 0 86rpx 74rpx;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* 输入验证码 */
+.mobilecode {
+	width: 300rpx;
+	/* line-height: 44rpx; */
+	/* margin-top: 30rpx; */
+	font-size: 28rpx;
+	font-family: DIN, DIN-Medium;
+	font-weight: 500;
+	color: #141414;
+}
+
+/* 获取验证码 */
+.getCode {
+	/* width: 250rpx; */
+	/* line-height: 44rpx; */
+	font-size: 26rpx;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	color: #D6912D;
+	cursor: pointer;
+}
+
+.bind-btn {
+	margin: 0 auto 32rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 602rpx;
+	height: 68rpx;
+	background: #1C6A4F;
+	border-radius: 34rpx;
+	font-size: 28rpx;
+	font-family: PingFang SC, PingFang SC-Regular;
+	font-weight: 400;
+	color: #ffffff;
+}
+
+.login-label {
+	flex: 1;
+	text-align: center;
+	font-size: 28rpx;
+	font-weight: 400 !important;
+	color: #fff;
+}
+
+.btn-label {
+	height: 100% !important;
+	line-height: 68rpx !important;
+	flex: 1;
+	text-align: center;
+	font-size: 28rpx !important;
+	font-weight: 400 !important;
+	border-radius: 34rpx !important;
+	color: #fff !important;
+	border: none !important;
+	padding: 0 !important;
+}
+
+.contractBox {
+	padding-top: 14rpx;
+	margin: 0 auto;
+	height: 32rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 22rpx;
+	font-family: PingFang SC, PingFang SC-Bold;
+	font-weight: 700;
+	color: #323232;
+}
+.checkImg{
+	width:32rpx;
+	height: 32rpx;
+	margin-right: 22rpx;
+}
+.contract_link {
+	color: #D6912D;
+}
+
+
+.wx-btn {
+	width: 100%;
+	padding-bottom: calc(env(safe-area-inset-bottom) + 26rpx);
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+}
+
+.wx_titleBox {
+	width: 100%;
+	height: 42rpx;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30rpx;
+	font-family: PingFang SC, PingFang SC-Bold;
+	font-weight: 700;
+	color: #323232;
+	margin-bottom: 28rpx;
+}
+
+.wx_titleLine {
+	width: 156rpx;
+	height: 2rpx;
+	opacity: 0.26;
+	background: #707070;
+	margin: 0 20rpx;
+}
+
+.wx_btnBox {
+	width: 92rpx !important;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 24rpx !important;
+	font-family: PingFang SC, PingFang SC-Regular !important;
+	font-weight: 400 !important;
+	color: #cecece !important;
+	padding: 0 !important;
+	border: none !important;
+}
+
+.wx_imgBox {
+	width: 92rpx;
+	height: 92rpx;
+	background: #dfdfdf;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 16rpx;
+}
+
+.wx_img {
+	width: 66rpx;
+	height: 66rpx;
+}

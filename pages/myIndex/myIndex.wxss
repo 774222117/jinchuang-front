@@ -1,0 +1,547 @@
+/* pages/myIndex/myIndex.wxss */
+page {
+  background: #f5f5f5;
+  height: 100%;
+}
+.personalCenter {
+  width: 750rpx;
+  height: 304rpx;
+  background: linear-gradient(181deg,#1c6a4f 0%, #1c6a4f 1%, #1a6048 29%, #174735 82%, #131e17 100%, #131c16 100%);
+}
+.personalCenter image {
+  width: 100%;
+  height: 100%;
+}
+.personIntroduce {
+  width: 702rpx;
+  height: 108rpx;
+  margin: 6rpx 0 0 24rpx;
+  display: flex;
+  align-items: center;
+}
+/* 头像 */
+.personPic {
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+  position: absolute;
+  top: 160rpx;
+  left: 24rpx;
+}
+.personPic image{
+  width: 108rpx;
+  height: 108rpx;
+  border-radius: 50%;
+}
+/* 名称 */
+.personName {
+  /* width: 160rpx; */
+  height: 56rpx;
+  font-size: 40rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+  left: 156rpx;
+  top: 188rpx;
+  position: absolute;
+}
+/* 设置 */
+.setting {
+  width: 68rpx;
+  height: 68rpx;
+  cursor: pointer;
+  top: 182rpx;
+  right: 14rpx;
+  position: absolute;
+}
+.setting image {
+  width: 100%;
+  height: 100%;
+}
+/* 我的卡券 */
+.myCard {
+  width: 706rpx;
+  height: 52rpx;
+  position: absolute;
+  top: 286rpx;
+  left: 44rpx;
+  display: flex;
+}
+.cardText {
+  width: 128rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: left;
+  color: #ffffff;
+}
+/* 绑卡 */
+.bindCard {
+  width: 106rpx;
+  height: 52rpx;
+  margin-left: 472rpx;
+  position: relative;
+}
+.bindCardText {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  position: absolute;
+  top: 4rpx;
+  left: 24rpx;
+  cursor: pointer;
+}
+.bindCard image {
+  width: 100%;
+  height: 100%;
+}
+/* 礼卡和优惠券 */
+.discountedBox {
+  width: 702rpx;
+  height: 104rpx;
+  overflow: hidden;
+  position: absolute;
+  /* top: 354rpx; */
+  left: 24rpx;
+  bottom:2rpx;
+}
+.discountedBox image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.discounted {
+  width: 580rpx;
+  height: 54rpx;
+  display: flex;
+  top: 28rpx;
+  left: 80rpx;
+  position: absolute;
+}
+.leftCard {
+  width: 196rpx;
+  height: 54rpx;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+.card {
+  width: 54rpx;
+  height: 54rpx;
+}
+.card image {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 6rpx;
+}
+.cardText {
+  width: 180rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  margin-left: 2rpx;
+}
+.rightCard {
+  width: 196rpx;
+  height: 54rpx;
+  right: 0;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  position: absolute;
+}
+
+/* 我的订单 */
+.myOrder {
+  width: 702rpx;
+  height: 220rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 194rpx 0 0 24rpx;
+  overflow: hidden;
+}
+.myOrderTitle{
+  width: 674rpx;
+  height: 44rpx;
+  margin: 20rpx 0 0 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.myOrderText {
+  min-width: 128rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Bold;
+  font-weight: 700;
+  text-align: center;
+  color: #141414;
+}
+.watchOrder {
+  min-width: 110rpx;
+  height: 34rpx;
+  display: flex;
+  align-items: center;
+}
+/* 查看更多卡券 */
+.watchOrderText {
+  opacity: 0.5;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  cursor: pointer;
+}
+/* 去兑换 */
+.exchange {
+  opacity: 0.5;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  cursor: pointer;
+}
+.morePic {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 7rpx;
+  /* margin-bottom: 28rpx; */
+  cursor: pointer;
+  display: flex;
+}
+.morePic image {
+  width: 100%;
+  height: 100%;
+}
+/* 订单状态 */
+.stateBox {
+  width: 640rpx;
+  height: 98rpx;
+  margin: 28rpx 0 0 31rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.statePic {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 6rpx;
+}
+.statePic image {
+  width: 100%;
+  height: 100%;
+}
+.statePoint {
+  width: 28rpx;
+  height: 28rpx;
+  background: #f35437;
+  border-radius: 50%;
+  position: absolute;
+  top: -6rpx;
+  right: -6rpx;
+  font-size: 18rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+}
+/* 待付款 */
+.pendingPayment {
+  width: 72rpx;
+  height: 98rpx;
+  position: relative;
+}
+.pendingPaymentText {
+  width: 72rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-top: 4rpx;
+}
+/* 代发货 */
+.shipped {
+  width: 72rpx;
+  height: 98rpx;
+  position: relative;
+}
+.shippedText {
+  width: 72rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-top: 4rpx;
+}
+/* 待收货 */
+.received {
+  width: 72rpx;
+  height: 98rpx;
+  position: relative;
+}
+.receivedText {
+  width: 72rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-top: 4rpx;
+}
+/* 已收货 */
+.receGoods {
+  width: 72rpx;
+  height: 98rpx;
+  position: relative;
+}
+.receGoodsText {
+  width: 72rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-top: 4rpx;
+}
+/* 售后服务 */
+.afterSale {
+  width: 72rpx;
+  height: 98rpx;
+  position: relative;
+}
+.afterSaleText {
+  width: 96rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-left: -10rpx;
+  margin-top: 4rpx;
+}
+
+
+/* 我的卡券 */
+.myDiscountedCard {
+  width: 702rpx;
+  /* height: 542rpx; */
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx 0 0 24rpx;
+  overflow: hidden;
+  padding-bottom: 24rpx;
+}
+/* 卡券 */
+.cardItem {
+  width: 654rpx;
+  height: 132rpx;
+  /* opacity: 0.72; */
+  /* background: linear-gradient(138deg,#11856f 1%, #075e57 100%); */
+  border-radius: 10rpx;
+  margin: 20rpx 0 0 24rpx;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.cardItem image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+/* 头像 */
+.cardPic {
+  width: 92rpx;
+  height: 92rpx;
+  opacity: 1;
+  background: red;
+  border-radius: 50%;
+  margin-left: 18rpx;
+}
+/* 有效期 */
+.cardTime {
+  width: 214rpx;
+  height: 74rpx;
+  left: 131rpx;
+  position: absolute;
+}
+.bookName {
+  width: 250rpx;
+  height: 44rpx;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+.time {
+  width: 214rpx;
+  height: 28rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+/* 剩余价格 */
+.cardMoney {
+  width: 96rpx;
+  height: 78rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  right: 10rpx;
+  position: absolute;
+}
+.cardMoneyText {
+  width: 48rpx;
+  height: 34rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+.price {
+  width: 56rpx;
+  height: 44rpx;
+  opacity: 1;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  display: flex;
+}
+.pricePoint {
+  width: 40rpx;
+  height: 44rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  line-height: 38rpx;
+}
+
+
+
+
+
+
+/* 更多设置 */
+.moreSetting {
+  width: 702rpx;
+  height: 388rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx auto;
+  overflow: hidden;
+}
+/* 收货地址 */
+.receAddressBox {
+  width: 655rpx;
+  height: 71rpx;
+  border-bottom: 2rpx solid rgba(112,112,112,0.1);
+  margin: 22rpx 0 0 22rpx;
+  display: flex;
+}
+.recePic {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+}
+.recePic image {
+  width: 100%;
+  height: 100%;
+}
+.receText {
+  width: 112rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  margin-left: 18rpx;
+  margin-top: 5rpx;
+}
+.moreBtn {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 438rpx;
+  margin-top: 10rpx;
+  cursor: pointer;
+}
+.moreBtn image {
+  width: 100%;
+  height: 100%;
+}
+/* 意见反馈 */
+.feedBack {
+  width: 655rpx;
+  height: 71rpx;
+  border-bottom: 2rpx solid rgba(112,112,112,0.1);
+  margin: 22rpx 0 0 22rpx;
+  display: flex;
+}
+/* 在线客服 */
+.customer {
+  width: 655rpx!important;
+  height: 71rpx;
+  border-bottom: 2rpx solid rgba(112,112,112,0.1);
+  margin: 22rpx 0 0 22rpx!important;
+  display: flex;
+  padding: 0;
+  background-color: transparent;
+}
+/* 关于我们 */
+.aboutUs {
+  width: 655rpx;
+  height: 71rpx;
+  margin: 22rpx 0 0 22rpx;
+  display: flex;
+}
+
+/* 没有卡券 */
+.noCardItem {
+  width: 252rpx;
+  height: 300rpx;
+  margin: 34rpx 0 0 224rpx;
+}
+.noCardPic {
+  width: 252rpx;
+  height: 252rpx;
+}
+.noCardPic image {
+  width: 100%;
+  height: 100%;
+}
+.noCardText {
+  width: 252rpx;
+  height: 44rpx;
+  opacity: 0.36;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #141414;
+}

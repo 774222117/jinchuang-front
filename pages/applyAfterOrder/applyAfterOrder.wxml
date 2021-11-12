@@ -1,0 +1,149 @@
+<!--pages/applyAfterOrder/applyAfterOrder.wxml-->
+<!-- 退款商品展示 -->
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+
+<view class="refundedGood">
+  <!-- 退款状态 -->
+  <view class="refundedState">
+    <view class="refundedStateText">退款商品</view>
+  </view>
+  <!-- 商品详情 -->
+  <view class="goodDetail" wx:for="{{goodsItems}}" wx:key="index">
+    <!-- 商品图片 -->
+    <image class="leftPic" src="{{item.goodsThumb}}"></image>
+    <!-- 右侧商品详情 -->
+    <view class="rightGoods">
+      <!-- 商品名称和数量 -->
+      <view class="goodsNameNum">
+        <view class="goodsName">{{item.title}}</view>
+      </view>
+      <!-- 重量 -->
+      <!-- <view class="goodsWeight">假数据</view> -->
+      <!-- 价格和后续操作 -->
+      <view class="goodsPriceControl">
+        <view class="priceBox">
+          <!-- 现价 -->
+          <view class="nowPrice">¥{{priceUtil.getBefore(item.price)}}.
+            <view class="pricePoint">{{priceUtil.getAfter(item.price)}}</view>
+          </view>
+          <!-- 原价 -->
+          <view class="oldPrice">¥{{item.discountPrice}}</view>
+        </view>
+        <!-- 商品数量 -->
+        <view class="goodsNum">×{{item.quantity}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 退货信息 -->
+<view class="refundedInfo">
+  <view class="refundedText">退款信息</view>
+  <!-- 退款状态 -->
+  <view class="goodsState">
+    <view class="goodsStateText">货物状态</view>
+    <view class="choice" bindtap="showModal" data-target="bottomModal" data-bottom="{{1}}">
+      <view class="choiceText" style="{{orderStatus==null?'':'opacity: 1'}}">
+        {{orderStatus==0?'未收到货':orderStatus==1?'已收到货':'请选择'}}</view>
+      <view class="choicePic">
+        <image src="/assets/images/myInex/more.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 退款原因 -->
+  <view class="goodsQuestion">
+    <view class="goodsQuestionText">退款原因</view>
+    <view class="choice" bindtap="showModal" data-target="bottomModal" data-bottom="{{2}}">
+      <view class="choiceText" style="{{resonId==null?'':'opacity: 1'}}">
+        {{resonId!=null?resonList[questionIndex].reason:'请选择'}}</view>
+      <view class="choicePic">
+        <image src="/assets/images/applyAfterOrder/more.png" mode="widthFix"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 退款金额 -->
+  <view class="refundedPrice">
+    <view class="refundedPriceText">退款金额</view>
+    <view class="refunPrice">¥{{priceUtil.getBefore(totalPrice)}}.
+      <view class="pricePoint">{{priceUtil.getAfter(totalPrice)}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 补充描述和凭证 -->
+<view class="moreDescription">
+  <view class="moreDesText">补充描述和凭证</view>
+  <!-- 上传凭证 -->
+  <view class="moreWay">
+    <view class="textBox">
+      <textarea class="moreText" cols="30" rows="10" maxlength="200" placeholder="补充描述，有助于商家更好的处理售后问题"
+        bindinput="getValue" value="{{describe}}"></textarea>
+      <!-- 输入字数 -->
+      <view class="textNum">{{describe.length}}/200</view>
+    </view>
+    <!-- 上传框 -->
+    <view style="display:flex;flex-wrap:wrap">
+      <view style="position:relative" wx:for="{{questionPicList}}">
+        <image hidden="{{questionPicList.length==0}}" src="{{item}}" mode="widthFix"
+          class="upload_img" wx:key="index" />
+          <image src="/images/applyAfterOrder/close.png" class="btn_close" data-index="{{index}}" bindtap="deleteImg"></image>
+      </view>
+      <view class="upload" hidden="{{questionPicList.length>5}}" bindtap="uploadPhoto">
+        <view class="uploadPic">
+          <image src="/assets/images/applyAfterOrder/upload.png" mode="widthFix"></image>
+        </view>
+        <view class="uploadText">上传凭证</view>
+        <view class="uploadText1">(最多6张)</view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 提交按钮 -->
+<button class="submit" bindtap="submit">提交</button>
+<view class="safeArea"></view>
+<!-- 底部窗口 -->
+<view class="cu-modal bottom-modal {{modalName=='bottomModal'?'show':''}}">
+  <view class="bottomState">
+    <view class="BottomClose" bindtap="hideModal">
+      <image src="/assets/images/applyAfterOrder/bottomClose.png" mode="widthFix"></image>
+    </view>
+    <!-- 底部窗口-货物状态 -->
+    <view class="goodsStateBox" wx:if="{{bottomIndex == 1 ? true : false}}">
+      <view class="bottomGoodsText">货物状态</view>
+      <!-- 未收到货 -->
+      <view class="noGoods" bindtap="receClick" data-flag="0">
+        <view class="noGoodsText">未收到货</view>
+        <view class="noGoodsPic">
+          <image wx:if="{{!isShow}}" src="/assets/images/applyAfterOrder/unchange.png" mode="widthFix"></image>
+          <image wx:else src="/assets/images/applyAfterOrder/ischange.png" mode="widthFix"></image>
+        </view>
+      </view>
+      <!-- line -->
+      <view class="bottomLine"></view>
+      <!-- 已收到货 -->
+      <view class="receGoods" bindtap="receClick" data-flag="1">
+        <view class="receGoodsText">已收到货</view>
+        <view class="receGoodsPic">
+          <image wx:if="{{isShow}}" src="/assets/images/applyAfterOrder/unchange.png" mode="widthFix"></image>
+          <image wx:else src="/assets/images/applyAfterOrder/ischange.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 底部窗口-退款原因 -->
+    <view class="goodsQuestionBox" wx:if="{{bottomIndex == 2 ? true : false}}">
+      <view class="godsQuestionText">退款原因</view>
+      <block wx:for="{{resonList}}" wx:key="index">
+        <view class="question" data-index="{{index}}" bindtap="questionClick">
+          <view class="questionText">{{item.reason}}</view>
+          <view class="questionPic">
+            <image wx:if="{{questionIndex == index ? false : true}}" src="/assets/images/applyAfterOrder/unchange.png"
+              mode="widthFix"></image>
+            <image wx:else src="/assets/images/applyAfterOrder/ischange.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

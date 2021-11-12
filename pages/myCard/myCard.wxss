@@ -1,0 +1,161 @@
+.top{
+  width: 100%;
+  height: 80rpx;
+  background: #ffffff;
+  margin: 18rpx auto 26rpx;
+  color: rgba(20,20,20,1);
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.headers.active{
+  font-weight: bold;
+  position: relative;
+}
+.headers.active::before{
+  content: '';
+  width: 24rpx;
+  height: 16rpx;
+  border-width: 4rpx;
+  border-style: solid;
+  border-color: #d6912d;
+  border-radius: 50%;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+  border-bottom-width: 4rpx;
+  position: absolute;
+  bottom: -10rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.allBalance{
+  opacity: 1;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  width: 714rpx;
+  height: 104rpx;
+  opacity: 1;
+  background: #1c6a4f;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30rpx;
+  padding-right: 23rpx;
+  margin: 0 auto;
+}
+.allBalance text:last-child{
+  opacity: 1;
+  font-size: 80rpx;
+  font-family: PingFang SC, PingFang SC-Heavy;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+}
+.cardList{
+  margin-top: 24rpx;
+  width: 750rpx;
+  background: #ffffff;
+  padding: 0 20rpx 24rpx 20rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+/* 卡券 */
+.cardItem {
+  margin-top: 24rpx;  
+  width: 710rpx;
+  height: 244rpx;
+  border-radius: 10rpx;
+  display: flex;
+  position: relative;
+  z-index: 1;
+}
+.imgsty{width: 100%;height: 100%;position: absolute;z-index: -1;}
+.balance{
+  height: 72rpx;
+  opacity: 1;
+  font-size: 80rpx;
+  font-family: PingFang SC, PingFang SC-Heavy;
+  font-weight: 800;
+  color: #ffffff;
+}
+.cardinfo{
+  display: flex;
+  flex-direction: column;
+  padding: 24rpx 28rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+  width: 100%;
+}
+.cardTitle{
+  margin-top: 24rpx;
+  font-size: 24rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  color: #ffffff;
+}
+.cardNo{
+  font-size: 22rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+/* 没有卡券 */
+.noCardItem {
+  width: 252rpx;
+  height: 300rpx;
+  margin: 34rpx 0 0 224rpx;
+}
+.noCardPic {
+  width: 252rpx;
+  height: 252rpx;
+}
+.noCardPic image {
+  width: 100%;
+  height: 100%;
+}
+.noCardText {
+  width: 252rpx;
+  height: 44rpx;
+  opacity: 0.36;
+  font-size: 32rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: center;
+  color: #141414;
+}
+.imgsty2{
+  width: 100%;
+  height: 100%;
+}
+/* 卡片失效 */
+.invalid{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.invalid .invalidImgs{
+  width: 108rpx;
+  height: 82rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 66rpx;
+}
+.imgsty1{
+  width: 100%;height: 100%;
+}

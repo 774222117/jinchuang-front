@@ -1,0 +1,30 @@
+<view class="company-name">
+  物流公司：
+  <input placeholder="请输入物流公司" type="text" value="{{logisticsCompany}}" bindinput="getValue"
+    data-name="logisticsCompany" />
+</view>
+<view class="logistics-order">
+  <text>物流单号 ：</text>
+  <input placeholder="请输入物流单号" type="text" value="{{logisticsNumber}}" bindinput="getValue"
+    data-name="logisticsNumber" />
+</view>
+<view class="refund-explain">
+  <view class="refund-explain-title">退货说明 : ({{textLength}}/200)</view>
+  <textarea bindinput="refundTextInput" class="refund-text" maxlength="200" name="" id=""
+    value="{{description}}"></textarea>
+</view>
+<view class="chooseImg-region">
+  <view class="chooseImg-left">
+    <text class="txt1">上传凭证：</text>
+    <view class="upload" hidden="{{questionPicList.length>0}}" bindtap="uploadPhoto">
+      <image src="/assets/images/applyAfterOrder/upload.png" mode="widthFix" class="upload_icon"></image>
+    </view>
+    <image hidden="{{questionPicList.length==0}}" src="{{questionPicList[0]}}" mode="widthFix" class="upload_img" />
+    <image hidden="{{questionPicList.length==0}}" src="/images/afterOrderExpressSubmit/close.png" class="upload_close" bindtap="deleteImg" />
+    <!-- <text class="txt2" bindtap="uploadPhoto">选择凭证图片</text> -->
+  </view>
+  <!-- <view class="chooseImg-right" bindtap="uploadPhoto">
+    <image style="width:42rpx;height:42rpx;" src="/images/camera.png"></image>
+  </view> -->
+</view>
+<view class="submitBtn" bindtap="submit">提交退货信息</view>

@@ -1,0 +1,113 @@
+<!--卡券详情-->
+<import src="../../components/wxParse/wxParse.wxml" />
+<scroll-view scroll-into-view="{{toView}}" style="height:{{screenHeight}}px" bindscroll="handleScroll"
+  scroll-with-animation scroll-y>
+  <!--电子卡-->
+  <view class="top">
+    <view class="imgs">
+      <image class="imgsty" src="{{cardVoucherInfo.cardImgUrl}}"></image>
+    </view>
+    <view class="titles">{{cardVoucherInfo.cardName}}</view>
+    <view class="labels">
+      <view class="labels_item" wx:for="{{ [ {a:false,b:'不支持退换'}, {a:true,b:'一次性使用'},{a:true,b:'每单仅限一张'} ] }}"
+        wx:key="index">
+        <view class="labels_icon">
+          <image wx:if="{{item.a}}" class="imgsty" src="/images/cart.svg"></image>
+          <image wx:else class="imgsty" src="/images/index/search.svg"></image>
+        </view>
+        <view class="labels_text">{{item.b}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 选择 -->
+  <view class="choiceBox" catchtap="chooseCardAmount">
+    <view class="choice">
+      <view class="texts" >
+        <view class="text1">选择：选择兑换面值</view>
+        <view class="text2">共{{cardVoucherInfo.merchantCardDetails.length}}种面值可选</view>
+      </view>
+      <view class="icon">
+        <image class="imgsty" src="/images/index/more.svg"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 兑换流程 -->
+  <view class="changeProcedureBox" id="a0">
+    <view class="changeProcedure">
+      <view class="titles {{isFixed?'fixedTitles':''}}">
+        <view class="{{chooseIndex==index?'active':''}}" wx:for="{{['兑换流程','须知']}}" wx:key="index" data-id="a{{index}}"
+          data-index="{{index}}" bindtap="chooseTab">
+          <view class="posisty">{{item}} </view>
+          <view class="lines"></view>
+        </view>
+      </view>
+      <view class="contents padlr" >
+        <template is="wxParse" data="{{wxParseData:commodityDetails.nodes}}" />
+      </view>
+    </view>
+  </view>
+  <!-- 须知事项 -->
+  <view class="notes" id="a1">
+    <view class="notes_title padlr">须知事项</view>
+    <view class="notes_title1 padlr">兑换须知</view>
+    <view class="content padlr">
+      <template is="wxParse" data="{{wxParseData:commodityDetails2.nodes}}" />
+    </view>
+    <!-- 核销 -->
+    <view class="spaceLine"></view>
+    <view class="notes_title1 padlr">核销须知</view>
+    <view class="content padlr">
+      <template is="wxParse" data="{{wxParseData:commodityDetails3.nodes}}" />
+    </view>
+    <!-- <view class="items" wx:for="{{ [ {a:'积分须知',b:'兑换沃尔玛电子卡所需的积分将根据订单所需自动购买，1积分的价格为1元。'}, {a:'退换须知',b:'本券一经售出，概不退换。'},{a:'发票须知',b:'使用美团外卖电子券消费，美团外卖不再开具发票。'}] }}">
+    <view class="items_icon"> <image class="imgsty" src="/images/index/search.svg"></image>  </view>
+    <view class="items_text">
+      <view class="items_text_top">{{item.a}}</view>
+      <view class="items_text_btm">{{item.b}}</view>
+    </view>
+  </view> -->
+  </view>
+</scroll-view>
+
+<!-- 底栏 -->
+<view class="footer {{isIphoneX?'isIphoneXSty':''}}">
+  <!-- <view class="lefts">
+    <view class="footer_icon">
+      <image class="imgsty" src="/images/cart.svg"></image>
+    </view>
+    <view class="footer_text">分享</view>
+  </view> -->
+  <view class="rights" catchtap="submit">立即兑换</view>
+</view>
+
+
+<!-- 弹框 -->
+<view class="models" wx:if="{{showChoose}}">
+  <view class="content">
+    <view class="close" catchtap="closeChoose">
+      <image class="imgsty" src="/images/cardVoucherList/close.svg"></image>
+    </view>
+    <!-- 面值 -->
+    <view class="faceValue">面值</view>
+    <view class="faceValue_content">
+      <view class="faceValue_content_item {{index==currentCardIndex?'faceValueActive':''}}" data-index="{{index}}"
+        catchtap="chooseCard" wx:for="{{cardVoucherInfo.merchantCardDetails}}" wx:key="obj">{{item.nominalPrice}}元</view>
+    </view>
+    <!-- 购买数量 -->
+    <view class="payNum">
+      <view class="lefts">购买数量</view>
+      <view class="rights">
+        <view class="cut" catchtap="delCount">
+          <image class="imgsty" src="/images/shoppingCart/reduce.png"></image>
+        </view>
+        <view class="shopNum">{{buyCount}}</view>
+        <view class="add" catchtap="addCount">
+          <image class="imgsty" src="/images/shoppingCart/add.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 立即兑换 -->
+    <view class="models_btn" catchtap="submit">立即兑换</view>
+  </view>
+</view>

@@ -1,0 +1,78 @@
+<!--订单列表-->
+<view style="display:flex;flex-direction:column;background-color:#F5F5F5;width:100%;height:{{scrollHeight+87}}px">
+  <!-- <view class="searchBox">
+    <image src="/images/categoryGoods/search.png" style="width:40rpx;height:40rpx" />
+    <input type="text" class="searchIpt" confirm-type="send" placeholder="搜索" bindtap="gotoSearch" disabled="true"
+      placeholder-style="font-size: 28rpx;font-family: PingFang SC,PingFang SC-Regular;font-weight: 400;color: rgba(50,50,50,.5);" />
+  </view> -->
+  <view class="container">
+    <view class="titleNav">
+      <view class="titleNav_list {{chooseIndex==index?'active':''}}" wx:for="{{['全部','待付款','待发货','待收货','待退款']}}"
+        wx:key="index" data-index="{{index}}" bindtap="changeTab">{{item}}</view>
+    </view>
+    <scroll-view scroll-y style="height:{{scrollHeight}}px;background-color:#f5f5f5" bindscrolltolower="toLower"
+      scroll-with-animation="">
+      <view class="orderListBox">
+        <view class="orderList" wx:for="{{orderList}}" wx:key="index">
+          <view class="orderList_body" wx:for="{{item.goodsList}}" wx:key="goods" wx:for-item="goods" wx:for-index="idx">
+            <image src="{{goods.goodsThumb}}" data-id="{{goods.goodsId}}" data-ordertype = "{{item.orderType}}"
+      bindtap="gotoDetails" class="orderList_img"></image>
+            <view class="orderList_bodyR">
+              <view>
+                <view class="orderList_status" wx:if="{{idx==0}}">{{item.statusExplain}}</view>
+                <view class="orderList_main" data-id="{{goods.goodsId}}" data-ordertype = "{{item.orderType}}"
+      bindtap="gotoDetails">
+                  <view class="orderList_title textOver2">{{goods.title}}</view>
+                  <view class="orderList_total">x{{goods.total}}</view>
+                </view>
+              </view>
+              <view class="orderList_price" hidden="{{idx != (item.goodsList.length-1)}}">
+                <view class="orderList_priceL">总价￥{{item.price}}</view>
+                <view class="orderList_priceR"><text
+                    style="color:#323232;font-size:24rpx;line-height:34rpx">实付款</text>￥{{item.price}}</view>
+              </view>
+            </view>
+          </view>
+          <view class="orderList_foot">
+            <!-- 待支付 -->
+            <view class="orderList_btn" wx:if="{{item.status==0}}" data-id="{{item.id}}" bindtap="cancelOrder">取消订单
+            </view>
+            <view class="orderList_btn" data-id="{{item.id}}" catchtap="toPay"
+              style="color:#1C6A4F;border-color:#1c6a4f" wx:if="{{item.status==0}}">立即付款
+            </view>
+            <!-- 待发货 -->
+            <view class="orderList_btn" wx:if="{{item.orderType==1&&item.status==1}}" data-id="{{item.id}}"
+              bindtap="toRefund">申请退款</view>
+            <view class="orderList_btn" style="color:#1C6A4F;border-color:#1c6a4f" wx:if="{{item.status==2}}"
+              bindtap="finishOrder" data-id="{{item.id}}">确认收货
+            </view>
+            <!-- 待收货 ， 已完成 -->
+            <view class="orderList_btn"
+              wx:if="{{item.orderType==1&&item.status==3&&item.afterStatus=='NO'}}" bindtap="applyService"
+              data-id="{{item.id}}">申请售后</view>
+            <!-- <view class="orderList_btn" wx:if="{{item.status==2||item.status==3}}" data-id="{{item.id}}" catchtap="toDeliveryInfo">查看物流</view> -->
+            <view class="orderList_btn" style="color:#1C6A4F;border-color:#1c6a4f" bindtap="orderDetail"
+              data-id="{{item.id}}">订单详情
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<view class="cu-modal {{modalName=='resoneModal'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item" wx:for="{{resonList}}" wx:key="resonList">
+          <label class="flex justify-between align-center flex-sub" data-value="{{item.reason}}"
+            bindtap="confirmRefund">
+            <view class="flex-sub">{{item.reason}}</view>
+            <radio class="round"></radio>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>

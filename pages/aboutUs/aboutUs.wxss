@@ -1,0 +1,38 @@
+/* pages/aboutUs/aboutUs.wxss */
+.card {
+  width: 702rpx;
+  height: 187rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  margin: 24rpx auto 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16rpx;
+}
+
+.cardItem {
+  width: calc(100% - 16rpx);
+  height: 93rpx;
+  border-bottom: 2rpx solid rgba(112, 112, 112, .1);
+  box-sizing: content-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8rpx
+}
+
+.cardItem:last-child {
+  border-bottom: none;
+}
+
+.cardItm_label {
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  color: #141414;
+}
+
+.cardItem_icon {
+  width: 32rpx;
+  height: 32rpx;
+}

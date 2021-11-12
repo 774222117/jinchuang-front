@@ -1,0 +1,153 @@
+.company-name {
+  width: 702rpx;
+  height: 100rpx;
+  margin: 18rpx auto 0;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 24rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+
+.logistics-order {
+  width: 702rpx;
+  height: 100rpx;
+  margin: 18rpx auto 0;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 24rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+
+.refund-explain {
+  width: 702rpx;
+  height: 382rpx;
+  margin: 18rpx auto 0;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 0 24rpx;
+}
+
+.refund-explain-title {
+  height: 92rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+
+.refund-text {
+  width: 654rpx;
+  height: 266rpx;
+  margin: 0 auto;
+  background: #fafafa;
+  border-radius: 10rpx;
+}
+
+.chooseImg-region {
+  width: 702rpx;
+  /* height: 100rpx; */
+  margin: 18rpx auto 0;
+  opacity: 1;
+  background: #ffffff;
+  border-radius: 20rpx;
+  display: flex;
+  /* align-items: center;
+  justify-content: space-between; */
+  padding: 28rpx 24rpx 0;
+}
+
+.chooseImg-left {
+  flex: 1;
+  display: flex;
+  position:relative;
+}
+
+.chooseImg-left .txt1 {
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+}
+
+.chooseImg-left .txt2 {
+  opacity: 0.5;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #141414;
+  flex: 1;
+}
+
+.submitBtn {
+  width: 702rpx;
+  height: 80rpx;
+  margin: 100rpx auto 0;
+  opacity: 1;
+  background: #1c6a4f;
+  border-radius: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  font-family: PingFang SC, PingFang SC-Regular;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+}
+
+/* 上传框 */
+.upload {
+  width: 156rpx;
+  height: 156rpx;
+  opacity: 0.36;
+  border: 2rpx dashed #707070;
+  /* margin: 82rpx 0 0 24rpx; */
+  margin: 0 0 28rpx 24rpx;
+  opacity: 0.53;
+  font-size: 20rpx;
+  font-family: PingFang SC, PingFang SC-Medium;
+  font-weight: 500;
+  text-align: center;
+  color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload_icon {
+  width: 58rpx;
+  height: 58rpx;
+}
+.upload_img {
+  width: 156rpx;
+  height: 156rpx;
+  margin: 0 0 28rpx 24rpx;
+}
+.upload_close{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: -25rpx;
+  left: 295rpx;
+  z-index:5;
+}

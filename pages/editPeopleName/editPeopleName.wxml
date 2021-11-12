@@ -1,0 +1,4 @@
+<!--用户名-->
+<input type="text" maxlength="16" placeholder="请输入用户名称" class="ipt" placeholder-class="ipt_place" bindinput="getValue" value="{{userName}}" />
+<view class="tip">最多可设置16个汉字，可设置含有中文、英文、数字、符号组合的昵称，但不可以设置有特殊字符。</view>
+<view class="saveBtn" bindtap="submit">保存修改</view>

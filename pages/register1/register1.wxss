@@ -1,0 +1,238 @@
+/* pages/myIndex/myIndex.wxss */
+page{
+    background: #f5f5f5;
+    height: 100%;
+    background: #fff;
+}
+/* 头部 */
+.register-header{
+    width: 100%;
+    min-height: 198rpx;
+    /* background-color: #13513c;
+    border-radius: 0 0 60rpx 60rpx; */
+    position: relative;
+    padding-top: 120rpx;
+    display: flex;
+    justify-content: center;
+}
+.register-bg{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 380rpx;
+}
+.toolbar{
+    /* width: 100%; */
+    width:70rpx;
+    height: 64rpx;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 40rpx;
+    left:0;
+    /* padding: 0 25rpx; */
+    z-index: 10;
+}
+.toolbar-back{
+    width: 20rpx;
+    height: 34rpx;
+    /* margin-top: 15rpx; */
+}
+.title{
+    height:64rpx;
+    line-height: 64rpx;
+    color: #fff;
+    font-size: 36rpx;
+    text-align: center;
+    width:100rpx;
+    position: absolute;
+    /* left:calc(50% - 50rpx); */
+    top:40rpx;
+    display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.step-item{
+    position: absolute;
+    top: 250rpx;
+    left: 50rpx;
+    width: 650rpx;
+    height: 232rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.06);
+    z-index: 9999;
+}
+.pic-guide{
+    width: 100%;
+    height: 116rpx;
+    display: flex;
+    justify-content: space-around;
+    padding: 0 50rpx;
+}
+.pic-guide-img{
+    width: 66rpx;
+    height: 66rpx;
+    margin-top: 50rpx;
+}
+.pic-guide-img-node{
+    width: 48rpx;
+    height: 30rpx;
+    margin-top: 78rpx;
+}
+.text-guide{
+    width: 100%;
+    height: 116rpx;
+    /* line-height: 100rpx; */
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50rpx;
+}
+.text-guide view{
+    font-size: 28rpx;
+    font-family: PingFang SC, PingFang SC-Bold;
+    font-weight: 700;
+    color: #323232;
+}
+.scan-code-tip{
+    opacity: 1;
+    font-size: 28rpx;
+    font-family: PingFang SC, PingFang SC-Bold;
+    font-weight: 700;
+    text-align: center;
+}
+.register-body{
+    width: 750rpx;
+    height: auto;
+    margin-top: 282rpx;
+    background: #fff;
+}
+.item-label{
+    padding: 70rpx 0 0 0;
+    width: 750rpx;
+    height: 100rpx;
+    line-height: 50rpx;
+    color: #141414;
+    font-size: 28rpx;
+    font-weight: 700;
+    text-indent: 100rpx;
+}
+.item-input-box {
+    width: 550rpx;
+    height: 91rpx;
+    border-bottom: 1rpx solid rgba(60,60,67,0.15);
+    margin: 10rpx 0 0 100rpx;
+    display: flex;
+    align-items: flex-end;
+    position:relative;
+}
+.item-input {
+    width: 368rpx;
+    line-height: 44rpx;
+    margin: 0 0 14rpx 56rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: #141414;
+}
+.scan-img{
+    width: 52rpx;
+    height: 52rpx;
+    position: absolute;
+    right:0;
+    top:-15rpx;
+}
+.card-label{
+    padding: 50rpx 0 0 0;
+    width: 750rpx;
+    height: 100rpx;
+    line-height: 50rpx;
+    color: #141414;
+    font-size: 36rpx;
+    font-weight: 700;
+    text-indent: 100rpx;
+}
+/* 输入验证码框 */
+.code {
+    width: 558rpx;
+    height: 91rpx;
+    border-bottom: 1rpx solid rgba(60,60,67,0.15);
+    margin: 0rpx 0 0 96rpx;
+    display: flex;
+    align-items: center;
+}
+/* 输入验证码 */
+.mobilecode {
+    width: 180rpx;
+    line-height: 44rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    margin-top: 30rpx;
+}
+/* 获取验证码 */
+.getCode {
+    width: 250rpx;
+    line-height: 44rpx;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: rgb(180 134 8);
+    margin-left: 250rpx;
+    cursor: pointer;
+    margin-top: 30rpx;
+}
+.next-btn{
+    margin-left: 100rpx;
+    display: flex;
+    width: 550rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    background: #266a24;
+    color: #fff;
+    border-radius: 100rpx;
+    padding: 0 50rpx;
+    margin-top: 100rpx;
+}
+
+.operation{
+    margin-top: 100rpx;
+    width: 750rpx;
+    height: 64rpx;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100rpx;
+}
+.operation-label_scan{
+    width: 276rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    text-align: center;
+    border-radius: 34rpx;
+    background: #d6912d;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #ffffff;
+}
+.operation-label{
+    width: 250rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    text-align: center;
+    border-radius: 34rpx;
+    background: #1C6A4F;
+    font-size: 28rpx;
+    font-weight: 400;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tip-margin{
+    margin-top: 80rpx;
+}
+.register-tip{
+    padding: 20rpx 100rpx;
+    font-size: 24rpx;
+    font-weight: 500;
+    color: #141414;
+}

@@ -1,0 +1,30 @@
+<!--帐号设置-->
+<view class="cardBox">
+  <view class="cardItem"  data-target="/pages/peopleInfo/peopleInfo" catchtap="toPage">
+    <text>个人信息</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+  </view>
+</view>
+<view class="cardBox">
+  <!-- <view class="cardItem">
+    <text>手机号</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+  </view> 
+  <view class="cardLine"></view>-->
+  <view class="cardItem"   catchtap="chooeAddress">
+    <text>地址管理</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+  </view>
+  <view class="cardLine"></view>
+  <view class="cardItem"  data-target="/pages/editPassword/editPassword" catchtap="toPage">
+    <text>修改支付密码</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+  </view>
+  <view class="cardLine"></view>
+  <view class="cardItem"  data-target="/pages/retrievePassword/retrievePassword" catchtap="toPage">
+    <text>忘记支付密码</text>
+    <image src='/images/peopleInfo/rightArrow.svg' class="cardItem_icon"></image>
+  </view>
+</view>
+<view class="logoutBtn" bindtap="logout">退出登录
+</view>

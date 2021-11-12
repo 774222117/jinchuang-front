@@ -1,0 +1,52 @@
+<wxs module="priceUtil" src="../../utils/priceSpilt.wxs"></wxs>
+<!-- 顶部控制栏 -->
+<view class="tabControl">
+  <block wx:for="{{['所有订单','待审核','已审核','已完成']}}" wx:key="{{index}}">
+    <view class="tabItem {{currentIndex == index ? 'active' : ''}}" data-index="{{index}}" bindtap="handleItemClick">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 退款商品展示 -->
+<block wx:for="{{orderList}}" wx:key="{{index}}">
+  <view class="refundedGood">
+    <!-- 退款状态 -->
+    <view class="refundedState">
+      <view class="refundedStateText">退款商品</view>
+      <view class="refundedChange">{{item.statusExplain}}</view>
+    </view>
+    <!-- 商品详情 -->
+    <view class="goodDetail">
+      <!-- 商品图片 -->
+      <view class="leftPic">
+        <image style="width:100%;height:100%;border-radius: 8rpx;" src="{{item.orderAfterSaleGoodsList[0].goodsThumb}}"></image>
+      </view>
+      <!-- 右侧商品详情 -->
+      <view class="rightGoods">
+        <!-- 商品名称和数量 -->
+        <view class="goodsNameNum">
+          <view class="goodsName">{{item.orderAfterSaleGoodsList[0].title}}</view>
+          <view class="goodsNum">×{{item.orderAfterSaleGoodsList[0].quantity}}</view>
+        </view>
+        <!-- 重量 -->
+        <view class="goodsWeight"></view>
+        <!-- 价格和后续操作 -->
+        <view class="goodsPriceControl">
+          <view class="priceBox">
+            <!-- 现价 -->
+            <view class="nowPrice">¥{{priceUtil.getBefore(item.orderAfterSaleGoodsList[0].totalRefund)}}.
+              <view class="pricePoint">{{priceUtil.getAfter(item.orderAfterSaleGoodsList[0].totalRefund)}}</view>
+            </view>
+            <!-- 原价 -->
+            <view class="oldPrice">¥{{item.orderAfterSaleGoodsList[0].price}}</view>
+          </view>
+          <!-- 后续状态 -->
+          <view class="result" data-id="{{item.id}}" catchtap="cancelAfterOrder" wx:if="{{item.status == 'WAITING_REVIEW'}}">取消</view>
+          <view class="result" catchtap="toSubmitExpress" data-id="{{item.id}}" wx:if="{{item.status == 'WAITING_RETURN_GOODS'&&item.logisticsNumber==''}}">填写退货物流信息</view>
+          <view class="ruseltTwo" wx:if="{{item.status == 'COMPLETED'}}">退款金额已自动返回</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>

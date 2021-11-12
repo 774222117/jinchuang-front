@@ -1,0 +1,40 @@
+<!--卡券列表-->
+<!-- 卡片 -->
+<view class="cards" wx:for="{{cardVoucherList}}" wx:key="cardVoucher">
+  <image class="imgsty" src="{{item.cardIndexImgUrl}}"></image>
+  <view class="card_text1">{{item.cardName}}</view>
+  <view class="card_text2">{{item.salesReal+item.salesVirtual}} · 已售</view>
+  <!-- <view class="card_text3" data-id="{{item.id}}" data-selltype ="{{item.sellType}}"  catchtap="showCardTypeModel">立即兑换</view> -->
+  <view class="card_exchange" data-selltype="{{item.sellType}}"
+      data-id="{{item.id}}" catchtap="showCardTypeModel">
+      <view class="card_text3">立即兑换</view>
+    </view>
+</view>
+
+<!-- 弹框 -->
+<view class="models" hidden="{{cardtypeShow}}">
+  <view class="content">
+    <view class="title">请选择兑换实体卡/电子卡</view>
+    <view class="entityCard pubsty">
+      <view class="texts">
+        <text class="text1">实体卡</text>
+        <text class="text2">（实体卡将以快递的形式寄到您的手中）</text>
+      </view>
+      <view class="radio" data-selltype="2" catchtap="selectType">
+        <image wx:if="{{selectedSellType==2}}" class="imgsty" src="/images/cardVoucherList/act.svg"></image>
+        <image wx:else class="imgsty" src="/images/cardVoucherList/def.svg"></image>
+      </view>
+    </view>
+    <view class="electronCard pubsty">
+      <view class="texts">
+        <text class="text1">电子卡</text>
+      </view>
+      <view class="radio" data-selltype="1" catchtap="selectType">
+        <image wx:if="{{selectedSellType==1}}"class="imgsty" src="/images/cardVoucherList/act.svg"></image>
+        <image wx:else class="imgsty" src="/images/cardVoucherList/def.svg"></image>
+      </view>
+    </view>
+    <view class="center" catchtap="toExchange">确定</view>
+    <view class="close" catchtap="closeCardTypeModel"><image class="imgsty" src="/images/cardVoucherList/close.svg"></image></view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class="head-block">
+  <view class="head-region">
+    <!-- <view class="naviTitle" style="top:{{navTop}}px;height:{{navHeight}}px">
+      <view class="title"><text>选择城市</text></view>
+    </view> -->
+    <view class="searchBarArea">
+      <view class="searchBar">
+        <image style="width:40rpx;height:40rpx" src="/images/index/search.svg"></image>
+        <input value="{{inputValue}}" bindfocus="onFocus" bindblur="onBlur" bindinput="onSearch" placeholder="输入城市名" type="text"/>
+      </view>
+      <view class="cancelBtn" bindtap="onSearchCancel">取消</view>
+    </view>
+  </view>
+  <!-- <view class="GPS-region">
+    <image style="width:40rpx;height:40rpx" src="/images/shoppingCart/location.png"></image>
+    <text class="cityName">南京</text>
+    <text class="tip">GPS定位</text>
+  </view> -->
+ <view class="history-region">  <!-- wx:if="{{histories.length != 0}}" -->
+    <view class="history-title">历史城市</view>
+    <view class="history-main">
+      <view class="history-city-item" wx:for="{{histories}}" data-name="{{item}}" bindtap="chooseCity">{{item}}</view>
+    </view>
+  </view>
+</view>
+<scroll-view class="scroll-class" scroll-y="true"  scroll-with-animation="true"
+  scroll-into-view="{{scrollTopId}}">
+<view class="hotCity-region" id='Hot'>
+  <view class="hotCity-title">热门城市</view>
+  <view class="hotCity-main">
+    <view class="hotCity-city-item" wx:for="{{hots}}" wx:key="index" data-name="{{item.name}}" bindtap="chooseCity">{{item.name}}</view>
+  </view>
+</view>
+<view class="city-alphabet-item" wx:for="{{cities}}" wx:key="index" wx:for-item="alphabetItem">
+  <view class="alphabet-title" id="{{alphabetItem.first}}">{{alphabetItem.first}}</view>
+  <view class="city-body">
+    <view class="city-na" wx:for="{{alphabetItem.data}}" wx:key="index" wx:for-item="cityItem" data-name="{{cityItem.name}}" bindtap="chooseCity">{{cityItem.name}}</view>
+  </view>
+</view>
+</scroll-view>
+<view class="alphabet-list">
+  <view class="list-item" data-letter="Hot" catchtouchend="clickLetter">热门</view>
+  <view class="list-item" wx:for="{{alphabetArr}}" wx:key="index" data-letter="{{item}}" catchtouchend="clickLetter">{{item}}</view>
+</view>
+
+<view wx:if="{{seachBg}}">
+    <view class='bg_layer' bindtap="onTouchBgLayer"></view>
+    <view class='search-main' wx:if="{{searchPanel}}">
+    <scroll-view class="seachScroll" scroll-y="true"  scroll-with-animation="true">
+      <view class="search-item" wx:for="{{searchResult}}" wx:key="index" data-name="{{item.name}}" bindtap="chooseCity">
+         {{item.name}}
+      </view>
+      <view class="holdThePlace"></view>
+    </scroll-view>
+    </view>
+</view>
