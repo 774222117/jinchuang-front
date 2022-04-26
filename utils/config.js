@@ -36,8 +36,7 @@ const HttpConfig = {
     SubmitShopOrderUrl: `${host}/app/order/v2/submit`, //新版订单支付
     //订单支付失败
     PayFaildOrderUrl: `${host}/app/order/v2/pay/fail`,
-    //重新支付
-    PayOrderUrl: `${host}/app/order/payOrder`,
+
     //售后订单列表
     findAfterSaleListUrl: `${host}/app/order/findAfterSaleList`,
     //售后订单详情
@@ -49,13 +48,11 @@ const HttpConfig = {
     //上传图片
     uploadImageUrl: `${host}/app/image/upload`,
     //退款原因
-    findRefundReasonUrl: `${host}/app/order/findRefundReason`,
+    findRefundReasonUrl: `${host}/app/order/v2/findRefundReason`,
     //查询订单列表
-    PeopleOrderInfoUrl: `${host}/app/order/getPeopleOrderInfo`,
+    PeopleOrderInfoUrl: `${host}/app/order/v2/getPeopleOrderInfo`,
     //申请退款，取消订单
     ApplyRefundUrl: `${host}/app/order/v2/applyRefund`,
-    //订单详情页，重新支付订单
-    AgainPayOrderUrl: `${host}/app/order/againPayOrder`,
     //校验支付密码
     CheckSecretUrl: `${host}/app/people/check/secret`,
     //订单支付

@@ -4,7 +4,7 @@ const app = getApp()
 //获取优惠券
 const myOrderCouponsUrl = require('../../utils/config.js').HttpConfig.OrderUrl.MyOrderCouponsUrl;
 //重新支付
-const PayOrderUrl = require('../../utils/config.js').HttpConfig.OrderUrl.PayOrderUrl;
+const GoPayUrl = require('../../utils/config.js').HttpConfig.OrderUrl.GoPayUrl;
 //提交订单
 const SubmitShopOrderUrl = require('../../utils/config.js').HttpConfig.OrderUrl.SubmitShopOrderUrl;
 const Message = require('../../utils/util.js').Message;
@@ -451,7 +451,7 @@ Page({
     //首次提交
     let url = SubmitShopOrderUrl
     if (that.data.orderId > 0) {
-      url = PayOrderUrl
+      url = GoPayUrl
       orderInfo.id = this.data.orderId
     }
     //提交数据

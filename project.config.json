@@ -26,7 +26,6 @@
     "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
-    "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
     "useApiHostProcess": true,
@@ -36,15 +35,17 @@
       "outputPath": ""
     },
     "enableEngineNative": false,
+    "bundle": false,
     "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
     "userConfirmedBundleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
-    "minifyWXSS": true,
-    "showES6CompileOption": false
+    "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.18.1",
+  "libVersion": "2.19.5",
   "appid": "wx3cfade610328c3a4",
   "projectname": "jinchuang-front",
   "debugOptions": {

@@ -18,7 +18,7 @@
         <image class="imgsty" src="/images/index/more.png"></image>
       </view>
     </view>
-    <!-- 搜索 -->
+    <!-- 搜索 1-->
     <view class="search_box">
       <view class="search_input"><input type="text" disabled catchtap="gotoSearch" placeholder="寻找称心商品"
           placeholder-class="placeholderSty" /></view>
